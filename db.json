@@ -1,0 +1,52 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "ArubaBuddies",
+      "thumbnail": "https://iemgpccgdlwpsrsjuumo.supabase.co/storage/v1/object/sign/foto/Screenshot%202025-06-16%20151003.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjkxZGZkZC1hYTQ1LTQ3NTUtODZiMy1iZDBhY2QyMjlkMjMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmb3RvL1NjcmVlbnNob3QgMjAyNS0wNi0xNiAxNTEwMDMucG5nIiwiaWF0IjoxNzUwMDgxODI5LCJleHAiOjE5MDc3NjE4Mjl9.N6hH3SMuUeCZzg13bKDzQ59enKoiqTRIa8wWxgw4tXI",
+      "excerpt": "ArubaBauddies is a smart trip planning platform for Aruba.",
+      "description": "ArubaBuddies is a smart trip planning platform that helps travelers effortlessly design personalized Aruba vacations with curated local recommendations and an interactive itinerary builder. It connects users to handpicked tours, restaurants, and hidden gems, making every Aruba trip unforgettable and easy to share.",
+      "websiteUrl": "https://arubabuddies.com/",
+      "technologies": [
+        "Node.js",
+        "React",
+        "Next.js",
+        "Supabase"
+      ]
+    },
+    {
+      "id": 1750082095116,
+      "title": "KickScore.io",
+      "thumbnail": "https://iemgpccgdlwpsrsjuumo.supabase.co/storage/v1/object/sign/foto/Screenshot%202025-06-16%20150622.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjkxZGZkZC1hYTQ1LTQ3NTUtODZiMy1iZDBhY2QyMjlkMjMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmb3RvL1NjcmVlbnNob3QgMjAyNS0wNi0xNiAxNTA2MjIucG5nIiwiaWF0IjoxNzUwMDgyMDM2LCJleHAiOjE5MDc3NjIwMzZ9.dNt3-U8vGw6O6M3XGHIgNj5gVMq-22tJNen8cLrTCrI",
+      "excerpt": "KickScore.io is an AI-driven platform that instantly validates business ideas.",
+      "description": "KickScore.io is an AI-powered platform that helps entrepreneurs validate their business ideas by providing instant, data-driven scores and detailed market insights. It combines AI analysis with community feedback, enabling founders to refine concepts, assess risks, and share results effortlessly.",
+      "websiteUrl": "https://kickscore.io/",
+      "technologies": [
+        "React",
+        "Node.js",
+        "WebSockets",
+        "MongoDB",
+        "REST API",
+        "Firebase",
+        "Tailwind CSS"
+      ]
+    },
+    {
+      "id": 1750082176035,
+      "title": "FactuurBaas",
+      "thumbnail": "https://iemgpccgdlwpsrsjuumo.supabase.co/storage/v1/object/sign/foto/Screenshot%202025-06-16%20150605.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjkxZGZkZC1hYTQ1LTQ3NTUtODZiMy1iZDBhY2QyMjlkMjMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmb3RvL1NjcmVlbnNob3QgMjAyNS0wNi0xNiAxNTA2MDUucG5nIiwiaWF0IjoxNzUwMDgyMTU0LCJleHAiOjE5MDc3NjIxNTR9._ARIqocRNmqWiVjGqE7Se7XrpSD16kNA9yHUIv_2mv0",
+      "excerpt": "FactuurBaas: Invoicing Made Fast, Simple, and Professional",
+      "description": "FactuurBaas is a fast and easy invoicing tool designed for freelancers and small businesses to create professional invoices in minutes without any hassle. It requires no account and offers intuitive, customizable layouts with instant PDF downloads—making invoicing simple and efficient.",
+      "websiteUrl": "https://factuurbaas.nl/",
+      "technologies": [
+        "React",
+        "Node.js",
+        "WebSockets",
+        "MongoDB",
+        "REST API",
+        "Firebase",
+        "Tailwind CSS"
+      ]
+    }
+  ]
+}

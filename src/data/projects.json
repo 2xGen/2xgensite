@@ -1,0 +1,13 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-commerce Platform",
+      "thumbnail": "/project-thumbnails/ecommerce.jpg",
+      "excerpt": "A modern e-commerce platform built with React and Node.js",
+      "description": "This project involved creating a full-featured e-commerce platform with real-time inventory management, secure payment processing, and an intuitive admin dashboard.",
+      "websiteUrl": "https://example.com/ecommerce",
+      "technologies": ["React", "Node.js", "MongoDB", "Stripe"]
+    }
+  ]
+} 

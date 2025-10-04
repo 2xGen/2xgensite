@@ -1,0 +1,60 @@
+{
+  "rewrites": [
+    {
+      "source": "/insights/ai-transforming-web-development",
+      "destination": "/insights/ai-transforming-web-development.html"
+    },
+    {
+      "source": "/insights/validating-saas-ideas",
+      "destination": "/insights/validating-saas-ideas.html"
+    },
+    {
+      "source": "/insights/viator-openai-integration",
+      "destination": "/insights/viator-openai-integration.html"
+    },
+    {
+      "source": "/insights/mygoprofile-built-on-google",
+      "destination": "/insights/mygoprofile-built-on-google.html"
+    },
+    {
+      "source": "/insights/arubabuddies-changing-bookings",
+      "destination": "/insights/arubabuddies-changing-bookings.html"
+    },
+    {
+      "source": "/insights/story-behind-toptours-ai",
+      "destination": "/insights/story-behind-toptours-ai.html"
+    },
+    {
+      "source": "/insights/starting-free-saas-growth",
+      "destination": "/insights/starting-free-saas-growth.html"
+    },
+    {
+      "source": "/insights/persistence-in-saas",
+      "destination": "/insights/persistence-in-saas.html"
+    },
+    {
+      "source": "/((?!insights/.*\\.html|contact\\.html|assets|data|favicon\\.svg|robots\\.txt|sitemap\\.xml).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|webp|ico))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000"
+        }
+      ]
+    }
+  ]
+}
