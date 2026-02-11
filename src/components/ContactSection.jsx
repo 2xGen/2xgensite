@@ -21,9 +21,9 @@ const ContactSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6 pb-2 leading-tight">Company Information</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6 pb-2 leading-tight">Contact Us</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            2xGen LLC is a venture studio building and scaling the next generation of digital products.
+            Let's talk about how we can work together to help your hospitality business get found, trusted, and booked.
           </p>
         </motion.div>
 
@@ -66,9 +66,9 @@ const ContactSection = () => {
           >
             <Card className="bg-gray-50 shadow-lg p-6 hover-lift">
               <CardHeader>
-                <CardTitle className="text-2xl text-gray-800 mb-4">At 2xGen, we build the future, together.</CardTitle>
+                <CardTitle className="text-2xl text-gray-800 mb-4">Get in Touch</CardTitle>
                 <CardDescription className="text-gray-600">
-                  Official company information and contact details.
+                  Whether you're interested in our products, managed services, or both — we'd love to hear from you.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">

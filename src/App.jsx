@@ -8,6 +8,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import StatsSection from '@/components/StatsSection';
+import PricingSection from '@/components/PricingSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import CallToActionSection from '@/components/CallToActionSection';
@@ -31,7 +32,7 @@ const HomePage = () => (
           "alternateName": "2xGen LLC",
           "url": "https://2xgen.com",
           "logo": "https://2xgen.com/logo.png",
-          "description": "2xGen LLC is a venture studio building and scaling the next generation of digital products.",
+          "description": "2xGen helps hospitality businesses get found, trusted, and booked. We Bring You Bookings. You Run the Business.",
           "foundingDate": "2024",
           "address": {
             "@type": "PostalAddress",
@@ -74,14 +75,14 @@ const HomePage = () => (
             }
           ],
           "knowsAbout": [
-            "Artificial Intelligence",
-            "Web Development",
-            "SaaS Platforms",
-            "Digital Products",
-            "Venture Studio",
+            "Hospitality Marketing",
+            "Travel Marketing",
             "Local SEO",
-            "Travel Technology",
-            "Business Automation"
+            "Restaurant Bookings",
+            "Tour Bookings",
+            "Travel Recommendations",
+            "Booking Platforms",
+            "Digital Visibility"
           ]
         })
       }}
@@ -91,14 +92,8 @@ const HomePage = () => (
     <HeroSection />
     <AboutSection />
     <ServicesSection />
-    <ProjectsSection />
     <StatsSection />
-    <CallToActionSection 
-      title="We're building the next generation of digital brands"
-      description="Explore our ventures or reach out to discuss partnership opportunities."
-      buttonText="Start Your Project | Get in Touch"
-      buttonLink="#contact"
-    />
+    <PricingSection />
     <ContactSection />
     <Footer />
   </>

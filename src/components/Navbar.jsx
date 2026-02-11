@@ -7,13 +7,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const isInsightsPage = location.pathname === '/insights';
+  const isHomePage = location.pathname === '/';
+  const isNonHomePage = !isHomePage;
 
   const navLinks = [
     { href: '/#home', label: 'Home' },
     { href: '/#about', label: 'About' },
-    { href: '/#services', label: 'What We Do' },
-    { href: '/#projects', label: 'Projects' },
+    { href: '/#products', label: 'Products' },
+    { href: '/#services', label: 'Services' },
     { href: '/#contact', label: 'Contact' },
   ];
 
@@ -30,7 +31,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <motion.a
-            href="#home"
+            href="/"
             className="flex items-center space-x-3"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -40,8 +41,8 @@ const Navbar = () => {
           </motion.a>
 
           <div className="hidden md:flex items-center space-x-8">
-            {isInsightsPage ? (
-              /* Insights page navigation - simple back to home */
+            {isNonHomePage ? (
+              /* Non-homepage navigation - simple back to home */
               <motion.a
                 href="/"
                 className="flex items-center space-x-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#09294c] to-[#1a4b7a] text-white hover:from-[#1a4b7a] hover:to-[#2d6ba8] shadow-lg hover:shadow-xl transform hover:scale-105 font-medium transition-all duration-300"
@@ -100,8 +101,8 @@ const Navbar = () => {
         className={`md:hidden overflow-hidden ${isScrolled || isOpen ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {isInsightsPage ? (
-            /* Insights page mobile navigation - simple back to home */
+          {isNonHomePage ? (
+            /* Non-homepage mobile navigation - simple back to home */
             <a
               href="/"
               onClick={() => setIsOpen(false)}

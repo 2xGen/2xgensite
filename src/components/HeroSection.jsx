@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, TrendingUp, Users, Zap } from 'lucide-react';
 
 const AnimatedTextCharacter = ({ children, delay }) => {
   return (
@@ -30,7 +30,7 @@ const AnimatedTextWord = ({ text, baseDelay = 0, className = "" }) => {
 
 const HeroSection = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-slate-50 to-gray-100 hero-pattern-subtle overflow-hidden pt-32 pb-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-white via-slate-50/30 to-white hero-pattern-subtle overflow-hidden pt-20 pb-20">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden z-0">
         <motion.div 
@@ -62,57 +62,130 @@ const HeroSection = () => {
         />
       </div>
       
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center glass-hero-content rounded-3xl shadow-2xl">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="space-y-4 py-12 md:py-16"
+          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="space-y-8 py-8 md:py-12"
         >
-          <motion.div
-            className="floating"
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.3, type: "spring", stiffness: 100 }}
-          >
-            <span className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-[#09294c] opacity-90">
-              <AnimatedTextWord text="2xGen" baseDelay={0.35} />
-            </span>
-          </motion.div>
+          {/* Main Headline - Compact */}
+          <div className="relative mb-4">
+            <motion.h1 
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-[-0.02em] leading-[1.15] max-w-6xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <span className="block">
+                <span className="text-gray-500 font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                  <AnimatedTextWord text="Get" baseDelay={0.5} />
+                </span>{" "}
+                <AnimatedTextWord text="Your Business" baseDelay={0.55} />{" "}
+                <span className="text-gray-500 font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                  <AnimatedTextWord text="Seen" baseDelay={0.6} />
+                </span>{" "}
+                <span className="text-gray-500 font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl">by the</span>{" "}
+                <AnimatedTextWord text="Right Travelers" baseDelay={0.7} />{" "}
+                <span className="text-gray-500 font-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl">at the</span>{" "}
+                <motion.span 
+                  className="bg-gradient-to-r from-[#09294c] via-[#1a4b7a] to-[#2d6ba8] text-transparent bg-clip-text"
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
+                >
+                  <AnimatedTextWord text="Right Moment." baseDelay={1.0} />
+                </motion.span>
+              </span>
+            </motion.h1>
+            
+            {/* Refined Decorative Element */}
+            <motion.div
+              className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-[#09294c]/40 to-transparent"
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: "40%", opacity: 1 }}
+              transition={{ duration: 1.2, delay: 1.3, ease: "easeOut" }}
+            />
+          </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-gray-800 mb-5 tracking-tight">
-            <span className="block">
-              <AnimatedTextWord text="We Build the" baseDelay={0.4} />
-            </span>
-            <span className="block bg-gradient-to-r from-[#09294c] via-[#1a4b7a] to-[#2d6ba8] text-transparent bg-clip-text pb-2">
-              <AnimatedTextWord text="Future, Together" baseDelay={0.8} />
-            </span>
-          </h1>
-
+          {/* Refined Subheadline */}
           <motion.p 
-            className="text-base sm:text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed px-4"
+            className="text-xl sm:text-2xl md:text-3xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.5, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 1.1, ease: "easeOut" }}
           >
-            2xGen is a digital venture studio. We build, validate, and scale SaaS products and web platforms that deliver growth and long-term value.
+            We Drive the Bookings. You Provide the Memories.
           </motion.p>
 
+          {/* Premium Features - More Refined */}
           <motion.div
-            className="mt-10"
+            className="flex flex-wrap justify-center gap-3 mb-12 max-w-3xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
+          >
+            {[
+              { icon: <TrendingUp className="w-4 h-4" />, text: "Maximum Visibility" },
+              { icon: <Users className="w-4 h-4" />, text: "Targeted Leads" },
+              { icon: <Zap className="w-4 h-4" />, text: "Zero Effort" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="group flex items-center gap-3 px-5 py-3 bg-white/60 backdrop-blur-sm rounded-full border border-gray-200/80 hover:border-[#09294c]/30 hover:bg-white/80 transition-all duration-500 shadow-sm hover:shadow-md"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 1.5 + index * 0.1, ease: "easeOut" }}
+                whileHover={{ scale: 1.02, y: -2 }}
+              >
+                <span className="text-[#09294c] opacity-70 group-hover:opacity-100 transition-opacity duration-300">
+                  {item.icon}
+                </span>
+                <span className="text-base font-semibold text-gray-700 tracking-wide">{item.text}</span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* Premium CTA Section */}
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 1.9, ease: "easeOut" }}
+            transition={{ duration: 0.9, delay: 1.8, ease: "easeOut" }}
           >
-            <a
-              href="#projects"
-              className="inline-flex items-center px-8 py-3 text-lg font-medium text-white bg-[#09294c] rounded-full hover:bg-[#1a4b7a] transition-colors duration-300 shadow-lg hover:shadow-xl"
+            <motion.a
+              href="#contact"
+              className="group relative inline-flex items-center px-10 py-4 text-lg font-semibold text-white bg-[#09294c] rounded-full hover:bg-[#1a4b7a] transition-all duration-500 shadow-lg hover:shadow-xl overflow-hidden"
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Explore Our Portfolio
-              <svg className="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-              </svg>
-            </a>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: "100%" }}
+                transition={{ duration: 0.7 }}
+              />
+              <span className="relative z-10">Get Started</span>
+              <ArrowRight className="w-4 h-4 ml-2 relative z-10 transform group-hover:translate-x-1 transition-transform duration-300" />
+            </motion.a>
+            <motion.a
+              href="#pricing"
+              className="inline-flex items-center px-10 py-4 text-lg font-semibold text-[#09294c] bg-white border border-[#09294c]/20 rounded-full hover:border-[#09294c] hover:bg-gray-50 transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -1 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              View Pricing
+            </motion.a>
+          </motion.div>
+
+          {/* Refined Trust Indicator */}
+          <motion.div
+            className="text-sm text-gray-400 font-medium tracking-wide"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 2.1 }}
+          >
+            Trusted by hospitality businesses worldwide
           </motion.div>
         </motion.div>
       </div>

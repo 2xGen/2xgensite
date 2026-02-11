@@ -496,6 +496,141 @@ const Insights = () => {
       contentType: "external",
       externalUrl: "https://toptours.ai/destinations"
     },
+    {
+      id: 44,
+      title: "How to Use AI to Find the Best Tours for Your Next Trip",
+      excerpt: "Discover how AI helps you find the best tours and activities worldwide. TopTours.ai connects you to Viator's 300,000+ experiences in seconds — fast, free, and personalized.",
+      content: "Discover how AI helps you find the best tours and activities worldwide. TopTours.ai connects you to Viator's 300,000+ experiences in seconds — fast, free, and personalized...",
+      author: "2xGen Team",
+      date: "2025-01-28",
+      category: "Travel",
+      brand: "TopTours.ai",
+      readTime: "6 min read",
+      image: "https://ouqeoizufbofdqbuiwvx.supabase.co/storage/v1/object/public/blogs/How%20to%20Use%20AI%20to%20Create%20Your%20Dream%20Travel%20Itinerary.png",
+      featured: false,
+      contentType: "external",
+      externalUrl: "https://www.toptours.ai/travel-guides/ai-travel-itinerary-planning"
+    },
+    {
+      id: 45,
+      title: "Private vs Group Tours: Which One Is Right for You?",
+      excerpt: "Compare private vs group tours and discover which travel style fits you best. Learn the pros, cons, and smart ways to find the perfect tour with TopTours.ai.",
+      content: "Compare private vs group tours and discover which travel style fits you best. Learn the pros, cons, and smart ways to find the perfect tour with TopTours.ai...",
+      author: "2xGen Team",
+      date: "2025-01-26",
+      category: "Travel",
+      brand: "TopTours.ai",
+      readTime: "7 min read",
+      image: "https://ouqeoizufbofdqbuiwvx.supabase.co/storage/v1/object/public/blogs/Private%20vs%20Group%20Tours.png",
+      featured: false,
+      contentType: "external",
+      externalUrl: "https://www.toptours.ai/travel-guides/private-vs-group-tours"
+    },
+    {
+      id: 46,
+      title: "How to Plan a Multi-Destination Trip Without the Stress",
+      excerpt: "Learn how to plan a seamless multi-destination trip with smart route planning, flexible tour booking, and AI-powered tools from TopTours.ai.",
+      content: "Learn how to plan a seamless multi-destination trip with smart route planning, flexible tour booking, and AI-powered tools from TopTours.ai...",
+      author: "2xGen Team",
+      date: "2025-01-24",
+      category: "Travel",
+      brand: "TopTours.ai",
+      readTime: "8 min read",
+      image: "https://ouqeoizufbofdqbuiwvx.supabase.co/storage/v1/object/public/blogs/How%20to%20Plan%20a%20Multi-Destination%20Trip%20Without%20the%20Stress.png",
+      featured: false,
+      contentType: "external",
+      externalUrl: "https://www.toptours.ai/travel-guides/multi-destination-trip-planning"
+    },
+    {
+      id: 47,
+      title: "7 Smart Ways to Save Money on Tours and Activities",
+      excerpt: "Discover how to find affordable tours and activities worldwide. Learn 7 proven ways to save money on travel experiences with AI-powered recommendations.",
+      content: "Discover how to find affordable tours and activities worldwide. Learn 7 proven ways to save money on travel experiences with AI-powered recommendations...",
+      author: "2xGen Team",
+      date: "2025-01-22",
+      category: "Travel",
+      brand: "TopTours.ai",
+      readTime: "6 min read",
+      image: "https://ouqeoizufbofdqbuiwvx.supabase.co/storage/v1/object/public/blogs/7%20Smart%20Ways%20to%20Save%20Money%20on%20Tours%20and%20Activities.png",
+      featured: false,
+      contentType: "external",
+      externalUrl: "https://www.toptours.ai/travel-guides/save-money-on-tours-activities"
+    },
+    {
+      id: 48,
+      title: "What to Pack for a Beach Vacation: The Ultimate Checklist",
+      excerpt: "Get the ultimate beach vacation packing checklist with essential items, beach gear, and travel tips. Discover what to pack for a perfect beach getaway.",
+      content: "Get the ultimate beach vacation packing checklist with essential items, beach gear, and travel tips. Discover what to pack for a perfect beach getaway...",
+      author: "2xGen Team",
+      date: "2025-01-20",
+      category: "Travel",
+      brand: "TopTours.ai",
+      readTime: "5 min read",
+      image: "https://ouqeoizufbofdqbuiwvx.supabase.co/storage/v1/object/public/blogs/What%20to%20Pack%20for%20a%20Beach%20Vacation.png",
+      featured: false,
+      contentType: "external",
+      externalUrl: "https://www.toptours.ai/travel-guides/beach-vacation-packing-list"
+    },
+    {
+      id: 49,
+      title: "How to Choose the Best Tour for Your Next Vacation",
+      excerpt: "Learn how to choose the best tour for your vacation. Compare guided tours vs private tours, find the right tour types, and discover what makes a tour experience unforgettable.",
+      content: "Learn how to choose the best tour for your vacation. Compare guided tours vs private tours, find the right tour types, and discover what makes a tour experience unforgettable...",
+      author: "2xGen Team",
+      date: "2025-01-18",
+      category: "Travel",
+      brand: "TopTours.ai",
+      readTime: "7 min read",
+      image: "https://ouqeoizufbofdqbuiwvx.supabase.co/storage/v1/object/public/blogs/How%20to%20Choose%20the%20Best%20Tour%20for%20Your%20Next%20Vacation.png",
+      featured: false,
+      contentType: "external",
+      externalUrl: "https://www.toptours.ai/travel-guides/how-to-choose-a-tour"
+    },
+    {
+      id: 50,
+      title: "Best Time to Book Tours and Activities for the Lowest Prices",
+      excerpt: "Discover the best time to book tours and activities for the lowest prices. Learn when to book tours, find tour discounts, and save money on your travel experiences.",
+      content: "Discover the best time to book tours and activities for the lowest prices. Learn when to book tours, find tour discounts, and save money on your travel experiences...",
+      author: "2xGen Team",
+      date: "2025-01-16",
+      category: "Travel",
+      brand: "TopTours.ai",
+      readTime: "6 min read",
+      image: "https://ouqeoizufbofdqbuiwvx.supabase.co/storage/v1/object/public/blogs/Best%20Time%20to%20Book%20Tours%20and%20Activities.png",
+      featured: false,
+      contentType: "external",
+      externalUrl: "https://www.toptours.ai/travel-guides/when-to-book-tours"
+    },
+    {
+      id: 51,
+      title: "10 Common Mistakes Travelers Make (and How to Avoid Them)",
+      excerpt: "Discover the 10 most common travel mistakes and learn how to avoid them. Make every trip smoother, smarter, and stress-free with these expert travel insights.",
+      content: "Discover the 10 most common travel mistakes and learn how to avoid them. Make every trip smoother, smarter, and stress-free with these expert travel insights...",
+      author: "2xGen Team",
+      date: "2025-01-14",
+      category: "Travel",
+      brand: "TopTours.ai",
+      readTime: "8 min read",
+      image: "https://ouqeoizufbofdqbuiwvx.supabase.co/storage/v1/object/public/blogs/10%20Common%20Mistakes%20Travelers%20Make%20and%20How%20to%20Avoid%20Them.png",
+      featured: false,
+      contentType: "external",
+      externalUrl: "https://www.toptours.ai/travel-guides/travel-mistakes-to-avoid"
+    },
+    {
+      id: 52,
+      title: "How to Plan a Trip with AI: The Future of Smart Travel",
+      excerpt: "Discover how AI trip planners revolutionize travel planning with personalized recommendations, smart itineraries, and automated booking. The complete guide to AI-powered travel planning.",
+      content: "Discover how AI trip planners revolutionize travel planning with personalized recommendations, smart itineraries, and automated booking. The complete guide to AI-powered travel planning...",
+      author: "2xGen Team",
+      date: "2025-01-12",
+      category: "AI & Technology",
+      brand: "TopTours.ai",
+      readTime: "9 min read",
+      image: "https://ouqeoizufbofdqbuiwvx.supabase.co/storage/v1/object/public/blogs/How%20to%20Plan%20a%20Trip%20with%20AI.png",
+      featured: false,
+      contentType: "external",
+      externalUrl: "https://www.toptours.ai/travel-guides/ai-travel-planning-guide"
+    },
     // FactuurBaas blog posts
     {
       id: 32,
@@ -873,11 +1008,12 @@ const Insights = () => {
             
                    {/* Brand Filter */}
                    <div className="flex flex-wrap gap-2 justify-center mb-4">
+                     <span className="text-sm font-medium text-gray-600 mb-2 w-full text-center">Filter by Brand:</span>
                      {brands.map((brand) => (
                        <button
                          key={brand}
                          onClick={() => setSelectedBrand(brand)}
-                         className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                         className={`px-3 py-2 rounded-full text-xs font-medium transition-colors ${
                            selectedBrand === brand
                              ? 'bg-[#09294c] text-white'
                              : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
@@ -890,6 +1026,7 @@ const Insights = () => {
                    
                    {/* Content Type Filter */}
                    <div className="flex flex-wrap gap-2 justify-center mb-8">
+                     <span className="text-sm font-medium text-gray-600 mb-2 w-full text-center">Content Type:</span>
                      {contentTypes.map((contentType) => {
                        const count = getBrandContentTypeCount(selectedBrand, contentType.value);
                        if (count === 0) return null;
@@ -898,7 +1035,7 @@ const Insights = () => {
                          <button
                            key={contentType.value}
                            onClick={() => setSelectedContentType(contentType.value)}
-                           className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                           className={`px-3 py-2 rounded-full text-xs font-medium transition-colors ${
                              selectedContentType === contentType.value
                                ? 'bg-[#1a4b7a] text-white'
                                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
@@ -932,9 +1069,9 @@ const Insights = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col md:flex-row"
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group flex flex-col"
               >
-                <div className="relative w-full md:w-80 h-48 md:h-auto flex-shrink-0">
+                <div className="relative w-full h-48 flex-shrink-0">
                   <img
                     src={post.image}
                     alt={post.title}
@@ -944,8 +1081,8 @@ const Insights = () => {
                 
                 <div className="p-6 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="flex items-center gap-2 flex-wrap">
+                    <div className="flex items-center justify-center mb-3">
+                      <div className="flex items-center gap-2 flex-wrap justify-center">
                         {post.brand === '2xGen' ? (
                           <span className="bg-[#09294c] text-white px-3 py-1 rounded-full text-sm font-medium">
                             {post.brand}
@@ -992,29 +1129,31 @@ const Insights = () => {
                         )}
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold mb-3 group-hover:text-[#09294c] transition-colors">
+                    <h3 className="text-xl font-bold mb-3 group-hover:text-[#09294c] transition-colors text-center">
                       {post.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 line-clamp-4">{post.excerpt}</p>
+                    <p className="text-gray-600 mb-4 line-clamp-4 text-center">{post.excerpt}</p>
                   </div>
                   
-                  {post.brand === '2xGen' ? (
-                    <a 
-                      href={post.slug ? `/insights/${post.slug}` : '#'}
-                      className="inline-flex items-center justify-center bg-[#09294c] text-white py-2 px-4 rounded-lg font-semibold hover:bg-[#1a4b7a] transition-colors group w-fit"
-                    >
-                      Read More
-                    </a>
-                  ) : (
-                    <a 
-                      href={post.externalUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-[#09294c] text-white py-2 px-4 rounded-lg font-semibold hover:bg-[#1a4b7a] transition-colors group w-fit"
-                    >
-                      Read on {post.brand} <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </a>
-                  )}
+                  <div className="flex justify-center">
+                    {post.brand === '2xGen' ? (
+                      <a 
+                        href={post.slug ? `/insights/${post.slug}` : '#'}
+                        className="inline-flex items-center justify-center bg-[#09294c] text-white py-2 px-4 rounded-lg font-semibold hover:bg-[#1a4b7a] transition-colors group w-fit"
+                      >
+                        Read More
+                      </a>
+                    ) : (
+                      <a 
+                        href={post.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center bg-[#09294c] text-white py-2 px-4 rounded-lg font-semibold hover:bg-[#1a4b7a] transition-colors group w-fit"
+                      >
+                        Read on {post.brand} <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </motion.article>
             ))}

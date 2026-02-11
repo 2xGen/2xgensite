@@ -258,3 +258,107 @@ html, body {
     padding-right: 1rem;
   }
 }
+
+/* Premium Agency Styles */
+.premium-shadow {
+  box-shadow: 0 20px 60px rgba(9, 41, 76, 0.12), 0 8px 24px rgba(9, 41, 76, 0.08);
+}
+
+.premium-shadow-hover {
+  transition: box-shadow 0.5s ease, transform 0.5s ease;
+}
+
+.premium-shadow-hover:hover {
+  box-shadow: 0 30px 80px rgba(9, 41, 76, 0.18), 0 12px 32px rgba(9, 41, 76, 0.12);
+  transform: translateY(-4px);
+}
+
+.premium-gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 1.5rem;
+}
+
+.premium-gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  padding: 2px;
+  background: linear-gradient(135deg, #09294c, #1a4b7a, #2d6ba8);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.text-premium-gradient {
+  background: linear-gradient(135deg, #09294c 0%, #1a4b7a 50%, #2d6ba8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.card-premium {
+  background: white;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(9, 41, 76, 0.08);
+  box-shadow: 0 4px 20px rgba(9, 41, 76, 0.06);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-premium:hover {
+  border-color: rgba(9, 41, 76, 0.2);
+  box-shadow: 0 20px 60px rgba(9, 41, 76, 0.15), 0 8px 24px rgba(9, 41, 76, 0.1);
+  transform: translateY(-8px);
+}
+
+/* Enhanced typography */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Smooth scroll with offset */
+html {
+  scroll-padding-top: 6rem;
+}
+
+/* Premium button styles */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-premium:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Premium section spacing */
+.section-premium {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+@media (max-width: 768px) {
+  .section-premium {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
