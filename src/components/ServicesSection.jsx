@@ -63,7 +63,7 @@ const ServicesSection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60 mb-6">What We Build</p>
+            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60 mb-6">Capabilities</p>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
               <span className="text-premium-gradient">What We Build</span>
             </h2>

@@ -51,19 +51,21 @@ const AboutSection = () => {
           >
             <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60">About 2xGen</p>
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-[1.15]">
-              <span className="text-premium-gradient">Not Services. Not Websites.</span>
+              <span className="text-premium-gradient">Beyond Websites. Built for Scale.</span>
             </h2>
-            <p className="text-2xl sm:text-3xl text-gray-800 font-semibold leading-tight">
-              We Build Digital Assets That Scale.
+            <p className="text-xl sm:text-2xl text-gray-800 font-bold leading-snug">
+              We help turn ideas into platforms — and platforms into long-term digital assets.
             </p>
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-              2xGen is a digital venture studio. We partner with founders and operators to design scalable digital models — then build the systems that allow them to grow.
+              2xGen is a digital venture studio. We partner with founders and operators to architect scalable digital models — then build the systems that allow them to grow.
             </p>
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
               SaaS platforms. Marketplaces. AI-driven applications. Authority-driven ecosystems.
             </p>
             <p className="text-lg sm:text-xl text-gray-800 font-medium">
-              Every venture is structured around one principle: compounding digital leverage.
+              Every venture is structured around one principle:
+              <br />
+              compounding digital leverage.
             </p>
           </motion.div>
           </div>
@@ -81,7 +83,7 @@ const AboutSection = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60">Philosophy</p>
+            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60">How we think</p>
             <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
               Our Philosophy
             </h3>
