@@ -13,12 +13,12 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-24 md:py-32 bg-[#f8fafc] relative overflow-hidden">
-      {/* Subtle background accent */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09294c]/10 to-transparent" />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* About: founder image + copy */}
-        <div className="grid md:grid-cols-[1fr,1.4fr] gap-10 md:gap-14 items-start mb-24">
+    <section id="about" className="relative overflow-hidden">
+      {/* Block 1: founder + copy — subtle blue tint */}
+      <div className="bg-[#eef4f9] py-24 md:py-32 relative">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09294c]/10 to-transparent" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-[1fr,1.4fr] gap-10 md:gap-14 items-start">
           <motion.div
             className="relative group max-w-sm mx-auto md:mx-0 md:sticky md:top-24"
             initial={{ opacity: 0, x: -24 }}
@@ -66,45 +66,68 @@ const AboutSection = () => {
               Every venture is structured around one principle: compounding digital leverage.
             </p>
           </motion.div>
-        </div>
-
-        {/* Our Philosophy */}
-        <motion.div
-          className="max-w-5xl mx-auto"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60 mb-4 text-center">Philosophy</p>
-          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 text-center tracking-tight">
-            Our Philosophy
-          </h3>
-          <p className="text-xl text-gray-700 text-center mb-12 font-medium">
-            Digital presence should be structural, not decorative.
-          </p>
-          <p className="text-lg text-gray-500 text-center mb-10">We believe:</p>
-          <div className="grid sm:grid-cols-2 gap-5">
-            {philosophy.map((item, index) => (
-              <motion.div
-                key={index}
-                className="card-premium flex items-center gap-5 p-6"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -16 : 16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-                viewport={{ once: true }}
-              >
-                <div className="flex-shrink-0 bg-gradient-to-br from-[#E5F5FC] to-[#D0E8F5] p-4 rounded-xl shadow-inner">
-                  {item.icon}
-                </div>
-                <p className="text-lg font-semibold text-gray-800">{item.text}</p>
-              </motion.div>
-            ))}
           </div>
-          <p className="text-lg text-gray-600 text-center mt-10 font-medium">
-            The right digital architecture creates optionality — and optionality creates power.
-          </p>
-        </motion.div>
+        </div>
+      </div>
+
+      {/* Block 2: philosophy + office — slightly warmer/softer tint */}
+      <div className="bg-[#f5f8fb] py-24 md:py-32 relative">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-[1.2fr,1fr] gap-10 md:gap-14 items-center">
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60">Philosophy</p>
+            <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
+              Our Philosophy
+            </h3>
+            <p className="text-xl text-gray-700 font-medium">
+              Digital presence should be structural, not decorative.
+            </p>
+            <p className="text-lg text-gray-500">We believe:</p>
+            <div className="grid sm:grid-cols-2 gap-5">
+              {philosophy.map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="card-premium flex items-center gap-5 p-6"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -16 : 16 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex-shrink-0 bg-gradient-to-br from-[#E5F5FC] to-[#D0E8F5] p-4 rounded-xl shadow-inner">
+                    {item.icon}
+                  </div>
+                  <p className="text-lg font-semibold text-gray-800">{item.text}</p>
+                </motion.div>
+              ))}
+            </div>
+            <p className="text-lg text-gray-600 font-medium">
+              The right digital architecture creates optionality — and optionality creates power.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="md:sticky md:top-24 flex justify-center md:justify-end"
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className="card-premium p-2 w-full max-w-md overflow-hidden">
+              <img
+                src="https://soaacpusdhyxwucjhhpy.supabase.co/storage/v1/object/public/images/2xGen%20office.png"
+                alt="2xGen office"
+                className="w-full aspect-square object-cover rounded-xl"
+              />
+            </div>
+          </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

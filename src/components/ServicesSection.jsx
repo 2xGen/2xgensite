@@ -100,7 +100,7 @@ const ServicesSection = () => {
       </section>
 
       {/* Our Ventures */}
-      <section id="ventures" className="py-24 md:py-32 bg-[#f8fafc] relative">
+      <section id="ventures" className="py-24 md:py-32 bg-[#eef4f9] relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09294c]/10 to-transparent" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -160,7 +160,7 @@ const ServicesSection = () => {
       </section>
 
       {/* Who We Work With */}
-      <section id="who" className="py-24 md:py-32 bg-[#f8fafc] relative">
+      <section id="who" className="py-24 md:py-32 bg-[#f5f8fb] relative">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09294c]/10 to-transparent" />
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
