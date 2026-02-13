@@ -28,43 +28,15 @@ const Footer = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-4">2xGen</h3>
                 <p className="text-blue-200 mb-4">
-                  2xGen is proudly building the next generation of digital platforms, including{' '}
-                  <a
-                    href="https://mygoprofile.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white font-semibold hover:underline transition-colors"
-                  >
-                    MyGoProfile
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://arubabuddies.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white font-semibold hover:underline transition-colors"
-                  >
-                    ArubaBuddies
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://factuurbaas.nl/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white font-semibold hover:underline transition-colors"
-                  >
-                    FactuurBaas
-                  </a>
-                  , and{' '}
-                  <a
-                    href="https://toptours.ai/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white font-semibold hover:underline transition-colors"
-                  >
-                    TopTours.ai
-                  </a>
-                  .
+                  2xGen is a digital venture studio. We build and operate platforms including{' '}
+                  <a href="https://toptours.ai" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TopTours.ai</a>,{' '}
+                  <a href="https://arubabuddies.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">ArubaBuddies.com</a>,{' '}
+                  <a href="https://factuurbaas.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">FactuurBaas</a>,{' '}
+                  <a href="https://onehappyfinance.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">OneHappyFinance</a>,{' '}
+                  <a href="https://arulist.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">AruList</a>,{' '}
+                  <a href="https://tofsports.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TOF Sports</a>,{' '}
+                  <a href="https://mygoprofile.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">MyGoProfile</a>, and{' '}
+                  <a href="https://bitereserve.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">BiteReserve</a>.
                 </p>
               </div>
 
@@ -87,15 +59,15 @@ const Footer = () => {
                     onClick={() => handleNavigation('services')} 
                     className="text-blue-200 hover:text-white transition-colors cursor-pointer"
                   >
-                    What We Do
+                    What We Build
                   </button>
                 </li>
                 <li>
                   <button 
-                    onClick={() => handleNavigation('projects')} 
+                    onClick={() => handleNavigation('ventures')} 
                     className="text-blue-200 hover:text-white transition-colors cursor-pointer"
                   >
-                    Projects
+                    Our Ventures
                   </button>
                 </li>
                 <li>
@@ -114,46 +86,18 @@ const Footer = () => {
               <div>
                 <h3 className="text-2xl font-bold mb-4">2xGen</h3>
                 <p className="text-blue-200 mb-4">
-                  2xGen is proudly building the next generation of digital platforms, including{' '}
-                  <a
-                    href="https://mygoprofile.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white font-semibold hover:underline transition-colors"
-                  >
-                    MyGoProfile
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://arubabuddies.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white font-semibold hover:underline transition-colors"
-                  >
-                    ArubaBuddies
-                  </a>
-                  ,{' '}
-                  <a
-                    href="https://factuurbaas.nl/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white font-semibold hover:underline transition-colors"
-                  >
-                    FactuurBaas
-                  </a>
-                  , and{' '}
-                  <a
-                    href="https://toptours.ai/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white font-semibold hover:underline transition-colors"
-                  >
-                    TopTours.ai
-                  </a>
-                  .
+                  2xGen is a digital venture studio. We build and operate platforms including{' '}
+                  <a href="https://toptours.ai" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TopTours.ai</a>,{' '}
+                  <a href="https://arubabuddies.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">ArubaBuddies.com</a>,{' '}
+                  <a href="https://factuurbaas.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">FactuurBaas</a>,{' '}
+                  <a href="https://onehappyfinance.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">OneHappyFinance</a>,{' '}
+                  <a href="https://arulist.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">AruList</a>,{' '}
+                  <a href="https://tofsports.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TOF Sports</a>,{' '}
+                  <a href="https://mygoprofile.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">MyGoProfile</a>, and{' '}
+                  <a href="https://bitereserve.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">BiteReserve</a>.
                 </p>
-              </div>
             </div>
+          </div>
 
             {/* Working Navigation Links */}
             <div>

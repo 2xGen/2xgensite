@@ -84,11 +84,11 @@ html, body {
 
 .hero-pattern-subtle {
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(9, 41, 76, 0.01) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(9, 41, 76, 0.01) 0%, transparent 50%),
-    linear-gradient(60deg, rgba(9, 41, 76, 0.015) 25%, transparent 25%, transparent 75%, rgba(9, 41, 76, 0.015) 75%, rgba(9, 41, 76, 0.015)),
-    linear-gradient(to right, rgba(9, 41, 76, 0.008) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(9, 41, 76, 0.008) 1px, transparent 1px);
+    radial-gradient(circle at 25% 25%, rgba(9, 41, 76, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(26, 75, 122, 0.05) 0%, transparent 50%),
+    linear-gradient(60deg, rgba(9, 41, 76, 0.04) 25%, transparent 25%, transparent 75%, rgba(9, 41, 76, 0.04) 75%, rgba(9, 41, 76, 0.04)),
+    linear-gradient(to right, rgba(9, 41, 76, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 41, 76, 0.025) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 80px 80px, 40px 40px, 40px 40px;
   animation: subtle-pattern-shift 40s linear infinite;
 }

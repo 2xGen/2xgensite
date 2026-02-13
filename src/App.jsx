@@ -32,7 +32,7 @@ const HomePage = () => (
           "alternateName": "2xGen LLC",
           "url": "https://2xgen.com",
           "logo": "https://2xgen.com/logo.png",
-          "description": "2xGen helps hospitality businesses get found, trusted, and booked. We Bring You Bookings. You Run the Business.",
+          "description": "2xGen is a digital venture studio. We partner with founders and operators to design scalable digital models and build the systems that allow them to grow.",
           "foundingDate": "2024",
           "address": {
             "@type": "PostalAddress",
@@ -75,14 +75,12 @@ const HomePage = () => (
             }
           ],
           "knowsAbout": [
-            "Hospitality Marketing",
-            "Travel Marketing",
-            "Local SEO",
-            "Restaurant Bookings",
-            "Tour Bookings",
-            "Travel Recommendations",
-            "Booking Platforms",
-            "Digital Visibility"
+            "Venture Architecture",
+            "SaaS Development",
+            "Digital Platforms",
+            "Growth Systems",
+            "Marketplaces",
+            "AI-Powered Applications"
           ]
         })
       }}
@@ -103,7 +101,7 @@ function App() {
   return (
     <Router>
       <AuthProvider>
-        <div className="min-h-screen bg-[#E5F5FC] text-gray-800">
+        <div className="min-h-screen bg-[#f8fafc] text-gray-800">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/insights" element={<Insights />} />

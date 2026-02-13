@@ -1,48 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Heart, Target, Zap } from 'lucide-react';
+import { Layers, Target, Zap, TrendingUp } from 'lucide-react';
 
 const AboutSection = () => {
-  const values = [
-    {
-      icon: <Target className="w-8 h-8 text-[#09294c]" />,
-      title: "Strategic Positioning",
-      description: "We understand where travelers actually make decisions, not just where they search."
-    },
-    {
-      icon: <Heart className="w-8 h-8 text-[#09294c]" />,
-      title: "Human-Centered",
-      description: "Real recommendations from real people create trust that algorithms can't replicate."
-    },
-    {
-      icon: <Zap className="w-8 h-8 text-[#09294c]" />,
-      title: "Product-First",
-      description: "Tools built specifically for your industry, not generic solutions adapted to fit."
-    }
-  ];
-
   const founderImageUrl = "https://iemgpccgdlwpsrsjuumo.supabase.co/storage/v1/object/sign/foto/founder%202xGen.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjkxZGZkZC1hYTQ1LTQ3NTUtODZiMy1iZDBhY2QyMjlkMjMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmb3RvL2ZvdW5kZXIgMnhHZW4ucG5nIiwiaWF0IjoxNzU3MjM5NjYxLCJleHAiOjQyODAxMTk2NjF9.LeDtfzNJq5ny7A3MFdeeZb4wYii53V7tBut9vSoLrkc";
 
+  const philosophy = [
+    { icon: <Layers className="w-8 h-8 text-[#09294c]" />, text: "Platforms outperform campaigns" },
+    { icon: <Zap className="w-8 h-8 text-[#09294c]" />, text: "Systems outperform tactics" },
+    { icon: <Target className="w-8 h-8 text-[#09294c]" />, text: "Ownership outperforms dependency" },
+    { icon: <TrendingUp className="w-8 h-8 text-[#09294c]" />, text: "Long-term positioning beats short-term traffic" }
+  ];
+
   return (
-    <section id="about" className="py-28 bg-gradient-to-br from-slate-50 via-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-[1fr,1.5fr] gap-8 md:gap-12 items-start px-4 mb-20">
+    <section id="about" className="py-24 md:py-32 bg-[#f8fafc] relative overflow-hidden">
+      {/* Subtle background accent */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09294c]/10 to-transparent" />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* About: founder image + copy */}
+        <div className="grid md:grid-cols-[1fr,1.4fr] gap-10 md:gap-14 items-start mb-24">
           <motion.div
-            className="relative group max-w-sm mx-auto md:mx-0 md:sticky md:top-8"
-            initial={{ opacity: 0, x: -50 }}
+            className="relative group max-w-sm mx-auto md:mx-0 md:sticky md:top-24"
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <div className="absolute -inset-2 bg-gradient-to-r from-[#09294c] via-[#1a4b7a] to-[#2d6ba8] rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative p-2 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100">
-              <img 
-                src={founderImageUrl} 
-                alt="Matthijs van Reek, Founder of 2xGen" 
-                className="h-auto w-full object-cover rounded-xl"
+            <div className="card-premium p-2 overflow-hidden">
+              <img
+                src={founderImageUrl}
+                alt="Matthijs van Reek, Founder of 2xGen"
+                className="w-full h-auto object-cover rounded-xl"
               />
               <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-white/95 backdrop-blur-md rounded-xl px-5 py-3 shadow-xl border border-gray-100">
+                <div className="bg-white/95 backdrop-blur-md rounded-xl px-4 py-3 shadow-lg border border-gray-100">
                   <p className="text-sm font-bold text-[#09294c] text-center tracking-wide">
                     Matthijs van Reek, Founder of 2xGen
                   </p>
@@ -52,56 +43,67 @@ const AboutSection = () => {
           </motion.div>
 
           <motion.div
-            className="space-y-5"
-            initial={{ opacity: 0, x: 50 }}
+            className="space-y-6"
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-2">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#09294c] via-[#1a4b7a] to-[#2d6ba8]">Built for Hospitality</span>
+            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60">About 2xGen</p>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight leading-[1.15]">
+              <span className="text-premium-gradient">Not Services. Not Websites.</span>
             </h2>
-            <p className="text-xl sm:text-2xl text-gray-700 leading-relaxed font-light">
-              We build tools specifically for tours and restaurants to help you get found, trusted, and booked.
+            <p className="text-2xl sm:text-3xl text-gray-800 font-semibold leading-tight">
+              We Build Digital Assets That Scale.
             </p>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              At 2xGen, we understand that running a hospitality business means focusing on creating exceptional experiences for your guests. That's why we've built four SaaS products that work together to solve the specific challenges tours and restaurants face.
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+              2xGen is a digital venture studio. We partner with founders and operators to design scalable digital models — then build the systems that allow them to grow.
             </p>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              Instead of generic marketing tools, you get products designed for your industry. Our tools help you get discovered by travelers when they're planning their trip, manage your online presence efficiently, and capture bookings from high-intent travelers.
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
+              SaaS platforms. Marketplaces. AI-driven applications. Authority-driven ecosystems.
+            </p>
+            <p className="text-lg sm:text-xl text-gray-800 font-medium">
+              Every venture is structured around one principle: compounding digital leverage.
             </p>
           </motion.div>
         </div>
 
-        {/* Our Values */}
+        {/* Our Philosophy */}
         <motion.div
-          className="mb-20"
-          initial={{ opacity: 0, y: 30 }}
+          className="max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl sm:text-4xl font-black text-gray-900 mb-10 text-center tracking-tight">What We Stand For</h3>
-          <div className="grid sm:grid-cols-3 gap-8">
-            {values.map((value, index) => (
+          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60 mb-4 text-center">Philosophy</p>
+          <h3 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 text-center tracking-tight">
+            Our Philosophy
+          </h3>
+          <p className="text-xl text-gray-700 text-center mb-12 font-medium">
+            Digital presence should be structural, not decorative.
+          </p>
+          <p className="text-lg text-gray-500 text-center mb-10">We believe:</p>
+          <div className="grid sm:grid-cols-2 gap-5">
+            {philosophy.map((item, index) => (
               <motion.div
                 key={index}
-                className="group p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl border border-gray-100 hover:border-[#09294c]/20 transition-all duration-500 hover:-translate-y-1 text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 0.2 + index * 0.1, ease: "easeOut" }}
+                className="card-premium flex items-center gap-5 p-6"
+                initial={{ opacity: 0, x: index % 2 === 0 ? -16 : 16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
-                <div className="flex justify-center mb-4">
-                  <div className="bg-gradient-to-br from-[#E5F5FC] to-[#D0E8F5] p-4 rounded-xl shadow-md group-hover:shadow-lg transition-shadow duration-300">
-                    {value.icon}
-                  </div>
+                <div className="flex-shrink-0 bg-gradient-to-br from-[#E5F5FC] to-[#D0E8F5] p-4 rounded-xl shadow-inner">
+                  {item.icon}
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-3 tracking-tight">{value.title}</h4>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <p className="text-lg font-semibold text-gray-800">{item.text}</p>
               </motion.div>
             ))}
           </div>
+          <p className="text-lg text-gray-600 text-center mt-10 font-medium">
+            The right digital architecture creates optionality — and optionality creates power.
+          </p>
         </motion.div>
       </div>
     </section>

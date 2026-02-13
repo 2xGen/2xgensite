@@ -13,8 +13,8 @@ const Navbar = () => {
   const navLinks = [
     { href: '/#home', label: 'Home' },
     { href: '/#about', label: 'About' },
-    { href: '/#products', label: 'Products' },
-    { href: '/#services', label: 'Services' },
+    { href: '/#services', label: 'What We Build' },
+    { href: '/#ventures', label: 'Our Ventures' },
     { href: '/#contact', label: 'Contact' },
   ];
 
@@ -37,7 +37,7 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <span className={`text-2xl font-bold transition-colors duration-300 ${isScrolled ? 'text-[#09294c]' : 'text-white md:text-[#09294c]'}`}>2xGen</span>
+            <span className={`text-2xl font-bold transition-colors duration-300 ${isScrolled ? 'text-[#09294c]' : 'text-[#09294c]'}`}>2xGen</span>
           </motion.a>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -61,7 +61,7 @@ const Navbar = () => {
                     <motion.a
                       key={link.href}
                       href={link.href}
-                      className={`font-medium transition-colors duration-300 ${isScrolled ? 'text-gray-700 hover:text-[#09294c]' : 'text-gray-700 hover:text-[#09294c]'}`}
+                      className="font-medium text-gray-700 hover:text-[#09294c] transition-colors duration-300"
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.2 + navLinks.indexOf(link) * 0.1 }}
@@ -74,7 +74,7 @@ const Navbar = () => {
                 {/* Special Insights button */}
                 <motion.a
                   href="/insights"
-                  className="px-4 py-2 rounded-full bg-gradient-to-r from-[#09294c] to-[#1a4b7a] text-white hover:from-[#1a4b7a] hover:to-[#2d6ba8] shadow-lg hover:shadow-xl transform hover:scale-105 font-medium transition-all duration-300"
+                  className="px-4 py-2 rounded-full font-medium bg-gradient-to-r from-[#09294c] to-[#1a4b7a] text-white hover:from-[#1a4b7a] hover:to-[#2d6ba8] shadow-lg hover:shadow-xl transition-all duration-300"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 + navLinks.length * 0.1 }}
@@ -86,7 +86,7 @@ const Navbar = () => {
           </div>
 
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className={`focus:outline-none ${isScrolled ? 'text-[#09294c]' : 'text-gray-700'}`}>
+            <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none text-[#09294c]">
               {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
