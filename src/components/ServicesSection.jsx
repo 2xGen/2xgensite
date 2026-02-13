@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layout, Code, TrendingUp, ExternalLink, Rocket, RefreshCw, Building2, Handshake } from 'lucide-react';
+import { Layout, Code, TrendingUp, ExternalLink, Rocket, RefreshCw, Building2, Users } from 'lucide-react';
 
 const ServicesSection = () => {
   const whatWeBuild = [
@@ -181,7 +181,7 @@ const ServicesSection = () => {
               { icon: <Rocket className="w-8 h-8 text-[#09294c]" />, text: "Founders building scalable digital platforms" },
               { icon: <RefreshCw className="w-8 h-8 text-[#09294c]" />, text: "Operators ready to transition from service to system" },
               { icon: <Building2 className="w-8 h-8 text-[#09294c]" />, text: "Businesses seeking structural, long-term digital growth" },
-              { icon: <Handshake className="w-8 h-8 text-[#09294c]" />, text: "Partners aligned with strategic, selective thinking" },
+              { icon: <Users className="w-8 h-8 text-[#09294c]" />, text: "Partners aligned with strategic, selective thinking" },
             ].map((item, index) => (
               <motion.div
                 key={index}
