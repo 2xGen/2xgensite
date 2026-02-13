@@ -72,13 +72,13 @@ const ContactSection = () => {
                   ? { href: info.href, ...(info.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {}) }
                   : {};
                 return (
-                  <div key={index} className="flex items-center gap-4 flex-wrap">
+                  <div key={index} className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
                     {info.href && info.actionLabel ? (
                       <>
-                        <div className="flex items-start gap-4 flex-1 min-w-0">{content}</div>
+                        <div className="flex items-start gap-4 min-w-0 flex-1">{content}</div>
                         <a
                           {...linkProps}
-                          className="shrink-0 inline-flex items-center justify-center gap-2 min-w-[140px] px-4 py-2.5 rounded-xl bg-[#09294c] text-white font-semibold text-sm hover:bg-[#1a4b7a] transition-colors"
+                          className="w-full sm:w-auto sm:min-w-[140px] shrink-0 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#09294c] text-white font-semibold text-sm hover:bg-[#1a4b7a] transition-colors"
                         >
                           {info.actionLabel}
                         </a>
