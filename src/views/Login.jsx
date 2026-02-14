@@ -1,20 +1,21 @@
+'use client';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useRouter } from 'next/navigation';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const { login } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
 
     if (login(username, password)) {
-      navigate('/admin/projects');
+      router.push('/admin/projects');
     } else {
       setError('Invalid username or password');
     }
@@ -80,4 +81,4 @@ const Login = () => {
   );
 };
 
-export default Login; 
+export default Login;

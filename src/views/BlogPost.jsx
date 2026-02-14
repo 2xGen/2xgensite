@@ -1,13 +1,14 @@
+'use client';
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, Clock, User } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-const BlogPost = () => {
-  const { slug } = useParams();
-  const navigate = useNavigate();
+const BlogPost = ({ slug: slugProp }) => {
+  const router = useRouter();
+  const slug = slugProp ?? null;
   const [post, setPost] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -728,7 +729,7 @@ Our backend architecture ensures your application can grow with your business wh
             <h1 className="text-4xl font-bold text-gray-900 mb-4">Post Not Found</h1>
             <p className="text-gray-600 mb-8">The blog post you're looking for doesn't exist.</p>
             <button
-              onClick={() => navigate('/insights')}
+              onClick={() => router.push('/insights')}
               className="bg-[#09294c] text-white px-6 py-3 rounded-lg hover:bg-[#1a4b7a] transition-colors"
             >
               Back to Insights
@@ -825,7 +826,7 @@ Our backend architecture ensures your application can grow with your business wh
       <div className="pt-24 pb-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <button
-            onClick={() => navigate('/insights')}
+            onClick={() => router.push('/insights')}
             className="inline-flex items-center text-[#09294c] hover:text-[#1a4b7a] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />

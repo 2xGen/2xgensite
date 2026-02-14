@@ -1,12 +1,12 @@
-import { Mail, MapPin } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   const handleNavigation = (section) => {
-    if (location.pathname === '/') {
+    if (pathname === '/') {
       // If already on homepage, scroll to section
       const element = document.getElementById(section);
       if (element) {
@@ -71,7 +71,7 @@ const Footer = () => {
                   </button>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-blue-200 hover:text-white transition-colors">
+                  <Link href="/contact" className="text-blue-200 hover:text-white transition-colors">
                     Contact
                   </Link>
                 </li>
@@ -104,17 +104,17 @@ const Footer = () => {
               <h3 className="text-xl font-semibold mb-4">Navigation</h3>
               <ul className="space-y-2">
                 <li>
-                  <Link to="/" className="text-blue-200 hover:text-white transition-colors">
+                  <Link href="/" className="text-blue-200 hover:text-white transition-colors">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/insights" className="text-blue-200 hover:text-white transition-colors">
+                  <Link href="/insights" className="text-blue-200 hover:text-white transition-colors">
                     Insights
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" className="text-blue-200 hover:text-white transition-colors">
+                  <Link href="/contact" className="text-blue-200 hover:text-white transition-colors">
                     Contact
                   </Link>
                 </li>
