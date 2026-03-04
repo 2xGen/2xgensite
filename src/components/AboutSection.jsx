@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Layers, Target, Zap, TrendingUp } from 'lucide-react';
 
@@ -37,6 +38,9 @@ const AboutSection = () => {
                   <p className="text-sm font-bold text-[#09294c] text-center tracking-wide">
                     Matthijs van Reek, Founder of 2xGen
                   </p>
+                  <Link href="/about" className="block text-center text-xs font-medium text-[#1a4b7a] hover:underline mt-1">
+                    More about Matthijs →
+                  </Link>
                 </div>
               </div>
             </div>
@@ -57,7 +61,7 @@ const AboutSection = () => {
               We help turn ideas into platforms — and platforms into long-term digital assets.
             </p>
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-              2xGen is a digital venture studio. We partner with founders and operators to architect scalable digital models — then build the systems that allow them to grow.
+              <strong>Matthijs van Reek</strong> founded 2xGen as a digital venture studio. We partner with founders and operators to architect scalable digital models — then build the systems that allow them to grow.
             </p>
             <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
               SaaS platforms. Marketplaces. AI-driven applications. Authority-driven ecosystems.

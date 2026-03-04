@@ -12,7 +12,7 @@ const stats = [
   {
     value: "Track Where Guests Come From",
     label: "Step 2",
-    description: "Use BiteReserve to see which sources actually send diners. Know what works instead of guessing.",
+    description: "Use our platforms to see which sources drive traffic and bookings. Know what works instead of guessing.",
     icon: <Target className="w-8 h-8 text-[#09294c]" />
   },
   {

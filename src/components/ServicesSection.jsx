@@ -39,15 +39,31 @@ const ServicesSection = () => {
     }
   ];
 
-  const ventures = [
-    { name: "TopTours.ai", description: "AI-powered discovery for global travel experiences", domain: "toptours.ai", url: "https://toptours.ai", cta: "Visit TopTours.ai" },
-    { name: "ArubaBuddies.com", description: "Curated local trip planning & itineraries", domain: "arubabuddies.com", url: "https://arubabuddies.com", cta: "Visit ArubaBuddies.com" },
-    { name: "FactuurBaas", description: "Streamlined invoicing for freelancers & small businesses", domain: "factuurbaas.nl", url: "https://factuurbaas.nl", cta: "Visit FactuurBaas" },
-    { name: "OneHappyFinance", description: "Transparent, actionable financial information for Aruba", domain: "onehappyfinance.com", url: "https://onehappyfinance.com", cta: "Visit OneHappyFinance" },
-    { name: "AruList", description: "Community-driven marketplace supporting sustainable second-hand commerce", domain: "arulist.com", url: "https://arulist.com", cta: "Visit AruList" },
-    { name: "TOF Sports", description: "Digital and physical ecosystem for youth tennis & padel development", domain: "tofsports.nl", url: "https://tofsports.nl", cta: "Visit TOF Sports" },
-    { name: "MyGoProfile", description: "AI-driven local profile management for businesses", domain: "mygoprofile.com", url: "https://mygoprofile.com", cta: "Visit MyGoProfile" },
-    { name: "BiteReserve", description: "Track exactly which guest sources send revenue, no guessing", domain: "bitereserve.com", url: "https://bitereserve.com", cta: "Visit BiteReserve" }
+  const ventureSections = [
+    {
+      title: "Tours & destinations",
+      subtitle: "Compare and book tours and experiences in one place.",
+      ventures: [
+        { name: "Tyo365", description: "Best tours and experiences in Tokyo – compare, browse, and book", domain: "tyo365.com", url: "https://tyo365.com", cta: "Visit Tyo365" },
+        { name: "Prg365", description: "Best tours and experiences in Prague – compare, browse, and book", domain: "prg365.com", url: "https://prg365.com", cta: "Visit Prg365" },
+        { name: "Aru365", description: "Best tours and experiences in Aruba – compare, browse, and book", domain: "aru365.com", url: "https://aru365.com", cta: "Visit Aru365" },
+        { name: "Lon365", description: "Best tours and experiences in London – compare, browse, and book", domain: "lon365.com", url: "https://lon365.com", cta: "Visit Lon365" },
+        { name: "Cur365", description: "Best tours and experiences in Curaçao – compare, browse, and book", domain: "cur365.com", url: "https://cur365.com", cta: "Visit Cur365" },
+        { name: "TopTours.ai", description: "AI-powered discovery for global travel experiences", domain: "toptours.ai", url: "https://toptours.ai", cta: "Visit TopTours.ai" },
+        { name: "ArubaBuddies.com", description: "Curated local trip planning & itineraries", domain: "arubabuddies.com", url: "https://arubabuddies.com", cta: "Visit ArubaBuddies.com" },
+      ],
+    },
+    {
+      title: "Business & community",
+      subtitle: "Tools and platforms for businesses and communities.",
+      ventures: [
+        { name: "FactuurBaas", description: "Streamlined invoicing for freelancers & small businesses", domain: "factuurbaas.nl", url: "https://factuurbaas.nl", cta: "Visit FactuurBaas" },
+        { name: "OneHappyFinance", description: "Transparent, actionable financial information for Aruba", domain: "onehappyfinance.com", url: "https://onehappyfinance.com", cta: "Visit OneHappyFinance" },
+        { name: "AruList", description: "Community-driven marketplace supporting sustainable second-hand commerce", domain: "arulist.com", url: "https://arulist.com", cta: "Visit AruList" },
+        { name: "TOF Sports", description: "Digital and physical ecosystem for youth tennis & padel development", domain: "tofsports.nl", url: "https://tofsports.nl", cta: "Visit TOF Sports" },
+        { name: "MyGoProfile", description: "AI-driven local profile management for businesses", domain: "mygoprofile.com", url: "https://mygoprofile.com", cta: "Visit MyGoProfile" },
+      ],
+    },
   ];
 
   return (
@@ -100,61 +116,68 @@ const ServicesSection = () => {
       </section>
 
       {/* Our Ventures */}
-      <section id="ventures" className="py-24 md:py-32 bg-[#eef4f9] relative">
+      <section id="ventures" className="py-20 md:py-28 bg-[#eef4f9] relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09294c]/10 to-transparent" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-14"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60 mb-6">Portfolio</p>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6">
+            <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60 mb-4">Portfolio</p>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
               <span className="text-premium-gradient">Our Ventures</span>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              2xGen builds and operates digital platforms that combine strategic positioning, scalable architecture, and measurable impact.
+            <p className="text-base sm:text-lg text-gray-600 max-w-xl mx-auto">
+              Digital platforms we build and operate — strategic positioning, scalable architecture, measurable impact.
             </p>
           </motion.div>
 
-          <div className="space-y-3">
-            {ventures.map((venture, index) => (
-              <motion.div
-                key={index}
-                className="card-premium flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6"
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.04, ease: "easeOut" }}
-                viewport={{ once: true }}
-              >
-                <div>
-                  <span className="font-bold text-gray-900">{venture.name}</span>
-                  <span className="text-gray-600"> – {venture.description}</span>
-                  <span className="text-gray-500 text-sm"> ({venture.domain})</span>
-                </div>
-                <a
-                  href={venture.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[#09294c] font-semibold hover:text-[#1a4b7a] shrink-0 transition-colors"
-                >
-                  {venture.cta}
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.p
-            className="text-center text-gray-600 mt-10 max-w-xl mx-auto font-medium"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+          <motion.div
+            className="overflow-hidden"
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
             viewport={{ once: true }}
           >
-            Each platform reflects our philosophy: strategic positioning, compounding digital leverage, and long-term impact.
+            {(() => {
+              const allVentures = ventureSections.flatMap((s) => s.ventures);
+              const duplicated = [...allVentures, ...allVentures];
+              return (
+                <div className="flex w-max gap-4 ventures-marquee-track">
+                  {duplicated.map((venture, index) => (
+                    <a
+                      key={`${venture.url}-${index}`}
+                      href={venture.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex-shrink-0 w-[280px] min-h-[140px] flex flex-col justify-between p-4 rounded-xl bg-white border border-gray-200/90 shadow-sm hover:shadow-md hover:border-[#09294c]/20 transition-all duration-200 text-left"
+                    >
+                      <div>
+                        <span className="font-semibold text-gray-900 block truncate">{venture.name}</span>
+                        <span className="text-gray-500 text-sm line-clamp-2 mt-0.5">{venture.description}</span>
+                      </div>
+                      <span className="text-[#09294c] text-xs font-medium mt-3 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                        Visit
+                        <ExternalLink className="w-3 h-3" />
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              );
+            })()}
+          </motion.div>
+
+          <motion.p
+            className="text-center text-gray-500 text-sm mt-8 max-w-lg mx-auto"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true }}
+          >
+            Each platform reflects our philosophy: strategic positioning, compounding leverage, long-term impact.
           </motion.p>
         </div>
       </section>

@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -29,14 +31,18 @@ const Footer = () => {
                 <h3 className="text-2xl font-bold mb-4">2xGen</h3>
                 <p className="text-blue-200 mb-4">
                   2xGen is a digital venture studio. We build and operate platforms including{' '}
+                  <a href="https://tyo365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Tyo365</a>,{' '}
+                  <a href="https://prg365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Prg365</a>,{' '}
+                  <a href="https://aru365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Aru365</a>,{' '}
+                  <a href="https://lon365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Lon365</a>,{' '}
+                  <a href="https://cur365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Cur365</a>,{' '}
                   <a href="https://toptours.ai" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TopTours.ai</a>,{' '}
                   <a href="https://arubabuddies.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">ArubaBuddies.com</a>,{' '}
                   <a href="https://factuurbaas.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">FactuurBaas</a>,{' '}
                   <a href="https://onehappyfinance.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">OneHappyFinance</a>,{' '}
                   <a href="https://arulist.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">AruList</a>,{' '}
-                  <a href="https://tofsports.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TOF Sports</a>,{' '}
-                  <a href="https://mygoprofile.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">MyGoProfile</a>, and{' '}
-                  <a href="https://bitereserve.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">BiteReserve</a>.
+                  <a href="https://tofsports.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TOF Sports</a>, and{' '}
+                  <a href="https://mygoprofile.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">MyGoProfile</a>.
                 </p>
               </div>
 
@@ -87,14 +93,18 @@ const Footer = () => {
                 <h3 className="text-2xl font-bold mb-4">2xGen</h3>
                 <p className="text-blue-200 mb-4">
                   2xGen is a digital venture studio. We build and operate platforms including{' '}
+                  <a href="https://tyo365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Tyo365</a>,{' '}
+                  <a href="https://prg365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Prg365</a>,{' '}
+                  <a href="https://aru365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Aru365</a>,{' '}
+                  <a href="https://lon365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Lon365</a>,{' '}
+                  <a href="https://cur365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Cur365</a>,{' '}
                   <a href="https://toptours.ai" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TopTours.ai</a>,{' '}
                   <a href="https://arubabuddies.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">ArubaBuddies.com</a>,{' '}
                   <a href="https://factuurbaas.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">FactuurBaas</a>,{' '}
                   <a href="https://onehappyfinance.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">OneHappyFinance</a>,{' '}
                   <a href="https://arulist.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">AruList</a>,{' '}
-                  <a href="https://tofsports.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TOF Sports</a>,{' '}
-                  <a href="https://mygoprofile.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">MyGoProfile</a>, and{' '}
-                  <a href="https://bitereserve.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">BiteReserve</a>.
+                  <a href="https://tofsports.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TOF Sports</a>, and{' '}
+                  <a href="https://mygoprofile.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">MyGoProfile</a>.
                 </p>
             </div>
           </div>
@@ -106,6 +116,11 @@ const Footer = () => {
                 <li>
                   <Link href="/" className="text-blue-200 hover:text-white transition-colors">
                     Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-blue-200 hover:text-white transition-colors">
+                    About
                   </Link>
                 </li>
                 <li>

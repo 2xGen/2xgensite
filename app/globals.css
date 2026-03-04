@@ -118,6 +118,18 @@ html, body {
   to { opacity: 1; transform: translateX(0); }
 }
 
+/* Continuous marquee for ventures */
+.ventures-marquee-track {
+  animation: ventures-scroll 45s linear infinite;
+}
+.ventures-marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes ventures-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 .slide-in-right { animation: slide-in-right 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
 @keyframes slide-in-right {
   from { opacity: 0; transform: translateX(50px); }
