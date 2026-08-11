@@ -5,25 +5,25 @@ const BASE_URL = 'https://2xgen.com';
 
 export const metadata = {
   metadataBase: new URL(BASE_URL),
-  title: '2xGen - Digital Venture Studio | Beyond Websites. Built for Scale.',
-  description: '2xGen is a digital venture studio founded by Matthijs van Reek. We partner with founders and operators to architect scalable digital models and build the systems that allow them to grow. We turn ideas into platforms — and platforms into long-term digital assets.',
-  keywords: 'Matthijs van Reek, digital venture studio, SaaS, product development, scalable platforms, digital products, venture studio, 2xGen, MyGoProfile, ArubaBuddies, TopTours.ai, FactuurBaas',
+  title: '2xGen | Systemen die klanten vinden',
+  description: '2xGen bouwt digitale acquisitiesystemen voor Nederlandse bedrijven — leadgeneratie, data, tools, automatisering en AI. Van doelgroep naar lead. Van lead naar klant.',
+  keywords: 'leadgeneratie bedrijf, b2b leads genereren, leadgeneratie uitbesteden, online leads genereren, b2b lead generation, sales automation, leadgeneratie website, meer zakelijke klanten vinden, B2B leadgeneratie Nederland, marketing automation, 2xGen',
   authors: [{ name: 'Matthijs van Reek', url: `${BASE_URL}/about` }, { name: '2xGen LLC' }],
   robots: 'index, follow',
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     url: '/',
-    title: '2xGen - Digital Venture Studio | Beyond Websites. Built for Scale.',
-    description: 'We turn ideas into platforms and platforms into long-term digital assets. Digital venture studio for founders and operators.',
+    title: '2xGen | Systemen die klanten vinden',
+    description: 'We bouwen websites, tools en digitale systemen waarmee bedrijven structureel nieuwe klanten vinden.',
     siteName: '2xGen LLC',
-    locale: 'en_US',
+    locale: 'nl_NL',
     images: [{ url: 'https://iemgpccgdlwpsrsjuumo.supabase.co/storage/v1/object/sign/foto/new%20logo.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjkxZGZkZC1hYTQ1LTQ3NTUtODZiMy1iZDBhY2QyMjlkMjMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmb3RvL25ldyBsb2dvLnBuZyIsImlhdCI6MTc1NzI0MTcyOSwiZXhwIjo0MjgwMTIxNzI5fQ.fHOoeBZzP_4kqfj6k2kVVY999LyT_OXEyToDeWi3pEE' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2xGen - Digital Venture Studio | Beyond Websites. Built for Scale.',
-    description: 'We turn ideas into platforms and platforms into long-term digital assets. Digital venture studio for founders and operators.',
+    title: '2xGen | Systemen die klanten vinden',
+    description: 'We bouwen websites, tools en digitale systemen waarmee bedrijven structureel nieuwe klanten vinden.',
   },
   icons: {
     icon: 'https://soaacpusdhyxwucjhhpy.supabase.co/storage/v1/object/public/images/favicon.png',
@@ -42,10 +42,13 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="overflow-x-hidden">
+    <html lang="nl" className="overflow-x-hidden">
       <head>
-        <meta name="geo.region" content="US-NM" />
-        <meta name="geo.placename" content="Albuquerque" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+        <meta name="geo.region" content="NL" />
+        <meta name="geo.placename" content="Nederland" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -54,15 +57,15 @@ export default function RootLayout({ children }) {
               '@type': 'Organization',
               name: '2xGen LLC',
               alternateName: '2xGen',
-              description: '2xGen is a digital venture studio. We partner with founders and operators to architect scalable digital models and build the systems that allow them to grow.',
+              description: '2xGen is een digitaal leadgeneratie- en technologiebedrijf gespecialiseerd in B2B leadgeneratie, online acquisitie, leadgeneratie tools, marketing automation en digitale groeisystemen voor Nederlandse bedrijven.',
               url: 'https://2xgen.com',
               logo: 'https://2xgen.com/favicon.svg',
               foundingDate: '2024',
               founder: { '@type': 'Person', name: 'Matthijs van Reek' },
               address: { '@type': 'PostalAddress', addressLocality: 'Albuquerque', addressRegion: 'New Mexico', addressCountry: 'USA' },
-              contactPoint: { '@type': 'ContactPoint', email: 'matthijs@2xgen.com', contactType: 'business', areaServed: 'Worldwide', availableLanguage: ['English', 'Dutch'] },
+              contactPoint: { '@type': 'ContactPoint', email: 'matthijs@2xgen.com', contactType: 'business', areaServed: ['NL', 'Nederland'], availableLanguage: ['Dutch', 'English'] },
               sameAs: ['https://www.linkedin.com/company/2xgen-com/'],
-              knowsAbout: ['Digital Venture Studio', 'SaaS', 'Product Development', 'Scalable Platforms', 'Digital Products', 'Venture Studio'],
+              knowsAbout: ['B2B Leadgeneratie', 'Leadgeneratie websites', 'Sales automation', 'Marketing automation', 'Leadgeneratie tools', 'AI-automatisering', 'Online acquisitie'],
             }),
           }}
         />
@@ -74,7 +77,8 @@ export default function RootLayout({ children }) {
               '@type': 'WebSite',
               name: '2xGen',
               url: 'https://2xgen.com',
-              description: 'Beyond Websites. Built for Scale. Digital venture studio — we turn ideas into platforms and platforms into long-term digital assets.',
+              description: 'Digitale leadgeneratie voor Nederlandse bedrijven. Van de eerste klik tot een gekwalificeerde lead.',
+              inLanguage: 'nl-NL',
               publisher: { '@type': 'Organization', name: '2xGen LLC' },
               potentialAction: {
                 '@type': 'SearchAction',
@@ -91,14 +95,14 @@ export default function RootLayout({ children }) {
               '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Matthijs van Reek',
-              jobTitle: 'Founder',
-              description: 'Founder of 2xGen, a digital venture studio that builds and operates scalable platforms including TopTours.ai, ArubaBuddies, MyGoProfile, and FactuurBaas.',
+              jobTitle: 'Oprichter',
+              description: 'Oprichter van 2xGen, een digitaal leadgeneratie- en technologiebedrijf dat systemen bouwt waarmee Nederlandse bedrijven nieuwe klanten vinden.',
               worksFor: { '@type': 'Organization', name: '2xGen LLC', url: 'https://2xgen.com' },
               url: 'https://2xgen.com/about',
               mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://2xgen.com/about' },
               image: 'https://iemgpccgdlwpsrsjuumo.supabase.co/storage/v1/object/sign/foto/founder%202xGen.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjkxZGZkZC1hYTQ1LTQ3NTUtODZiMy1iZDBhY2QyMjlkMjMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmb3RvL2ZvdW5kZXIgMnhHZW4ucG5nIiwiaWF0IjoxNzU3MjM5NjYxLCJleHAiOjQyODAxMTk2NjF9.LeDtfzNJq5ny7A3MFdeeZb4wYii53V7tBut9vSoLrkc',
               sameAs: ['https://www.linkedin.com/company/2xgen-com/'],
-              knowsAbout: ['Digital Venture Studio', 'SaaS', 'Product Development', 'Scalable Platforms', 'Digital Products'],
+              knowsAbout: ['B2B Leadgeneratie', 'Leadgeneratie websites', 'Sales automation', 'Marketing automation', 'Digitale acquisitie'],
             }),
           }}
         />

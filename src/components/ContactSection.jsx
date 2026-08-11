@@ -1,101 +1,71 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Mail, MapPin, MessageCircle, Building2 } from 'lucide-react';
+import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
 
 const ContactSection = () => {
-  const contactInfo = [
-    { icon: <Building2 className="w-7 h-7 text-[#09294c]" />, title: "Company", lines: ["2xGen LLC"], subtext: "" },
-    { icon: <MapPin className="w-7 h-7 text-[#09294c]" />, title: "Company registration", lines: ["Albuquerque, New Mexico, USA"], subtext: "" },
-    {
-      icon: <Mail className="w-7 h-7 text-[#09294c]" />,
-      title: "Email",
-      lines: ["matthijs@2xgen.com"],
-      subtext: "",
-      href: "mailto:matthijs@2xgen.com",
-      actionLabel: "Send email",
-    },
-    {
-      icon: <MessageCircle className="w-7 h-7 text-[#09294c]" />,
-      title: "WhatsApp",
-      lines: ["+297 566 8844"],
-      subtext: "",
-      href: "https://wa.me/2975668844",
-      actionLabel: "Send WhatsApp",
-    },
-  ];
-
   return (
-    <section id="contact" className="py-24 md:py-32 bg-[#f8fafc] relative">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#09294c]/10 to-transparent" />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-[#09294c]/60 mb-6">Get in touch</p>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">
-            <span className="text-premium-gradient">Contact</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Every scalable venture begins with architecture. Contact us to start the conversation.
-          </p>
-        </motion.div>
+    <section id="contact" className="py-20 md:py-24 pattern-dots">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="rounded-3xl bg-[#09294c] text-white p-8 sm:p-10 relative overflow-hidden flex flex-col justify-center"
+          >
+            <div className="absolute bottom-0 left-0 w-full h-1.5 bg-[#3d8fd1]" />
+            <p className="text-[#3d8fd1] font-semibold mb-3">Contact</p>
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4 text-white">
+              Laten we kijken waar de ruimte zit.
+            </h2>
+            <p className="text-white/65 leading-relaxed max-w-md">
+              Stuur een bericht over je acquisitie — we denken mee zonder ellenlange salespitch.
+            </p>
+          </motion.div>
 
-        <motion.div
-          className="max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          <Card className="card-premium border-0 p-8">
-            <CardContent className="space-y-6">
-              {contactInfo.map((info, index) => {
-                const content = (
-                  <>
-                    <div className="flex-shrink-0 bg-gradient-to-br from-[#E5F5FC] to-[#D0E8F5] p-3 rounded-xl">
-                      {info.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider">{info.title}</h4>
-                      {info.lines.map((line, i) => (
-                        <p key={i} className="text-gray-800 font-medium">{line}</p>
-                      ))}
-                    </div>
-                  </>
-                );
-                const linkProps = info.href
-                  ? { href: info.href, ...(info.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {}) }
-                  : {};
-                return (
-                  <div key={index} className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-                    {info.href && info.actionLabel ? (
-                      <>
-                        <div className="flex items-start gap-4 min-w-0 flex-1">{content}</div>
-                        <a
-                          {...linkProps}
-                          className="w-full sm:w-auto sm:min-w-[140px] shrink-0 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#09294c] text-white font-semibold text-sm hover:bg-[#1a4b7a] transition-colors"
-                        >
-                          {info.actionLabel}
-                        </a>
-                      </>
-                    ) : info.href ? (
-                      <a className="flex items-start gap-4 hover:opacity-90 transition-opacity flex-1" {...linkProps}>
-                        {content}
-                      </a>
-                    ) : (
-                      <div className="flex items-start gap-4">{content}</div>
-                    )}
-                  </div>
-                );
-              })}
-            </CardContent>
-          </Card>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08 }}
+            className="space-y-3"
+          >
+            <a
+              href="mailto:matthijs@2xgen.com"
+              className="xgen-card p-5 sm:p-6 flex items-center justify-between gap-4 group"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#e8f1f8] flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-[#09294c]" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-400">E-mail</p>
+                  <p className="font-semibold text-[#09294c]">matthijs@2xgen.com</p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-5 h-5 text-[#3d8fd1] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+            <a
+              href="https://wa.me/2975668844"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="xgen-card p-5 sm:p-6 flex items-center justify-between gap-4 group"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-2xl bg-[#e8f1f8] flex items-center justify-center">
+                  <MessageCircle className="w-5 h-5 text-[#09294c]" />
+                </div>
+                <div>
+                  <p className="text-sm text-gray-400">WhatsApp</p>
+                  <p className="font-semibold text-[#09294c]">+297 566 8844</p>
+                </div>
+              </div>
+              <ArrowUpRight className="w-5 h-5 text-[#3d8fd1] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

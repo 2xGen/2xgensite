@@ -1,142 +1,54 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 const Footer = () => {
-  const pathname = usePathname();
-  const isHomePage = pathname === '/';
-
-  const handleNavigation = (section) => {
-    if (pathname === '/') {
-      // If already on homepage, scroll to section
-      const element = document.getElementById(section);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    } else {
-      // If on another page, navigate to homepage with hash
-      window.location.href = `/#${section}`;
-    }
-  };
+  const links = [
+    { href: '/wat-we-bouwen', label: 'Wat we bouwen' },
+    { href: '/sectoren', label: 'Sectoren' },
+    { href: '/platforms', label: 'Platforms' },
+    { href: '/prijzen', label: 'Prijzen' },
+    { href: '/acquisitiecheck', label: 'Acquisitiecheck' },
+    { href: '/over-ons', label: 'Over ons' },
+    { href: '/contact', label: 'Contact' },
+  ];
 
   return (
-    <footer className="bg-[#09294c] text-white py-12">
+    <footer className="relative bg-[#0c1b2a] text-white py-14">
+      <div className="absolute top-0 left-0 right-0 h-1 bg-[#3d8fd1]" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {isHomePage ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div className="md:col-span-2">
-              {/* Company Info */}
-              <div>
-                <h3 className="text-2xl font-bold mb-4">2xGen</h3>
-                <p className="text-blue-200 mb-4">
-                  2xGen is a digital venture studio. We build and operate platforms including{' '}
-                  <a href="https://tyo365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Tyo365</a>,{' '}
-                  <a href="https://prg365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Prg365</a>,{' '}
-                  <a href="https://aru365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Aru365</a>,{' '}
-                  <a href="https://lon365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Lon365</a>,{' '}
-                  <a href="https://cur365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Cur365</a>,{' '}
-                  <a href="https://toptours.ai" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TopTours.ai</a>,{' '}
-                  <a href="https://arubabuddies.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">ArubaBuddies.com</a>,{' '}
-                  <a href="https://factuurbaas.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">FactuurBaas</a>,{' '}
-                  <a href="https://onehappyfinance.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">OneHappyFinance</a>,{' '}
-                  <a href="https://arulist.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">AruList</a>,{' '}
-                  <a href="https://tofsports.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TOF Sports</a>, and{' '}
-                  <a href="https://mygoprofile.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">MyGoProfile</a>.
-                </p>
-              </div>
-
-            </div>
-
-            {/* Quick Links */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <button 
-                    onClick={() => handleNavigation('about')} 
-                    className="text-blue-200 hover:text-white transition-colors cursor-pointer"
-                  >
-                    About Us
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => handleNavigation('services')} 
-                    className="text-blue-200 hover:text-white transition-colors cursor-pointer"
-                  >
-                    What We Build
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => handleNavigation('ventures')} 
-                    className="text-blue-200 hover:text-white transition-colors cursor-pointer"
-                  >
-                    Our Ventures
-                  </button>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-blue-200 hover:text-white transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
+        <div className="grid md:grid-cols-2 gap-10 mb-10">
+          <div>
+            <h3 className="text-2xl font-semibold tracking-tight mb-3 text-white" style={{ fontFamily: 'Outfit, sans-serif' }}>
+              2xGen
+            </h3>
+            <p className="text-[#3d8fd1] text-sm font-medium mb-3">
+              Wij bouwen systemen die klanten vinden.
+            </p>
+            <p className="text-white/55 text-sm leading-relaxed max-w-md">
+              Leadgeneratie · Data · Tools · Automatisering · AI
+              <br />
+              Digitale acquisitiesystemen — en eigen platforms als proeftuin.
+            </p>
           </div>
-        ) : (
-          /* Non-homepage footer - working navigation links */
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div className="md:col-span-2">
-              {/* Company Info */}
-              <div>
-                <h3 className="text-2xl font-bold mb-4">2xGen</h3>
-                <p className="text-blue-200 mb-4">
-                  2xGen is a digital venture studio. We build and operate platforms including{' '}
-                  <a href="https://tyo365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Tyo365</a>,{' '}
-                  <a href="https://prg365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Prg365</a>,{' '}
-                  <a href="https://aru365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Aru365</a>,{' '}
-                  <a href="https://lon365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Lon365</a>,{' '}
-                  <a href="https://cur365.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">Cur365</a>,{' '}
-                  <a href="https://toptours.ai" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TopTours.ai</a>,{' '}
-                  <a href="https://arubabuddies.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">ArubaBuddies.com</a>,{' '}
-                  <a href="https://factuurbaas.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">FactuurBaas</a>,{' '}
-                  <a href="https://onehappyfinance.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">OneHappyFinance</a>,{' '}
-                  <a href="https://arulist.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">AruList</a>,{' '}
-                  <a href="https://tofsports.nl" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">TOF Sports</a>, and{' '}
-                  <a href="https://mygoprofile.com" target="_blank" rel="noopener noreferrer" className="text-white font-semibold hover:underline transition-colors">MyGoProfile</a>.
-                </p>
-            </div>
+          <div className="flex flex-wrap gap-x-5 gap-y-2 md:justify-end content-start">
+            {links.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm text-white/50 hover:text-white transition-colors"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
-
-            {/* Working Navigation Links */}
-            <div>
-              <h3 className="text-xl font-semibold mb-4">Navigation</h3>
-              <ul className="space-y-2">
-                <li>
-                  <Link href="/" className="text-blue-200 hover:text-white transition-colors">
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/about" className="text-blue-200 hover:text-white transition-colors">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/insights" className="text-blue-200 hover:text-white transition-colors">
-                    Insights
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-blue-200 hover:text-white transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        )}
+        </div>
+        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-2 text-xs text-white/30">
+          <span>© {new Date().getFullYear()} 2xGen LLC</span>
+          <a href="mailto:matthijs@2xgen.com" className="hover:text-white/60 transition-colors">
+            matthijs@2xgen.com
+          </a>
+        </div>
       </div>
     </footer>
   );

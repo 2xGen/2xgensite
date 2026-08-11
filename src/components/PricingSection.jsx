@@ -1,38 +1,35 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const PricingSection = () => {
   return (
-    <section id="explore" className="py-24 md:py-32 bg-[#0a2744] relative overflow-hidden">
-      {/* Soft orbs */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#1a4b7a]/40 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[300px] bg-[#2d6ba8]/30 rounded-full blur-[80px] pointer-events-none" />
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="explore" className="py-20 md:py-28 bg-white">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          className="text-center py-16 md:py-20"
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
         >
-          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-white/60 mb-6">Next step</p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white tracking-tight mb-6">
-            Explore the Possibilities
+          <div className="accent-bar mx-auto mb-4" />
+          <p className="text-[#1a5f9e] font-semibold mb-2">Heb je een goed product?</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-[1.12] mb-4">
+            Dan moeten we zorgen dat de juiste mensen het vinden.
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto leading-relaxed mb-4 font-light">
-            Every scalable venture begins with architecture.
+          <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto">
+            Vertel wat je verkoopt, wie je zoekt en waar je nu tegenaan loopt. Wij kijken waar de kansen zitten.
           </p>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed mb-12">
-            If you're building a platform, a SaaS product, or a digital ecosystem — let's explore how to structure it for long-term growth.
-          </p>
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 text-base font-semibold text-[#0a2744] bg-white rounded-full hover:bg-blue-50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-[1.02]"
-          >
-            Contact us to start the conversation
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
-          </a>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="/contact" className="xgen-btn xgen-btn-primary">
+              Even sparren
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a href="/prijzen" className="xgen-btn xgen-btn-secondary">
+              Bekijk prijzen
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
