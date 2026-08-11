@@ -11,6 +11,7 @@ const Footer = () => {
     { href: '/acquisitiecheck', label: 'Acquisitiecheck' },
     { href: '/over-ons', label: 'Over ons' },
     { href: '/contact', label: 'Contact' },
+    { href: '/privacy', label: 'Privacy' },
   ];
 
   return (

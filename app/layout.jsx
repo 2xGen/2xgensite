@@ -29,7 +29,17 @@ export const metadata = {
     icon: 'https://soaacpusdhyxwucjhhpy.supabase.co/storage/v1/object/public/images/favicon.png',
     apple: 'https://soaacpusdhyxwucjhhpy.supabase.co/storage/v1/object/public/images/favicon.png',
   },
-  verification: { google: 'JiADLh3Bmq5TaxgwrelX1YPhkW6JDut95j9LdMOJ8cc' },
+  verification: {
+    // Google Search Console — HTML-tag content value
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'JiADLh3Bmq5TaxgwrelX1YPhkW6JDut95j9LdMOJ8cc',
+    // Bing Webmaster Tools — set NEXT_PUBLIC_BING_SITE_VERIFICATION in .env.local
+    other: {
+      ...((process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION &&
+        !process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION.startsWith('YOUR_'))
+        ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+        : {}),
+    },
+  },
 };
 
 export const viewport = {
@@ -104,11 +114,6 @@ export default function RootLayout({ children }) {
               sameAs: ['https://www.linkedin.com/company/2xgen-com/'],
               knowsAbout: ['B2B Leadgeneratie', 'Leadgeneratie websites', 'Sales automation', 'Marketing automation', 'Digitale acquisitie'],
             }),
-          }}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"1b10e4e8bf2cb6621bc9e5b26bca03be"})});`,
           }}
         />
       </head>
