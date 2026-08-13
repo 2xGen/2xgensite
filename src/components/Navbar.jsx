@@ -4,20 +4,25 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { useLocale } from '@/i18n/LocaleContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const { locale, t, href, switchTo } = useLocale();
 
   const navLinks = [
-    { href: '/wat-we-bouwen', label: 'Wat we bouwen' },
-    { href: '/sectoren', label: 'Sectoren' },
-    { href: '/platforms', label: 'Platforms' },
-    { href: '/prijzen', label: 'Prijzen' },
-    { href: '/over-ons', label: 'Over ons' },
-    { href: '/contact', label: 'Contact' },
+    { href: href('/wat-we-bouwen'), label: t.nav.whatWeBuild },
+    { href: href('/sectoren'), label: t.nav.sectors },
+    { href: href('/platforms'), label: t.nav.platforms },
+    { href: href('/prijzen'), label: t.nav.pricing },
+    { href: href('/over-ons'), label: t.nav.about },
+    { href: href('/contact'), label: t.nav.contact },
   ];
+
+  const homeHref = locale === 'en' ? '/en' : '/';
+  const otherLocale = locale === 'en' ? 'nl' : 'en';
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 12);
@@ -29,15 +34,17 @@ const Navbar = () => {
     setIsOpen(false);
   }, [pathname]);
 
+  const isHome = pathname === '/' || pathname === '/en';
+
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-200 ${isScrolled || pathname !== '/' ? 'bg-white/95 backdrop-blur border-b border-[#09294c]/10 shadow-sm' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-200 ${isScrolled || !isHome ? 'bg-white/95 backdrop-blur border-b border-[#09294c]/10 shadow-sm' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <a href="/" className="text-xl font-semibold text-[#09294c] tracking-tight" style={{ fontFamily: 'Outfit, sans-serif' }}>
+          <a href={homeHref} className="text-xl font-semibold text-[#09294c] tracking-tight" style={{ fontFamily: 'Outfit, sans-serif' }}>
             2xGen
           </a>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -51,14 +58,29 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <a href="/acquisitiecheck" className="xgen-btn xgen-btn-primary !py-2 !px-4 text-sm">
-              Acquisitiecheck
+            <a
+              href={switchTo(otherLocale)}
+              className="text-xs font-bold tracking-wide px-2.5 py-1 rounded-lg border border-[#09294c]/15 text-[#09294c]/70 hover:text-[#09294c] hover:border-[#09294c]/30"
+              aria-label={t.lang.switchTo}
+            >
+              {otherLocale === 'en' ? 'EN' : 'NL'}
+            </a>
+            <a href={href('/acquisitiecheck')} className="xgen-btn xgen-btn-primary !py-2 !px-4 text-sm">
+              {t.nav.check}
             </a>
           </div>
 
-          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-[#09294c] p-1" aria-label="Menu">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          <div className="lg:hidden flex items-center gap-2">
+            <a
+              href={switchTo(otherLocale)}
+              className="text-xs font-bold tracking-wide px-2 py-1 rounded-lg border border-[#09294c]/15 text-[#09294c]"
+            >
+              {otherLocale === 'en' ? 'EN' : 'NL'}
+            </a>
+            <button onClick={() => setIsOpen(!isOpen)} className="text-[#09294c] p-1" aria-label="Menu">
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -77,8 +99,8 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
-          <a href="/acquisitiecheck" className="block px-3 py-2.5 rounded-xl text-sm font-semibold bg-[#09294c] text-white mt-2">
-            Acquisitiecheck
+          <a href={href('/acquisitiecheck')} className="block px-3 py-2.5 rounded-xl text-sm font-semibold bg-[#09294c] text-white mt-2">
+            {t.nav.check}
           </a>
         </div>
       </motion.div>

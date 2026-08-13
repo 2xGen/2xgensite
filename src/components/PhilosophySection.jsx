@@ -2,25 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-
-const questions = [
-  'Wie zijn je beste klanten?',
-  'Waar kunnen we ze vinden?',
-  'Waar zoeken ze naar?',
-  'Waarom zouden ze contact opnemen?',
-  'Hoe krijgen we ze bij sales?',
-];
-
-const flow = [
-  { title: 'Data', text: 'Wie wil je bereiken?' },
-  { title: 'Bereik', text: 'Waar vinden we ze?' },
-  { title: 'Digitale ingang', text: 'Wat zorgt ervoor dat ze klikken?' },
-  { title: 'Lead', text: 'Hoe krijgen we contact?' },
-  { title: 'Opvolging', text: 'Wat gebeurt er daarna?' },
-  { title: 'Sales', text: 'Wanneer wordt een lead klant?' },
-];
+import { useLocale } from '@/i18n/LocaleContext';
 
 const PhilosophySection = () => {
+  const { t } = useLocale();
+  const p = t.philosophy;
+
   return (
     <>
       <section className="py-20 md:py-28 bg-white">
@@ -34,20 +21,18 @@ const PhilosophySection = () => {
             >
               <div className="accent-bar" />
               <h2 className="text-3xl sm:text-4xl lg:text-[2.8rem] font-semibold tracking-tight leading-[1.1]">
-                Een website moet meer doen dan gevonden worden.
+                {p.h2}
               </h2>
               <div className="space-y-1 text-lg text-gray-600">
-                <p>Een goede website vertelt je verhaal.</p>
-                <p className="font-semibold text-[#09294c]">Een goede acquisitiesite brengt nieuwe klanten binnen.</p>
+                <p>{p.p1}</p>
+                <p className="font-semibold text-[#09294c]">{p.p2}</p>
               </div>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                We combineren data, websites, SEO, tools, AI en automatisering om van online verkeer concrete kansen te maken.
-              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">{p.body}</p>
             </motion.div>
 
             <div className="space-y-2.5">
-              <p className="text-sm font-semibold text-[#3d8fd1] mb-3">Je wilt weten:</p>
-              {questions.map((q, i) => (
+              <p className="text-sm font-semibold text-[#3d8fd1] mb-3">{p.want}</p>
+              {p.questions.map((q, i) => (
                 <motion.div
                   key={q}
                   initial={{ opacity: 0, x: 16 }}
@@ -60,7 +45,7 @@ const PhilosophySection = () => {
                   <span className="font-semibold text-[#09294c]">{q}</span>
                 </motion.div>
               ))}
-              <p className="pt-4 text-[#09294c] font-semibold text-lg">Daar begint 2xGen.</p>
+              <p className="pt-4 text-[#09294c] font-semibold text-lg">{p.start}</p>
             </div>
           </div>
         </div>
@@ -76,15 +61,13 @@ const PhilosophySection = () => {
           >
             <div className="accent-bar mb-4 !bg-[#3d8fd1]" />
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-4 text-white">
-              Van losse kanalen naar één systeem.
+              {p.systemH2}
             </h2>
-            <p className="text-lg text-white/65 leading-relaxed">
-              Een advertentie kan morgen stoppen. Een goed opgebouwde acquisitiepagina, calculator of SEO-kanaal kan maanden of jaren blijven werken.
-            </p>
+            <p className="text-lg text-white/65 leading-relaxed">{p.systemBody}</p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {flow.map((step, index) => (
+            {p.flow.map((step, index) => (
               <motion.div
                 key={step.title}
                 initial={{ opacity: 0, y: 14 }}

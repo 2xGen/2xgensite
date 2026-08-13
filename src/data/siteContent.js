@@ -172,6 +172,32 @@ export const sectors = [
   },
 ];
 
+/** All live properties — used in the homepage marquee (trust strip). */
+export const liveBrands = [
+  { name: 'FactuurBaas', url: 'https://factuurbaas.nl' },
+  { name: 'TopTours.ai', url: 'https://toptours.ai' },
+  { name: 'OneHappyFinance', url: 'https://onehappyfinance.com' },
+  { name: 'AruList', url: 'https://arulist.com' },
+  { name: 'MyGoProfile', url: 'https://mygoprofile.com' },
+  { name: 'TalentPad', url: 'https://talentpad.nl' },
+  { name: 'KlaarVoorAdvies', url: 'https://klaarvooradvies.nl' },
+  { name: 'ArubaCheck', url: 'https://arubacheck.com' },
+  { name: 'Belgium Vignette', url: 'https://belgiumvignette.be' },
+  { name: 'TOF Sports', url: 'https://tofsports.nl' },
+  { name: 'TOF Social', url: 'https://tof.social' },
+  { name: 'Omnibus Tennis', url: 'https://omnibustennis.com' },
+  { name: 'Tennis365', url: 'https://tennis365.nl' },
+  { name: 'Tennis365.app', url: 'https://tennis365.app' },
+  { name: 'TennisConnect', url: 'https://tennisconnect.nl' },
+  { name: 'TYO365', url: 'https://tyo365.com' },
+  { name: 'PRG365', url: 'https://prg365.com' },
+  { name: 'ARU365', url: 'https://aru365.com' },
+];
+
+/** Count of live own products — keep hero/stats in sync with liveBrands */
+export const LIVE_PRODUCT_COUNT = liveBrands.length;
+
+/** Featured platforms with acquisition angle — used on /platforms and Ventures. */
 export const platforms = [
   {
     name: 'FactuurBaas',
@@ -179,13 +205,7 @@ export const platforms = [
     blurb: 'Gratis facturatie voor freelancers en kleine bedrijven.',
     url: 'https://factuurbaas.nl',
     mechanism: 'Zoekverkeer rond factureren landt op een gratis tool. Gebruikers ervaren waarde direct — en worden op natuurlijke wijze leads en terugkerende gebruikers.',
-  },
-  {
-    name: 'ArubaBuddies',
-    angle: 'Search → boeking',
-    blurb: 'Travelplatform met SEO, content en affiliates.',
-    url: 'https://arubabuddies.com',
-    mechanism: 'Content en SEO vangen reisintentie. Affiliates en boekingspaden zetten bezoekers om in omzet.',
+    featured: true,
   },
   {
     name: 'TopTours.ai',
@@ -193,6 +213,7 @@ export const platforms = [
     blurb: 'AI-gedreven discovery voor tours en activiteiten.',
     url: 'https://toptours.ai',
     mechanism: 'AI helpt bezoekers sneller de juiste ervaring te vinden. Discovery wordt het acquisitiekanaal.',
+    featured: true,
   },
   {
     name: 'OneHappyFinance',
@@ -200,20 +221,23 @@ export const platforms = [
     blurb: 'Financiële informatie en leadgeneratie voor Aruba.',
     url: 'https://onehappyfinance.com',
     mechanism: 'Informatieve content bouwt vertrouwen. Intentie wordt omgezet naar leads voor financiële diensten.',
+    featured: true,
   },
   {
-    name: 'AruList',
-    angle: 'Listing → deal',
-    blurb: 'Marketplace voor tweedehands producten.',
-    url: 'https://arulist.com',
-    mechanism: 'Aanbod trekt zoekverkeer. Listings en contactmomenten vormen het conversiepad.',
+    name: 'TalentPad',
+    angle: 'Search → sollicitatie',
+    blurb: 'Recruitmentgericht platform voor talent en werkgevers.',
+    url: 'https://talentpad.nl',
+    mechanism: 'Intentie rond werk en talent wordt omgezet naar concrete sollicitaties en werkgeversleads.',
+    featured: true,
   },
   {
-    name: 'TOF Sports',
-    angle: 'Community → product',
-    blurb: 'Digitaal ecosysteem voor tennis en padel.',
-    url: 'https://tofsports.nl',
-    mechanism: 'Community en content bouwen bereik. Producten en diensten volgen uit betrokken gebruikers.',
+    name: 'KlaarVoorAdvies',
+    angle: 'Check → lead',
+    blurb: 'Adviesgericht acquisitiepad via checks en content.',
+    url: 'https://klaarvooradvies.nl',
+    mechanism: 'Bezoekers krijgen eerst waarde via een check — daarna volgt het gesprek.',
+    featured: true,
   },
   {
     name: 'MyGoProfile',
@@ -221,15 +245,107 @@ export const platforms = [
     blurb: 'Digitale bedrijfsprofielen voor lokale bedrijven.',
     url: 'https://mygoprofile.com',
     mechanism: 'Lokale zichtbaarheid als acquisitie-asset: profielen die bedrijven vinden en gevonden worden.',
+    featured: true,
   },
   {
-    name: '365-platforms',
+    name: 'AruList',
+    angle: 'Listing → deal',
+    blurb: 'Marketplace voor tweedehands producten.',
+    url: 'https://arulist.com',
+    mechanism: 'Aanbod trekt zoekverkeer. Listings en contactmomenten vormen het conversiepad.',
+    featured: false,
+  },
+  {
+    name: 'ArubaCheck',
+    angle: 'Check → conversie',
+    blurb: 'Check-gedreven acquisitie voor Aruba-gerelateerde diensten.',
+    url: 'https://arubacheck.com',
+    mechanism: 'Een snelle check trekt intentie en zet bezoekers om in leads.',
+    featured: false,
+  },
+  {
+    name: 'Belgium Vignette',
+    angle: 'Search → aankoop',
+    blurb: 'Intentiegericht platform rond vignettes en reisformaliteiten.',
+    url: 'https://belgiumvignette.be',
+    mechanism: 'Zoekverkeer met hoge koopintentie landt op een gerichte conversiepagina.',
+    featured: false,
+  },
+  {
+    name: 'TYO365',
     angle: 'Search → intent',
-    blurb: 'SEO-platforms voor tours in verschillende steden.',
+    blurb: 'SEO-platform voor tours en activiteiten.',
     url: 'https://tyo365.com',
-    mechanism: 'Stad- en intent-gedreven SEO-platforms die structureel zoekverkeer naar tours leiden.',
+    mechanism: 'Stad- en intent-gedreven SEO dat structureel zoekverkeer naar tours leidt.',
+    featured: false,
+  },
+  {
+    name: 'PRG365',
+    angle: 'Search → intent',
+    blurb: 'SEO-platform voor tours in Praag.',
+    url: 'https://prg365.com',
+    mechanism: 'Lokale zoekintentie wordt omgezet naar boekingen en affiliate-omzet.',
+    featured: false,
+  },
+  {
+    name: 'ARU365',
+    angle: 'Search → intent',
+    blurb: 'SEO-platform voor tours en activiteiten op Aruba.',
+    url: 'https://aru365.com',
+    mechanism: 'Reisintentie wordt gevangen via content en doorgezet naar conversie.',
+    featured: false,
+  },
+  {
+    name: 'Tennis365',
+    angle: 'Community → product',
+    blurb: 'Tennisplatform met content, tools en community.',
+    url: 'https://tennis365.nl',
+    mechanism: 'Community en content bouwen bereik; producten volgen uit betrokken gebruikers.',
+    featured: false,
+  },
+  {
+    name: 'Tennis365.app',
+    angle: 'App → engagement',
+    blurb: 'Digitale tenniservaring en tools voor spelers.',
+    url: 'https://tennis365.app',
+    mechanism: 'Productgebruik zelf is het acquisitie- en retentiekanaal.',
+    featured: false,
+  },
+  {
+    name: 'TennisConnect',
+    angle: 'Community → connect',
+    blurb: 'Platform om tennispartners en wedstrijden te vinden.',
+    url: 'https://tennisconnect.nl',
+    mechanism: 'Spelers zoeken een partner of partij. Intentie wordt omgezet naar matches, community en terugkerend gebruik.',
+    featured: false,
+  },
+  {
+    name: 'TOF Sports',
+    angle: 'Community → product',
+    blurb: 'Digitaal ecosysteem voor tennis en padel.',
+    url: 'https://tofsports.nl',
+    mechanism: 'Community en content bouwen bereik. Producten en diensten volgen uit betrokken gebruikers.',
+    featured: false,
+  },
+  {
+    name: 'TOF Social',
+    angle: 'Community → bereik',
+    blurb: 'Sociale laag binnen het tennis- en padel-ecosysteem.',
+    url: 'https://tof.social',
+    mechanism: 'Community-activiteit voedt bereik, betrokkenheid en doorverwijzing naar producten.',
+    featured: false,
+  },
+  {
+    name: 'Omnibus Tennis',
+    angle: 'Content → klant',
+    blurb: 'Tennisgericht digitaal product en contentkanaal.',
+    url: 'https://omnibustennis.com',
+    mechanism: 'Content en productervaring brengen spelers en clubs in beweging.',
+    featured: false,
   },
 ];
+
+export const featuredPlatforms = platforms.filter((p) => p.featured);
 
 export function getService(slug) {
   return services.find((s) => s.slug === slug);

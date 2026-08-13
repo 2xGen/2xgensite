@@ -1,36 +1,33 @@
 import { ExternalLink } from 'lucide-react';
 import PageShell from '@/components/PageShell';
 import PageCta from '@/components/PageCta';
-import { platforms } from '@/data/siteContent';
+import { getPlatforms } from '@/i18n/content';
+import { getMessages } from '@/i18n/messages';
 
 export const metadata = {
   title: 'Platforms & cases | 2xGen',
-  description: 'Wat 2xGen zelf bouwt en runt: FactuurBaas, TopTours.ai, TalentPad en meer — met het acquisitiemechanisme achter elk product.',
-  alternates: { canonical: '/platforms' },
+  description:
+    'What 2xGen builds and runs: FactuurBaas, TopTours.ai, TalentPad and more — with the acquisition mechanism behind each product.',
+  alternates: { canonical: '/en/platforms', languages: { nl: '/platforms', en: '/en/platforms' } },
 };
 
-export default function PlatformsPage() {
+export default function EnPlatformsPage() {
+  const t = getMessages('en').pages.platforms;
+  const platforms = getPlatforms('en');
+
   return (
     <PageShell>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-6 mb-12">
           <div className="rounded-3xl bg-white border border-[#09294c]/10 p-8 sm:p-10">
             <div className="accent-bar mb-4" />
-            <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight mb-4">
-              We doen het zelf ook.
-            </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Geen PowerPoint-cases. We runnen zelf websites en digitale producten — en laten zien welk acquisitiemechanisme erachter zit.
-            </p>
+            <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight mb-4">{t.h1}</h1>
+            <p className="text-lg text-gray-600 leading-relaxed">{t.body}</p>
           </div>
           <div className="rounded-3xl pattern-navy text-white p-8 sm:p-10 flex flex-col justify-center">
-            <p className="text-[#3d8fd1] text-sm font-semibold mb-3">Onze proeftuin</p>
-            <p className="text-xl sm:text-2xl font-semibold text-white leading-snug mb-3">
-              We bouwen. Publiceren. Meten. Aanpassen. Bouwen verder.
-            </p>
-            <p className="text-white/65">
-              Wat we voor klanten bouwen, bouwen we zelf ook.
-            </p>
+            <p className="text-[#3d8fd1] text-sm font-semibold mb-3">{t.lab}</p>
+            <p className="text-xl sm:text-2xl font-semibold text-white leading-snug mb-3">{t.process}</p>
+            <p className="text-white/65">{t.own}</p>
           </div>
         </div>
 
@@ -57,8 +54,8 @@ export default function PlatformsPage() {
         </div>
 
         <PageCta
-          title="Wil je zo’n acquisitie-asset?"
-          text="Van tool tot platform — we kijken wat bij jouw markt past."
+          title="Want an acquisition asset like this?"
+          text="From tool to platform — we look at what fits your market."
         />
       </div>
     </PageShell>

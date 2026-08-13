@@ -1,17 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+import { useLocale } from '@/i18n/LocaleContext';
+import { openCookieSettings } from '@/components/CookieConsent';
 
 const Footer = () => {
+  const { t, href } = useLocale();
+
   const links = [
-    { href: '/wat-we-bouwen', label: 'Wat we bouwen' },
-    { href: '/sectoren', label: 'Sectoren' },
-    { href: '/platforms', label: 'Platforms' },
-    { href: '/prijzen', label: 'Prijzen' },
-    { href: '/acquisitiecheck', label: 'Acquisitiecheck' },
-    { href: '/over-ons', label: 'Over ons' },
-    { href: '/contact', label: 'Contact' },
-    { href: '/privacy', label: 'Privacy' },
+    { href: href('/wat-we-bouwen'), label: t.nav.whatWeBuild },
+    { href: href('/sectoren'), label: t.nav.sectors },
+    { href: href('/platforms'), label: t.nav.platforms },
+    { href: href('/prijzen'), label: t.nav.pricing },
+    { href: href('/acquisitiecheck'), label: t.nav.check },
+    { href: href('/over-ons'), label: t.nav.about },
+    { href: href('/contact'), label: t.nav.contact },
+    { href: href('/privacy'), label: t.footer.privacy },
   ];
 
   return (
@@ -23,16 +27,14 @@ const Footer = () => {
             <h3 className="text-2xl font-semibold tracking-tight mb-3 text-white" style={{ fontFamily: 'Outfit, sans-serif' }}>
               2xGen
             </h3>
-            <p className="text-[#3d8fd1] text-sm font-medium mb-3">
-              Wij bouwen systemen die klanten vinden.
-            </p>
+            <p className="text-[#3d8fd1] text-sm font-medium mb-3">{t.footer.tag}</p>
             <p className="text-white/55 text-sm leading-relaxed max-w-md">
-              Leadgeneratie · Data · Tools · Automatisering · AI
+              {t.footer.line}
               <br />
-              Digitale acquisitiesystemen — en eigen platforms als proeftuin.
+              {t.footer.line2}
             </p>
           </div>
-          <div className="flex flex-wrap gap-x-5 gap-y-2 md:justify-end content-start">
+          <div className="flex flex-wrap gap-x-5 gap-y-2 md:justify-end content-start items-center">
             {links.map((item) => (
               <Link
                 key={item.href}
@@ -42,10 +44,19 @@ const Footer = () => {
                 {item.label}
               </Link>
             ))}
+            <button
+              type="button"
+              onClick={openCookieSettings}
+              className="text-sm text-white/50 hover:text-white transition-colors"
+            >
+              {t.footer.cookies}
+            </button>
           </div>
         </div>
         <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-2 text-xs text-white/30">
-          <span>© {new Date().getFullYear()} 2xGen LLC</span>
+          <span>
+            © {new Date().getFullYear()} 2xGen LLC · Albuquerque, NM 87110
+          </span>
           <a href="mailto:matthijs@2xgen.com" className="hover:text-white/60 transition-colors">
             matthijs@2xgen.com
           </a>

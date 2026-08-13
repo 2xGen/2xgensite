@@ -1,21 +1,16 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
-
-const ventures = [
-  { name: 'FactuurBaas', angle: 'SEO → tool → lead', blurb: 'Gratis facturatie voor freelancers en kleine bedrijven.', url: 'https://factuurbaas.nl' },
-  { name: 'ArubaBuddies', angle: 'Search → boeking', blurb: 'Travelplatform met SEO, content en affiliates.', url: 'https://arubabuddies.com' },
-  { name: 'TopTours.ai', angle: 'AI → discovery', blurb: 'AI-gedreven discovery voor tours en activiteiten.', url: 'https://toptours.ai' },
-  { name: 'OneHappyFinance', angle: 'Info → lead', blurb: 'Financiële informatie en leadgeneratie voor Aruba.', url: 'https://onehappyfinance.com' },
-  { name: 'AruList', angle: 'Listing → deal', blurb: 'Marketplace voor tweedehands producten.', url: 'https://arulist.com' },
-  { name: 'TOF Sports', angle: 'Community → product', blurb: 'Digitaal ecosysteem voor tennis en padel.', url: 'https://tofsports.nl' },
-  { name: 'MyGoProfile', angle: 'Profiel → zichtbaarheid', blurb: 'Digitale bedrijfsprofielen voor lokale bedrijven.', url: 'https://mygoprofile.com' },
-  { name: '365-platforms', angle: 'Search → intent', blurb: 'SEO-platforms voor tours in verschillende steden.', url: 'https://tyo365.com' },
-];
+import { ExternalLink, ArrowRight } from 'lucide-react';
+import { getFeaturedPlatforms } from '@/i18n/content';
+import { useLocale } from '@/i18n/LocaleContext';
 
 const VenturesSection = () => {
+  const { locale, t, href } = useLocale();
+  const featuredPlatforms = getFeaturedPlatforms(locale);
+
   return (
     <section id="ventures" className="py-20 md:py-28 pattern-dots">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,11 +23,9 @@ const VenturesSection = () => {
           >
             <div className="accent-bar mb-4" />
             <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-semibold tracking-tight leading-[1.1] mb-4">
-              We doen het zelf ook.
+              {t.ventures.h2}
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              We runnen zelf websites en digitale producten. Daardoor weten we wat werkt — niet uit een presentatie, maar uit de praktijk.
-            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">{t.ventures.body}</p>
           </motion.div>
 
           <motion.div
@@ -42,18 +35,16 @@ const VenturesSection = () => {
             transition={{ delay: 0.08 }}
             className="rounded-3xl pattern-navy text-white p-8 sm:p-10 flex flex-col justify-center"
           >
-            <p className="text-[#3d8fd1] text-sm font-semibold mb-3">Onze proeftuin</p>
+            <p className="text-[#3d8fd1] text-sm font-semibold mb-3">{t.ventures.lab}</p>
             <h3 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4 text-white leading-tight">
-              Geen PowerPoint-cases.
+              {t.ventures.h3}
             </h3>
-            <p className="text-lg text-white/65 leading-relaxed">
-              We bouwen. Publiceren. Meten. Aanpassen. Bouwen verder.
-            </p>
+            <p className="text-lg text-white/65 leading-relaxed">{t.ventures.process}</p>
           </motion.div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-          {ventures.map((venture, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-8">
+          {featuredPlatforms.map((venture, index) => (
             <motion.a
               key={venture.name}
               href={venture.url}
@@ -74,6 +65,14 @@ const VenturesSection = () => {
             </motion.a>
           ))}
         </div>
+
+        <Link
+          href={href('/platforms')}
+          className="inline-flex items-center gap-2 text-sm font-semibold text-[#1a5f9e] hover:underline"
+        >
+          {t.ventures.all}
+          <ArrowRight className="w-4 h-4" />
+        </Link>
       </div>
     </section>
   );

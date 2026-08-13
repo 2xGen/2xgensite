@@ -4,8 +4,10 @@ import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import AcquisitieCheck from '@/components/AcquisitieCheck';
+import { useLocale } from '@/i18n/LocaleContext';
 
 const StickyAcquisitieButton = () => {
+  const { t } = useLocale();
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
 
@@ -41,9 +43,9 @@ const StickyAcquisitieButton = () => {
             exit={{ opacity: 0, y: 16 }}
             onClick={() => setOpen(true)}
             className="fixed z-40 right-4 bottom-4 xgen-btn xgen-btn-primary !py-3 !px-5 text-sm shadow-lg shadow-[#09294c]/30"
-            aria-label="Open acquisitiecheck"
+            aria-label={t.sticky}
           >
-            Acquisitiecheck
+            {t.sticky}
           </motion.button>
         )}
       </AnimatePresence>
@@ -59,7 +61,7 @@ const StickyAcquisitieButton = () => {
             <button
               type="button"
               className="absolute inset-0 bg-[#09294c]/55 backdrop-blur-[2px]"
-              aria-label="Sluit acquisitiecheck"
+              aria-label={t.check.close}
               onClick={() => setOpen(false)}
             />
             <motion.div

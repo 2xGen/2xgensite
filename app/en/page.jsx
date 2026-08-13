@@ -24,15 +24,33 @@ const organizationSchema = {
   alternateName: '2xGen LLC',
   url: 'https://2xgen.com',
   logo: 'https://2xgen.com/logo.png',
-  description: '2xGen bouwt digitale acquisitiesystemen waarmee Nederlandse bedrijven structureel nieuwe klanten vinden.',
+  description:
+    '2xGen builds digital acquisition systems that help companies find new customers structurally.',
   foundingDate: '2024',
-  address: { '@type': 'PostalAddress', addressLocality: 'Albuquerque', addressRegion: 'New Mexico', addressCountry: 'USA' },
-  contactPoint: { '@type': 'ContactPoint', email: 'matthijs@2xgen.com', contactType: 'business', areaServed: 'NL', availableLanguage: ['Dutch', 'English'] },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Albuquerque',
+    addressRegion: 'New Mexico',
+    addressCountry: 'USA',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'matthijs@2xgen.com',
+    contactType: 'business',
+    areaServed: 'NL',
+    availableLanguage: ['Dutch', 'English'],
+  },
   sameAs: ['https://www.linkedin.com/company/2xgen-com/'],
-  knowsAbout: ['B2B Leadgeneratie', 'Leadgeneratie tools', 'Sales automation', 'Marketing automation', 'Online acquisitie'],
+  knowsAbout: [
+    'B2B Lead Generation',
+    'Lead generation tools',
+    'Sales automation',
+    'Marketing automation',
+    'Online acquisition',
+  ],
 };
 
-export default function HomePage() {
+export default function EnglishHomePage() {
   return (
     <>
       <script

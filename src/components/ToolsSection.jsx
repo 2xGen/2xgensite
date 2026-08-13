@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLocale } from '@/i18n/LocaleContext';
 
 const tools = [
   { name: 'HubSpot', category: 'CRM', icon: 'hubspot' },
@@ -49,6 +50,7 @@ function ToolLogo({ tool }) {
 }
 
 const ToolsSection = () => {
+  const { t } = useLocale();
   const duplicated = [...tools, ...tools];
 
   return (
@@ -61,14 +63,12 @@ const ToolsSection = () => {
           className="max-w-xl"
         >
           <span className="inline-flex px-3 py-1 rounded-full bg-[#3d8fd1]/20 text-[#9ec9ee] text-sm font-semibold mb-4 border border-[#3d8fd1]/25">
-            Technologie
+            {t.tools.pill}
           </span>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-3 text-white">
-            We gebruiken de technologie die past.
+            {t.tools.h2}
           </h2>
-          <p className="text-lg text-white/60">
-            Niet andersom. Bestaande tools waar dat slim is — maatwerk waar dat nodig is.
-          </p>
+          <p className="text-lg text-white/60">{t.tools.body}</p>
         </motion.div>
       </div>
 

@@ -2,8 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLocale } from '@/i18n/LocaleContext';
 
-const steps = [
+const stepsNl = [
   'Google',
   'Content / SEO',
   'Landingspagina',
@@ -15,7 +16,23 @@ const steps = [
   'Klant',
 ];
 
+const stepsEn = [
+  'Google',
+  'Content / SEO',
+  'Landing page',
+  'Tool / check',
+  'Lead',
+  'CRM',
+  'WhatsApp / email',
+  'Sales',
+  'Customer',
+];
+
 const LeadEngineSection = () => {
+  const { locale, t } = useLocale();
+  const steps = locale === 'en' ? stepsEn : stepsNl;
+  const highlight = locale === 'en' ? ['Lead', 'Customer'] : ['Lead', 'Klant'];
+
   return (
     <section id="lead-engine" className="py-20 md:py-28 pattern-navy text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,28 +44,22 @@ const LeadEngineSection = () => {
             className="space-y-5"
           >
             <span className="inline-flex px-3 py-1 rounded-full bg-[#3d8fd1]/20 text-[#9ec9ee] text-sm font-semibold border border-[#3d8fd1]/25">
-              Acquisitie
+              {t.lead.pill}
             </span>
             <h2 className="font-semibold tracking-tight leading-[1.12]">
               <span className="block text-lg sm:text-xl text-white/55 font-medium mb-3">
-                Je hebt misschien genoeg marketing.
+                {t.lead.small}
               </span>
               <span className="block text-3xl sm:text-4xl text-white">
-                Maar waar komt je
+                {t.lead.h2a}
                 <br />
-                <span className="text-[#3d8fd1]">volgende klant vandaan?</span>
+                <span className="text-[#3d8fd1]">{t.lead.h2b}</span>
               </span>
             </h2>
-            <p className="text-lg text-white/65 leading-relaxed">
-              Je hebt een website. Misschien SEO. Misschien advertenties. Misschien een salesteam.
-            </p>
-            <p className="text-lg text-white/65 leading-relaxed">
-              Maar hoe komt iemand van “ik zoek dit” naar “ik wil met jullie praten”?
-            </p>
-            <p className="text-white font-semibold text-lg">Daar bouwen wij tussen.</p>
-            <p className="text-sm text-white/40">
-              Niet ieder bedrijf heeft alle stappen nodig. Ieder bedrijf heeft wel een route nodig.
-            </p>
+            <p className="text-lg text-white/65 leading-relaxed">{t.lead.p1}</p>
+            <p className="text-lg text-white/65 leading-relaxed">{t.lead.p2}</p>
+            <p className="text-white font-semibold text-lg">{t.lead.bridge}</p>
+            <p className="text-sm text-white/40">{t.lead.note}</p>
           </motion.div>
 
           <motion.div
@@ -69,7 +80,7 @@ const LeadEngineSection = () => {
                 >
                   <div
                     className={`rounded-xl px-4 py-2.5 text-center text-sm font-semibold ${
-                      step === 'Lead' || step === 'Klant'
+                      highlight.includes(step)
                         ? 'bg-[#3d8fd1] text-white shadow-lg shadow-[#3d8fd1]/30'
                         : 'bg-white/10 text-white border border-white/10'
                     }`}

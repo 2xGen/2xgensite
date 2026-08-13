@@ -4,14 +4,14 @@ import PageCta from '@/components/PageCta';
 import { getMessages } from '@/i18n/messages';
 
 export const metadata = {
-  title: 'Wat kost leadgeneratie? | 2xGen',
+  title: 'What does lead generation cost? | 2xGen',
   description:
-    'Geen standaard pakketprijzen. Wel richtlijnen: vanaf €500 p/m voor leadgeneratie, vanaf €2.000 eenmalig voor een acquisitiesysteem.',
-  alternates: { canonical: '/prijzen', languages: { nl: '/prijzen', en: '/en/pricing' } },
+    'No standard package prices. Guidelines: from $750 / month as Growth Partner, from $2,500 one-off for an Acquisition System.',
+  alternates: { canonical: '/en/pricing', languages: { nl: '/prijzen', en: '/en/pricing' } },
 };
 
-export default function PrijzenPage() {
-  const t = getMessages('nl').pages.pricing;
+export default function EnPricingPage() {
+  const t = getMessages('en').pages.pricing;
 
   return (
     <PageShell>
@@ -59,14 +59,14 @@ export default function PrijzenPage() {
 
         <div className="rounded-3xl bg-white border border-[#09294c]/10 p-7 max-w-3xl">
           <p className="text-[#09294c] font-medium leading-relaxed mb-4">{t.note}</p>
-          <Link href="/acquisitiecheck" className="text-sm font-semibold text-[#1a5f9e] hover:underline">
+          <Link href="/en/acquisition-check" className="text-sm font-semibold text-[#1a5f9e] hover:underline">
             {t.check}
           </Link>
         </div>
 
         <PageCta
-          title="Wil je weten wat bij jou past?"
-          text="Kort gesprek over markt, doelgroep en waarde per klant — zonder ellenlange salespitch."
+          title="Want to know what fits you?"
+          text="A short conversation about market, audience and value per customer — without a long sales pitch."
         />
       </div>
     </PageShell>

@@ -6,6 +6,7 @@ import { AuthProvider } from '@/contexts/AuthContext';
 import { Toaster } from '@/components/ui/toaster';
 import StickyAcquisitieButton from '@/components/StickyAcquisitieButton';
 import CookieConsent, { getCookieConsent } from '@/components/CookieConsent';
+import { LocaleProvider } from '@/i18n/LocaleContext';
 
 function loadMetricool() {
   if (typeof window === 'undefined' || window.__metricoolLoaded) return;
@@ -37,11 +38,13 @@ export default function ClientProviders({ children }) {
 
   return (
     <AuthProvider>
-      {children}
-      <StickyAcquisitieButton />
-      <CookieConsent onConsentChange={handleConsentChange} />
-      {consent === 'all' && <Analytics />}
-      <Toaster />
+      <LocaleProvider>
+        {children}
+        <StickyAcquisitieButton />
+        <CookieConsent onConsentChange={handleConsentChange} />
+        {consent === 'all' && <Analytics />}
+        <Toaster />
+      </LocaleProvider>
     </AuthProvider>
   );
 }

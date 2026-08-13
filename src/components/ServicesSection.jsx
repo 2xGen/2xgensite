@@ -11,7 +11,8 @@ import {
   LayoutTemplate,
   Layers,
 } from 'lucide-react';
-import { services } from '@/data/siteContent';
+import { useLocale } from '@/i18n/LocaleContext';
+import { getServices } from '@/i18n/content';
 
 const icons = {
   leadgeneratie: Target,
@@ -23,6 +24,9 @@ const icons = {
 };
 
 const ServicesSection = () => {
+  const { locale, t, href } = useLocale();
+  const services = getServices(locale);
+
   return (
     <section id="services" className="py-20 md:py-28 bg-[#f3f7fb]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,14 +38,10 @@ const ServicesSection = () => {
         >
           <div className="accent-bar mb-4" />
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight mb-4">
-            Wat kunnen we voor je bouwen?
+            {t.services.h2}
           </h2>
-          <p className="text-lg text-gray-600 mb-2">
-            Geen standaard pakket. Geen lijst met marketingdiensten.
-          </p>
-          <p className="text-lg text-gray-600">
-            We kijken naar je markt, je klanten en waar de kansen liggen. Daarna bouwen we wat nodig is.
-          </p>
+          <p className="text-lg text-gray-600 mb-2">{t.services.p1}</p>
+          <p className="text-lg text-gray-600">{t.services.p2}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -56,7 +56,7 @@ const ServicesSection = () => {
                 transition={{ delay: index * 0.05 }}
               >
                 <Link
-                  href={`/diensten/${service.slug}`}
+                  href={href(`/diensten/${service.slug}`)}
                   className="xgen-card p-6 sm:p-7 h-full flex flex-col group block"
                 >
                   <div className="w-11 h-11 rounded-xl bg-[#e8f1f8] border border-[#09294c]/08 flex items-center justify-center mb-4 group-hover:bg-[#09294c] transition-colors">
@@ -73,8 +73,8 @@ const ServicesSection = () => {
           })}
         </div>
         <div className="mt-8">
-          <Link href="/wat-we-bouwen" className="text-sm font-semibold text-[#1a5f9e] hover:underline">
-            Alle diensten →
+          <Link href={href('/wat-we-bouwen')} className="text-sm font-semibold text-[#1a5f9e] hover:underline">
+            {t.services.all}
           </Link>
         </div>
       </div>

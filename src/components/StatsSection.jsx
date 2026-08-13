@@ -2,13 +2,8 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-
-const stats = [
-  { value: 15, suffix: '+', label: 'Digitale projecten' },
-  { value: 12, suffix: '', label: 'Platforms gebouwd' },
-  { value: 5, suffix: '+', label: 'Acquisitiekanalen' },
-  { value: null, display: 'Live', label: 'Eigen producten in productie' },
-];
+import { useLocale } from '@/i18n/LocaleContext';
+import { LIVE_PRODUCT_COUNT } from '@/data/siteContent';
 
 function CountUp({ value, suffix = '', active }) {
   const [count, setCount] = useState(0);
@@ -35,8 +30,16 @@ function CountUp({ value, suffix = '', active }) {
 }
 
 const StatsSection = () => {
+  const { t } = useLocale();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
+
+  const stats = t.stats.map((stat) => {
+    if (stat.key === 'live') {
+      return { ...stat, value: LIVE_PRODUCT_COUNT };
+    }
+    return stat;
+  });
 
   return (
     <section id="cijfers" className="py-16 md:py-20 bg-[#09294c]">

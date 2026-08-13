@@ -4,15 +4,20 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import AcquisitieCheck from '@/components/AcquisitieCheck';
-
-const credibility = [
-  { value: '15+', label: 'Digitale projecten' },
-  { value: '12', label: 'Platforms gebouwd' },
-  { value: '5+', label: 'Acquisitiekanalen' },
-  { value: 'Live', label: 'Eigen producten' },
-];
+import { useLocale } from '@/i18n/LocaleContext';
+import { LIVE_PRODUCT_COUNT } from '@/data/siteContent';
 
 const HeroSection = () => {
+  const { t, href } = useLocale();
+  const { hero } = t;
+
+  const stats = hero.stats.map((item) => {
+    if (item.key === 'live') {
+      return { ...item, value: String(LIVE_PRODUCT_COUNT) };
+    }
+    return item;
+  });
+
   return (
     <section id="home" className="relative pattern-dots pt-20 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-2 bg-[#09294c]" />
@@ -21,25 +26,23 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-14 items-center">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
             <div className="accent-bar" />
-            <p className="xgen-pill">Leadgeneratie · Data · Tools · Automatisering · AI</p>
+            <p className="xgen-pill">{hero.pill}</p>
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.05]">
-              Wij bouwen systemen die{' '}
-              <span className="text-[#1a5f9e]">klanten vinden.</span>
+              {hero.h1a}{' '}
+              <span className="text-[#1a5f9e]">{hero.h1b}</span>
             </h1>
             <div className="flex flex-col gap-1 text-lg text-[#09294c]/70 font-medium border-l-4 border-[#3d8fd1] pl-4">
-              <span>Van doelgroep naar lead.</span>
-              <span>Van lead naar klant.</span>
+              <span>{hero.line1}</span>
+              <span>{hero.line2}</span>
             </div>
-            <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-              We bouwen websites, tools en digitale systemen waarmee bedrijven structureel nieuwe klanten vinden.
-            </p>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-lg">{hero.body}</p>
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
-              <a href="#services" className="xgen-btn xgen-btn-primary">
-                Bekijk wat we doen
+              <a href={href('/wat-we-bouwen')} className="xgen-btn xgen-btn-primary">
+                {hero.cta1}
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <a href="/acquisitiecheck" className="xgen-btn xgen-btn-secondary">
-                Doe de gratis acquisitiecheck
+              <a href={href('/acquisitiecheck')} className="xgen-btn xgen-btn-secondary">
+                {hero.cta2}
               </a>
             </div>
           </motion.div>
@@ -59,7 +62,7 @@ const HeroSection = () => {
       <div className="bg-[#09294c] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {credibility.map((item, i) => (
+            {stats.map((item, i) => (
               <motion.div
                 key={item.label}
                 initial={{ opacity: 0, y: 10 }}
