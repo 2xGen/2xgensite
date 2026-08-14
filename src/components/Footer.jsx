@@ -8,12 +8,12 @@ const Footer = () => {
   const { t, href } = useLocale();
 
   const links = [
-    { href: href('/wat-we-bouwen'), label: t.nav.whatWeBuild },
-    { href: href('/sectoren'), label: t.nav.sectors },
+    { href: href('/what-we-build'), label: t.nav.whatWeBuild },
+    { href: href('/sectors'), label: t.nav.sectors },
     { href: href('/platforms'), label: t.nav.platforms },
-    { href: href('/prijzen'), label: t.nav.pricing },
-    { href: href('/acquisitiecheck'), label: t.nav.check },
-    { href: href('/over-ons'), label: t.nav.about },
+    { href: href('/pricing'), label: t.nav.pricing },
+    { href: href('/acquisition-check'), label: t.nav.check },
+    { href: href('/about'), label: t.nav.about },
     { href: href('/contact'), label: t.nav.contact },
     { href: href('/privacy'), label: t.footer.privacy },
   ];

@@ -37,11 +37,11 @@ const HeroSection = () => {
             </div>
             <p className="text-lg text-gray-600 leading-relaxed max-w-lg">{hero.body}</p>
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
-              <a href={href('/wat-we-bouwen')} className="xgen-btn xgen-btn-primary">
+              <a href={href('/what-we-build')} className="xgen-btn xgen-btn-primary">
                 {hero.cta1}
                 <ArrowRight className="w-4 h-4" />
               </a>
-              <a href={href('/acquisitiecheck')} className="xgen-btn xgen-btn-secondary">
+              <a href={href('/acquisition-check')} className="xgen-btn xgen-btn-secondary">
                 {hero.cta2}
               </a>
             </div>

@@ -11,7 +11,7 @@ const organizationSchema = {
   url: 'https://2xgen.com',
   logo: 'https://2xgen.com/logo.png',
   description:
-    '2xGen builds acquisition systems that turn search demand into qualified leads and customers.',
+    '2xGen bouwt acquisitiesystemen waarmee bedrijven zoekvraag omzetten in gekwalificeerde leads en klanten.',
   foundingDate: '2024',
   address: {
     '@type': 'PostalAddress',
@@ -23,19 +23,19 @@ const organizationSchema = {
     '@type': 'ContactPoint',
     email: 'matthijs@2xgen.com',
     contactType: 'business',
-    areaServed: ['US', 'NL'],
-    availableLanguage: ['English', 'Dutch'],
+    areaServed: ['NL', 'US'],
+    availableLanguage: ['Dutch', 'English'],
   },
   sameAs: ['https://www.linkedin.com/company/2xgen-com/'],
   knowsAbout: [
-    'Acquisition systems',
-    'Lead-generation tools',
-    'B2B Lead Generation',
+    'Acquisitiesystemen',
+    'Leadgeneratie tools',
+    'B2B Leadgeneratie',
     'Sales automation',
     'SEO',
   ],
 };
 
-export default function EnglishHome() {
+export default function DutchHome() {
   return <HomePage schema={organizationSchema} />;
 }

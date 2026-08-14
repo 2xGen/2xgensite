@@ -32,7 +32,7 @@ const AboutSection = () => {
               <div className="px-1">
                 <p className="text-sm font-semibold text-[#09294c]">{t.about.founder}</p>
                 <Link
-                  href={href('/over-ons')}
+                  href={href('/about')}
                   className="inline-block text-sm font-medium text-[#1a5f9e] hover:underline mt-0.5"
                 >
                   {t.about.more}

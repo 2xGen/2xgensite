@@ -35,7 +35,7 @@ const IndustriesSection = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.04 }}
             >
-              <Link href={href(`/sectoren/${industry.slug}`)} className="xgen-card p-5 flex gap-4 h-full group">
+              <Link href={href(`/sectors/${industry.slug}`)} className="xgen-card p-5 flex gap-4 h-full group">
                 <span className="text-sm font-bold text-[#3d8fd1] pt-0.5">{String(index + 1).padStart(2, '0')}</span>
                 <div>
                   <h3 className="font-semibold text-[#09294c] mb-1 group-hover:text-[#1a5f9e] transition-colors">{industry.title}</h3>

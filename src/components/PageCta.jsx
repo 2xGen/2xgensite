@@ -14,7 +14,7 @@ export default function PageCta({ title, text }) {
       <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-3">{heading}</h2>
       <p className="text-white/65 mb-6 max-w-xl">{body}</p>
       <div className="flex flex-col sm:flex-row gap-3">
-        <Link href={href('/acquisitiecheck')} className="xgen-btn bg-white text-[#09294c] hover:bg-[#e8f1f8]">
+        <Link href={href('/acquisition-check')} className="xgen-btn bg-white text-[#09294c] hover:bg-[#e8f1f8]">
           {t.nav.check}
           <ArrowRight className="w-4 h-4" />
         </Link>

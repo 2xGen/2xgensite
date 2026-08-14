@@ -6,10 +6,10 @@ import { getLocaleFromPath, localizedHref, switchLocalePath } from '@/i18n/paths
 import { getMessages } from '@/i18n/messages';
 
 const LocaleContext = createContext({
-  locale: 'nl',
-  t: getMessages('nl'),
+  locale: 'en',
+  t: getMessages('en'),
   href: (path) => path,
-  switchTo: (locale) => (locale === 'en' ? '/en' : '/'),
+  switchTo: (locale) => (locale === 'nl' ? '/nl' : '/'),
 });
 
 export function LocaleProvider({ children, locale: forcedLocale }) {
