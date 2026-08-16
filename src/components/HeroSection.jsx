@@ -19,12 +19,12 @@ const HeroSection = () => {
   });
 
   return (
-    <section id="home" className="relative pattern-dots pt-20 overflow-hidden">
+    <section id="home" className="relative pattern-dots pt-16 overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-2 bg-[#09294c]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-16 md:pt-20 md:pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-14 items-center">
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="space-y-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-12 md:pt-10 md:pb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="space-y-4 md:space-y-6">
             <div className="accent-bar" />
             <p className="xgen-pill">{hero.pill}</p>
             <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight leading-[1.05]">
