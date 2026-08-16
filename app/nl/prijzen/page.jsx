@@ -7,7 +7,7 @@ import { getMessages } from '@/i18n/messages';
 export const metadata = {
   title: 'Prijzen | Eén keer bouwen. Continu laten groeien. | 2xGen',
   description:
-    'Begin met een acquisitiesysteem vanaf €2.000. Daarna groei vanaf €500 p/m — of Groei + Ads vanaf €1.000 p/m inclusief €200 advertentiebudget.',
+    'Begin met een acquisitiesysteem vanaf €1.500. Daarna groei vanaf €500 p/m — of Groei + Ads vanaf €900 p/m inclusief €250 advertentiebudget.',
   alternates: { canonical: '/nl/prijzen', languages: { nl: '/nl/prijzen', en: '/pricing' } },
 };
 
@@ -73,9 +73,15 @@ export default function PrijzenPage() {
           ))}
         </div>
 
-        <div className="rounded-3xl bg-white border border-[#09294c]/10 p-7 max-w-3xl">
-          <p className="text-[#09294c] font-medium leading-relaxed mb-4">{t.note}</p>
-          <Link href="/nl/acquisitiecheck" className="text-sm font-semibold text-[#1a5f9e] hover:underline">
+        <div className="rounded-3xl bg-white border border-[#09294c]/10 p-7 sm:p-8 w-full space-y-5">
+          <p className="text-[#09294c] font-medium leading-relaxed">{t.note}</p>
+          {t.performanceTitle && (
+            <div className="rounded-2xl bg-[#f3f7fb] border border-[#09294c]/08 px-5 py-4">
+              <p className="text-sm font-semibold text-[#09294c] mb-1">{t.performanceTitle}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{t.performanceBody}</p>
+            </div>
+          )}
+          <Link href="/nl/acquisitiecheck" className="inline-block text-sm font-semibold text-[#1a5f9e] hover:underline">
             {t.check}
           </Link>
         </div>

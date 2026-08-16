@@ -61,6 +61,9 @@ const VenturesSection = () => {
                 <ExternalLink className="w-3.5 h-3.5 text-[#09294c]/25 group-hover:text-[#3d8fd1] transition-colors shrink-0 mt-1" />
               </div>
               <p className="text-sm text-gray-500 mb-4 leading-relaxed">{venture.blurb}</p>
+              {venture.metrics && (
+                <p className="text-xs font-semibold text-[#09294c] mb-3">{venture.metrics}</p>
+              )}
               <p className="text-xs font-semibold text-[#3d8fd1]">{venture.angle}</p>
             </motion.a>
           ))}

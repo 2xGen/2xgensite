@@ -7,7 +7,7 @@ import { getMessages } from '@/i18n/messages';
 export const metadata = {
   title: 'Pricing | Build once. Grow continuously. | 2xGen',
   description:
-    'Start with an Acquisition System from $2,500. Then grow from $750/month — or Growth + Ads from $1,250/month including $250 ad spend.',
+    'Start with an Acquisition System from $1,500. Then grow from $500/month — or Growth + Ads from $900/month including $250 ad spend. Commission-based partnerships available.',
   alternates: { canonical: '/pricing', languages: { en: '/pricing', nl: '/nl/prijzen' } },
 };
 
@@ -73,9 +73,15 @@ export default function PricingPage() {
           ))}
         </div>
 
-        <div className="rounded-3xl bg-white border border-[#09294c]/10 p-7 max-w-3xl">
-          <p className="text-[#09294c] font-medium leading-relaxed mb-4">{t.note}</p>
-          <Link href="/acquisition-check" className="text-sm font-semibold text-[#1a5f9e] hover:underline">
+        <div className="rounded-3xl bg-white border border-[#09294c]/10 p-7 sm:p-8 w-full space-y-5">
+          <p className="text-[#09294c] font-medium leading-relaxed">{t.note}</p>
+          {t.performanceTitle && (
+            <div className="rounded-2xl bg-[#f3f7fb] border border-[#09294c]/08 px-5 py-4">
+              <p className="text-sm font-semibold text-[#09294c] mb-1">{t.performanceTitle}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{t.performanceBody}</p>
+            </div>
+          )}
+          <Link href="/acquisition-check" className="inline-block text-sm font-semibold text-[#1a5f9e] hover:underline">
             {t.check}
           </Link>
         </div>

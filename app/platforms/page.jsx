@@ -41,11 +41,21 @@ export default function EnPlatformsPage() {
               className="xgen-card p-6 sm:p-7 group"
             >
               <div className="flex items-start justify-between gap-3 mb-3">
-                <h2 className="text-xl font-semibold tracking-tight text-[#09294c]">{platform.name}</h2>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h2 className="text-xl font-semibold tracking-tight text-[#09294c]">{platform.name}</h2>
+                  {platform.status && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-md bg-[#e8f1f8] text-[#1a5f9e]">
+                      {platform.status}
+                    </span>
+                  )}
+                </div>
                 <ExternalLink className="w-4 h-4 text-[#09294c]/25 group-hover:text-[#3d8fd1] shrink-0 mt-1" />
               </div>
               <p className="text-sm font-semibold text-[#3d8fd1] mb-3">{platform.angle}</p>
               <p className="text-gray-600 mb-4">{platform.blurb}</p>
+              {platform.metrics && (
+                <p className="text-sm font-semibold text-[#09294c] mb-4">{platform.metrics}</p>
+              )}
               <p className="text-sm text-[#09294c]/75 leading-relaxed border-t border-[#09294c]/08 pt-4">
                 {platform.mechanism}
               </p>

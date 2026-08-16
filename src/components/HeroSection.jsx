@@ -35,6 +35,11 @@ const HeroSection = () => {
               <span>{hero.line1}</span>
               <span>{hero.line2}</span>
             </div>
+            {hero.proof && (
+              <p className="text-base sm:text-lg text-[#09294c]/80 leading-relaxed max-w-lg font-medium">
+                {hero.proof}
+              </p>
+            )}
             <p className="text-lg text-gray-600 leading-relaxed max-w-lg">{hero.body}</p>
             <div className="flex flex-col sm:flex-row gap-3 pt-1">
               <a href={href('/what-we-build')} className="xgen-btn xgen-btn-primary">

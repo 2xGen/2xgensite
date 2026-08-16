@@ -84,13 +84,19 @@ const PricingSection = () => {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-          <p className="text-sm text-gray-500 max-w-xl">{p.note}</p>
-          <a href={href('/pricing')} className="xgen-btn xgen-btn-primary inline-flex shrink-0 self-start">
-            {p.cta}
-            <ArrowRight className="w-4 h-4" />
-          </a>
+        <div className="flex flex-col gap-4 mb-6 max-w-2xl">
+          <p className="text-sm text-gray-500">{p.note}</p>
+          {p.performanceTitle && (
+            <div className="rounded-2xl bg-white border border-[#09294c]/10 px-5 py-4">
+              <p className="text-sm font-semibold text-[#09294c] mb-1">{p.performanceTitle}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{p.performanceBody}</p>
+            </div>
+          )}
         </div>
+        <a href={href('/pricing')} className="xgen-btn xgen-btn-primary inline-flex shrink-0 self-start">
+          {p.cta}
+          <ArrowRight className="w-4 h-4" />
+        </a>
       </div>
     </section>
   );

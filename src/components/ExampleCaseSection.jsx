@@ -53,6 +53,21 @@ const ExampleCaseSection = () => {
                 ))}
               </ul>
             </div>
+            {c.results?.length > 0 && (
+              <div>
+                <p className="text-sm font-semibold text-[#09294c]/60 mb-3">{c.resultLabel}</p>
+                <ul className="flex flex-wrap gap-2">
+                  {c.results.map((item) => (
+                    <li
+                      key={item}
+                      className="text-sm font-medium px-3 py-1.5 rounded-xl bg-[#09294c] text-white"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </motion.div>
 
           <motion.div

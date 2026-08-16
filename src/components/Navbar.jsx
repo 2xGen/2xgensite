@@ -16,6 +16,7 @@ const Navbar = () => {
     { href: href('/what-we-build'), label: t.nav.whatWeBuild },
     { href: href('/sectors'), label: t.nav.sectors },
     { href: href('/platforms'), label: t.nav.platforms },
+    { href: href('/aruba'), label: t.nav.aruba },
     { href: href('/pricing'), label: t.nav.pricing },
     { href: href('/about'), label: t.nav.about },
     { href: href('/contact'), label: t.nav.contact },

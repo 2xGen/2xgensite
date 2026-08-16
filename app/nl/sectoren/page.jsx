@@ -5,7 +5,7 @@ import { sectors } from '@/data/siteContent';
 
 export const metadata = {
   title: 'Sectoren | 2xGen',
-  description: 'Leadgeneratie en acquisitiesystemen voor finance, recruitment, industrie, vastgoed, energie en zakelijke dienstverlening.',
+  description: 'Acquisitiesystemen voor toerisme, autoverhuur, retail, vastgoed, zakelijke dienstverlening, lokale diensten, finance, B2B en recruitment.',
   alternates: { canonical: '/nl/sectoren', languages: { nl: '/nl/sectoren', en: '/sectors' } },
 };
 

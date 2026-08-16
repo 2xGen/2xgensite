@@ -11,6 +11,7 @@ import LeadDeliverySection from '@/components/LeadDeliverySection';
 import ServicesSection from '@/components/ServicesSection';
 import ToolsSection from '@/components/ToolsSection';
 import VenturesSection from '@/components/VenturesSection';
+import ArubaSection from '@/components/ArubaSection';
 import StatsSection from '@/components/StatsSection';
 import IndustriesSection from '@/components/IndustriesSection';
 import AboutSection from '@/components/AboutSection';
@@ -37,6 +38,7 @@ export default function HomePage({ schema }) {
       <ServicesSection />
       <ToolsSection />
       <VenturesSection />
+      <ArubaSection />
       <StatsSection />
       <IndustriesSection />
       <PricingSection />

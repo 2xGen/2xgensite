@@ -11,8 +11,14 @@ create table if not exists public.acquisitiechecks (
   challenge text,
   situation_id text,
   situation text,
+  business_type text,
+  website text,
   source text not null default 'website'
 );
+
+-- Add columns if the table already exists
+alter table public.acquisitiechecks add column if not exists business_type text;
+alter table public.acquisitiechecks add column if not exists website text;
 
 alter table public.acquisitiechecks enable row level security;
 

@@ -7,7 +7,7 @@ import { getMessages } from '@/i18n/messages';
 export const metadata = {
   title: 'Sectors | 2xGen',
   description:
-    'Acquisition systems for home services, professional services, financial services, B2B, real estate and recruitment.',
+    'Acquisition systems for tourism, car rentals, retail, real estate, professional services, local services, financial services, B2B and recruitment.',
   alternates: { canonical: '/sectors', languages: { en: '/sectors', nl: '/nl/sectoren' } },
 };
 

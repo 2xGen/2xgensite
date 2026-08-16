@@ -33,6 +33,9 @@ const nextConfig = {
 
       // Founder profile moved
       { source: '/about-matthijs', destination: '/founder', permanent: true },
+
+      // Retired NL energy sector → local services
+      { source: '/nl/sectoren/energie', destination: '/nl/sectoren/lokale-diensten', permanent: true },
     ];
   },
   webpack: (config) => {

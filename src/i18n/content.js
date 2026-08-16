@@ -2,14 +2,44 @@ import { sectors as sectorsNl, services as servicesNl, platforms, featuredPlatfo
 
 const sectorsEn = [
   {
-    slug: 'home-services',
-    title: 'Home Services',
-    items: 'Roofing · HVAC · Plumbing · Solar · Landscaping',
-    headline: 'Acquisition systems for home services',
+    slug: 'tourism-hospitality',
+    title: 'Tourism & Hospitality',
+    items: 'Hotels · Tours · Restaurants · Activities',
+    headline: 'Acquisition systems for tourism & hospitality',
     intro:
-      'Homeowners search with intent — costs, replacements, repairs. Calculators and checks turn that demand into qualified local leads.',
-    focus: ['Roofing and exterior', 'HVAC and plumbing', 'Solar and landscaping'],
-    angle: 'Search demand → estimate tool → qualified project lead for your sales team.',
+      'Travelers search before and during their trip. We build systems that turn that demand into bookings, reservations and qualified leads.',
+    focus: ['Hotels and stays', 'Tours and activities', 'Restaurants and hospitality'],
+    angle: 'Search → content → traffic → booking or lead — built from platforms we operate ourselves.',
+  },
+  {
+    slug: 'car-rentals',
+    title: 'Car Rentals',
+    items: 'Cars · SUVs · Transfers · Mobility',
+    headline: 'Acquisition systems for car rentals',
+    intro:
+      'Visitors compare cars, prices and pickup times before they book. We build tools and pages that capture that intent and turn it into reservations.',
+    focus: ['Car and SUV rentals', 'Airport transfers', 'Local mobility'],
+    angle: 'Search demand → comparison or booking tool → qualified reservation for your fleet.',
+  },
+  {
+    slug: 'retail',
+    title: 'Retail & Shopping',
+    items: 'Stores · Boutiques · Duty-free · Local products',
+    headline: 'Acquisition systems for retail & shopping',
+    intro:
+      'Shoppers search for products, gifts and places to buy. We help you show up with the right offer — and convert that interest into visits or sales.',
+    focus: ['Boutiques and stores', 'Duty-free and gifts', 'Local products'],
+    angle: 'Search → product or guide page → visit, inquiry or purchase.',
+  },
+  {
+    slug: 'real-estate',
+    title: 'Real Estate',
+    items: 'Agents · Brokers · Developers · Property services',
+    headline: 'Acquisition systems for real estate',
+    intro:
+      'In real estate, timing matters. We help you show up when someone is searching, comparing or starting a project.',
+    focus: ['Agents and brokers', 'Developers', 'Property services'],
+    angle: 'Local and intent-driven acquisition — with pages and tools that move people to contact.',
   },
   {
     slug: 'professional-services',
@@ -22,13 +52,23 @@ const sectorsEn = [
     angle: 'Sharp targeting, a strong digital entry, and follow-up that fits a high-trust sales process.',
   },
   {
+    slug: 'home-services',
+    title: 'Local Services',
+    items: 'Home services · Health · Beauty · Trades',
+    headline: 'Acquisition systems for local services',
+    intro:
+      'Local search is concrete. Tools and landing pages turn “I need this now” into qualified leads for your team.',
+    focus: ['Home services', 'Health and beauty', 'Local trades'],
+    angle: 'Local intent → digital entry → a lead you can follow up immediately.',
+  },
+  {
     slug: 'financial-services',
     title: 'Financial Services',
-    items: 'Mortgage · Insurance · Financing · Wealth',
+    items: 'Mortgage · Insurance · Financing',
     headline: 'Acquisition systems for financial services',
     intro:
       'One new customer often has high value. Then it is not about more traffic — but the right inquiries, at the right moment.',
-    focus: ['Mortgage and financing', 'Insurance', 'Wealth and planning'],
+    focus: ['Mortgage and financing', 'Insurance', 'Financing'],
     angle: 'From search intent to a qualified inquiry — with tools, content and follow-up that fit finance.',
   },
   {
@@ -40,16 +80,6 @@ const sectorsEn = [
       'B2B buyers research before they talk. We build systems that find the right companies and move them toward sales.',
     focus: ['IT and SaaS', 'Telecom', 'Industrial services'],
     angle: 'Demand capture, qualification and delivery into CRM — built for longer sales cycles.',
-  },
-  {
-    slug: 'real-estate',
-    title: 'Real Estate',
-    items: 'Agents · Brokers · Developers · Property services',
-    headline: 'Acquisition systems for real estate',
-    intro:
-      'In real estate, timing matters. We help you show up when someone is searching, comparing or starting a project.',
-    focus: ['Agents and brokers', 'Developers', 'Property services'],
-    angle: 'Local and intent-driven acquisition — with pages and tools that move people to contact.',
   },
   {
     slug: 'recruitment',
@@ -113,8 +143,13 @@ export function getServices(locale = 'nl') {
 }
 
 const platformEnByName = {
+  ArubaBuddies: {
+    blurb: 'Aruba tourism discovery — tours, activities and local highlights.',
+    mechanism:
+      'Search demand around Aruba lands on content and discovery. Traffic turns into tour clicks and bookings — an acquisition system we operate ourselves.',
+  },
   FactuurBaas: {
-    blurb: 'Free invoicing for freelancers and small businesses.',
+    blurb: 'Freelancer acquisition platform — free invoicing for freelancers and small businesses.',
     mechanism:
       'Search traffic around invoicing lands on a free tool. Users feel value immediately — and naturally become leads and returning users.',
   },
@@ -136,18 +171,21 @@ const platformEnByName = {
     mechanism: 'Visitors get value first through a check — then the conversation follows.',
   },
   MyGoProfile: {
-    angle: 'Profile → visibility',
-    blurb: 'Digital business profiles for local companies.',
-    mechanism: 'Local visibility as an acquisition asset: profiles that help businesses find and be found.',
+    angle: 'GBP → visibility',
+    blurb: 'AI automation for optimized Google Business Profiles.',
+    mechanism:
+      'AI automates optimization and management of Google Business Profiles — local visibility as an acquisition asset.',
   },
   AruList: {
-    blurb: 'Marketplace for second-hand products.',
+    blurb: 'Marketplace for second-hand products in Aruba.',
     mechanism: 'Supply attracts search traffic. Listings and contact moments form the conversion path.',
   },
   ArubaCheck: {
-    angle: 'Check → conversion',
-    blurb: 'Check-driven acquisition for Aruba-related services.',
-    mechanism: 'A quick check captures intent and turns visitors into leads.',
+    angle: 'Financial information → mortgage check → qualified lead',
+    blurb: 'Mortgage information and lead generation for Aruba property buyers.',
+    mechanism:
+      'Financial information attracts search demand. A mortgage check qualifies intent and delivers leads for Aruba property buyers.',
+    status: 'In development',
   },
   'Belgium Vignette': {
     angle: 'Search → purchase',
@@ -196,7 +234,12 @@ const platformEnByName = {
 };
 
 export function getPlatforms(locale = 'nl') {
-  if (locale !== 'en') return platforms;
+  if (locale !== 'en') {
+    return platforms.map((p) => ({
+      ...p,
+      status: p.status === 'In development' ? 'In ontwikkeling' : p.status,
+    }));
+  }
   return platforms.map((p) => ({
     ...p,
     ...(platformEnByName[p.name] || {}),

@@ -6,6 +6,8 @@ export const pathMap = {
   '/what-we-build': '/nl/wat-we-bouwen',
   '/sectors': '/nl/sectoren',
   '/platforms': '/nl/platforms',
+  '/aruba': '/nl/aruba',
+  '/aruba/guides': '/nl/aruba/guides',
   '/pricing': '/nl/prijzen',
   '/about': '/nl/over-ons',
   '/contact': '/nl/contact',
@@ -28,6 +30,9 @@ export function stripLocale(pathname = '/') {
   if (pathname.startsWith('/nl/')) {
     const nlPath = pathname;
     if (nlToEn[nlPath]) return nlToEn[nlPath];
+    if (pathname.startsWith('/nl/aruba/guides')) {
+      return pathname.replace('/nl/aruba/guides', '/aruba/guides');
+    }
     if (pathname.startsWith('/nl/sectoren/')) {
       return `/sectors/${pathname.replace('/nl/sectoren/', '')}`;
     }
@@ -46,6 +51,9 @@ export function switchLocalePath(pathname = '/', targetLocale) {
 
   if (targetLocale === 'nl') {
     if (pathMap[pathname]) return pathMap[pathname];
+    if (pathname.startsWith('/aruba/guides')) {
+      return pathname.replace('/aruba/guides', '/nl/aruba/guides');
+    }
     if (pathname.startsWith('/sectors/')) {
       return '/nl/sectoren';
     }
@@ -57,6 +65,9 @@ export function switchLocalePath(pathname = '/', targetLocale) {
 
   // to EN
   if (nlToEn[pathname]) return nlToEn[pathname];
+  if (pathname.startsWith('/nl/aruba/guides')) {
+    return pathname.replace('/nl/aruba/guides', '/aruba/guides');
+  }
   if (pathname.startsWith('/nl/sectoren/')) {
     return '/sectors';
   }
