@@ -367,9 +367,9 @@ export const messages = {
         },
       ],
       note: 'Exacte prijs hangt af van markt, complexiteit en acquisitiekans.',
-      performanceTitle: 'Resultaatgerichte partnerships mogelijk',
+      performanceTitle: 'Wij hebben skin in the game',
       performanceBody:
-        'Voor geselecteerde bedrijven kunnen we onze vergoeding deels koppelen aan de klanten of omzet die we genereren.',
+        'Waar de kans sterk is, kunnen we op commissie werken — zodat ons belang meeloopt met de klanten die we voor je winnen, niet alleen met uren factureren.',
       cta: 'Bekijk prijzen',
     },
     tools: {
@@ -637,9 +637,9 @@ export const messages = {
           },
         ],
         note: 'Exacte prijs hangt af van markt, complexiteit en acquisitiekans.',
-        performanceTitle: 'Resultaatgerichte partnerships mogelijk',
+        performanceTitle: 'Wij hebben skin in the game',
         performanceBody:
-          'Voor geselecteerde bedrijven kunnen we onze vergoeding deels koppelen aan de klanten of omzet die we genereren.',
+          'Waar de kans sterk is, kunnen we op commissie werken — zodat ons belang meeloopt met de klanten die we voor je winnen, niet alleen met uren factureren.',
         check: 'Begin met de acquisitiecheck →',
       },
       about: {
@@ -1031,9 +1031,9 @@ export const messages = {
         },
       ],
       note: 'Exact pricing depends on the market, complexity and acquisition opportunity.',
-      performanceTitle: 'Commission-based partnerships available',
+      performanceTitle: 'We take skin in the game',
       performanceBody:
-        'For selected businesses, we can structure our fee around the results we generate.',
+        'Where the opportunity is strong, we can work on commission — so our upside tracks the customers we help you win, not just hours billed.',
       cta: 'See full pricing',
     },
     tools: {
@@ -1302,9 +1302,9 @@ export const messages = {
           },
         ],
         note: 'Exact pricing depends on the market, complexity and acquisition opportunity.',
-        performanceTitle: 'Commission-based partnerships available',
+        performanceTitle: 'We take skin in the game',
         performanceBody:
-          'For selected businesses, we can structure our fee around the results we generate.',
+          'Where the opportunity is strong, we can work on commission — so our upside tracks the customers we help you win, not just hours billed.',
         check: 'Start with the acquisition check →',
       },
       about: {
