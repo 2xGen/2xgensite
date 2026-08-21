@@ -6,25 +6,25 @@ const BASE_URL = 'https://2xgen.com';
 export const metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: '2xGen | Acquisition systems that find customers',
+    default: '2xGen | Managed Google Acquisition for Tour Operators',
     template: '%s | 2xGen',
   },
   description:
-    '2xGen builds acquisition systems that turn search demand into qualified leads — tools, SEO, lead capture and automation.',
+    'Get more bookings from Google without leaving Viator or GetYourGuide. We build and manage a highly targeted SEO site around your tour that sends travelers to your existing listing.',
   keywords:
-    'acquisition system, lead generation tools, calculators, SEO, B2B lead generation, sales automation, 2xGen',
+    'tour operator SEO, Google acquisition, Viator booking, GetYourGuide, travel SEO, tour bookings, destination SEO',
   authors: [{ name: 'Matthijs van Reek', url: `${BASE_URL}/founder` }, { name: '2xGen LLC' }],
   robots: 'index, follow',
   alternates: {
     canonical: '/',
-    languages: { en: '/', nl: '/nl' },
+    languages: { en: '/' },
   },
   openGraph: {
     type: 'website',
     url: '/',
-    title: '2xGen | Acquisition systems that find customers',
+    title: '2xGen | Managed Google Acquisition for Tour Operators',
     description:
-      'Turn search demand into qualified leads — and leads into customers. Tools · SEO · Lead Generation · Automation · AI',
+      'We build and manage a Google-ranking site around your tour and send travelers to your existing Viator or GetYourGuide checkout.',
     siteName: '2xGen LLC',
     locale: 'en_US',
     images: [
@@ -35,9 +35,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2xGen | Acquisition systems that find customers',
+    title: '2xGen | Managed Google Acquisition for Tour Operators',
     description:
-      'Turn search demand into qualified leads — and leads into customers.',
+      'We build and manage a Google-ranking site around your tour and send travelers to your existing Viator or GetYourGuide checkout.',
   },
   icons: {
     icon: 'https://soaacpusdhyxwucjhhpy.supabase.co/storage/v1/object/public/images/favicon.png',
@@ -80,7 +80,7 @@ export default function RootLayout({ children }) {
               name: '2xGen LLC',
               alternateName: '2xGen',
               description:
-                '2xGen builds acquisition systems that turn search demand into qualified leads — tools, SEO, lead capture and automation.',
+                '2xGen builds SEO microsites for tour operators that rank for destination activities and send travelers into live Viator booking.',
               url: 'https://2xgen.com',
               logo: 'https://2xgen.com/favicon.svg',
               foundingDate: '2024',
@@ -96,16 +96,15 @@ export default function RootLayout({ children }) {
                 '@type': 'ContactPoint',
                 email: 'matthijs@2xgen.com',
                 contactType: 'business',
-                areaServed: ['US', 'NL'],
-                availableLanguage: ['English', 'Dutch'],
+                availableLanguage: ['English'],
               },
               sameAs: ['https://www.linkedin.com/company/2xgen-com/'],
               knowsAbout: [
-                'Acquisition systems',
-                'Lead-generation tools',
-                'B2B Lead Generation',
-                'SEO',
-                'Sales automation',
+                'Tour operator SEO',
+                'Viator microsites',
+                'Travel SEO',
+                'Destination microsites',
+                'Tour booking websites',
               ],
             }),
           }}
@@ -118,14 +117,10 @@ export default function RootLayout({ children }) {
               '@type': 'WebSite',
               name: '2xGen',
               url: 'https://2xgen.com',
-              description: 'Acquisition systems that turn search demand into qualified leads and customers.',
+              description:
+                '2xGen builds SEO microsites for tour operators connected to Viator live booking.',
               inLanguage: 'en-US',
               publisher: { '@type': 'Organization', name: '2xGen LLC' },
-              potentialAction: {
-                '@type': 'SearchAction',
-                target: { '@type': 'EntryPoint', urlTemplate: 'https://2xgen.com/insights?q={search_term_string}' },
-                'query-input': 'required name=search_term_string',
-              },
             }),
           }}
         />
@@ -138,17 +133,17 @@ export default function RootLayout({ children }) {
               name: 'Matthijs van Reek',
               jobTitle: 'Founder',
               description:
-                'Founder of 2xGen — builds acquisition systems that help companies find new customers.',
+                'Founder of 2xGen — builds SEO microsites for tour operators on Viator.',
               worksFor: { '@type': 'Organization', name: '2xGen LLC', url: 'https://2xgen.com' },
               url: 'https://2xgen.com/founder',
               mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://2xgen.com/founder' },
               image: 'https://iemgpccgdlwpsrsjuumo.supabase.co/storage/v1/object/sign/foto/founder%202xGen.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YjkxZGZkZC1hYTQ1LTQ3NTUtODZiMy1iZDBhY2QyMjlkMjMiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJmb3RvL2ZvdW5kZXIgMnhHZW4ucG5nIiwiaWF0IjoxNzU3MjM5NjYxLCJleHAiOjQyODAxMTk2NjF9.LeDtfzNJq5ny7A3MFdeeZb4wYii53V7tBut9vSoLrkc',
               sameAs: ['https://www.linkedin.com/company/2xgen-com/'],
               knowsAbout: [
-                'Acquisition systems',
-                'Lead-generation tools',
-                'B2B Lead Generation',
-                'Sales automation',
+                'Tour operator SEO',
+                'Viator microsites',
+                'Travel SEO',
+                'Destination websites',
               ],
             }),
           }}

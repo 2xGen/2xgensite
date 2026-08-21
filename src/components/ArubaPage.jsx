@@ -81,6 +81,17 @@ export default function ArubaPage() {
           </div>
         </section>
 
+        {/* Aruba business research survey */}
+        <section className="mb-20 rounded-3xl border border-[#09294c]/10 bg-white p-7 sm:p-9">
+          <p className="xgen-pill mb-3">{page.surveyPill}</p>
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight mb-3">{page.surveyH2}</h2>
+          <p className="text-gray-600 leading-relaxed mb-5 max-w-2xl">{page.surveyBody}</p>
+          <Link href={href('/aruba/survey')} className="xgen-btn xgen-btn-primary inline-flex">
+            {page.surveyCta}
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </section>
+
         {/* Growth guides */}
         <section className="mb-20">
           <div className="max-w-2xl mb-8">

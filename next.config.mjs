@@ -8,34 +8,51 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      // English-first: old /en/* → root English
+      // ── Keep product site: /, /about, /privacy, /admin/* ──
+
+      // Old English marketing pages → home
+      { source: '/what-we-build', destination: '/', permanent: true },
+      { source: '/sectors', destination: '/', permanent: true },
+      { source: '/sectors/:path*', destination: '/', permanent: true },
+      { source: '/platforms', destination: '/', permanent: true },
+      { source: '/pricing', destination: '/', permanent: true },
+      { source: '/contact', destination: '/', permanent: true },
+      { source: '/acquisition-check', destination: '/', permanent: true },
+      { source: '/founder', destination: '/about', permanent: true },
+      { source: '/about-matthijs', destination: '/about', permanent: true },
+      { source: '/cases', destination: '/', permanent: true },
+
+      // Insights / blog
+      { source: '/insights', destination: '/', permanent: true },
+      { source: '/insights/:path*', destination: '/', permanent: true },
+
+      // Aruba microsite + survey + guides
+      { source: '/aruba', destination: '/', permanent: true },
+      { source: '/aruba/:path*', destination: '/', permanent: true },
+
+      // Legacy /en/* (English-first era)
       { source: '/en', destination: '/', permanent: true },
-      { source: '/en/what-we-build', destination: '/what-we-build', permanent: true },
-      { source: '/en/sectors', destination: '/sectors', permanent: true },
-      { source: '/en/sectors/:slug', destination: '/sectors/:slug', permanent: true },
-      { source: '/en/platforms', destination: '/platforms', permanent: true },
-      { source: '/en/pricing', destination: '/pricing', permanent: true },
-      { source: '/en/about', destination: '/about', permanent: true },
-      { source: '/en/contact', destination: '/contact', permanent: true },
-      { source: '/en/acquisition-check', destination: '/acquisition-check', permanent: true },
-      { source: '/en/privacy', destination: '/privacy', permanent: true },
+      { source: '/en/:path*', destination: '/', permanent: true },
 
-      // Old Dutch roots → /nl/*
-      { source: '/wat-we-bouwen', destination: '/nl/wat-we-bouwen', permanent: true },
-      { source: '/sectoren', destination: '/nl/sectoren', permanent: true },
-      { source: '/sectoren/:slug', destination: '/nl/sectoren/:slug', permanent: true },
-      { source: '/prijzen', destination: '/nl/prijzen', permanent: true },
-      { source: '/over-ons', destination: '/nl/over-ons', permanent: true },
-      { source: '/acquisitiecheck', destination: '/nl/acquisitiecheck', permanent: true },
-      { source: '/diensten', destination: '/nl/wat-we-bouwen', permanent: true },
-      { source: '/diensten/:slug', destination: '/nl/wat-we-bouwen', permanent: true },
-      { source: '/cases', destination: '/platforms', permanent: true },
+      // Dutch site + old Dutch roots
+      { source: '/nl', destination: '/', permanent: true },
+      { source: '/nl/:path*', destination: '/', permanent: true },
+      { source: '/wat-we-bouwen', destination: '/', permanent: true },
+      { source: '/sectoren', destination: '/', permanent: true },
+      { source: '/sectoren/:path*', destination: '/', permanent: true },
+      { source: '/prijzen', destination: '/', permanent: true },
+      { source: '/over-ons', destination: '/about', permanent: true },
+      { source: '/acquisitiecheck', destination: '/', permanent: true },
+      { source: '/diensten', destination: '/', permanent: true },
+      { source: '/diensten/:path*', destination: '/', permanent: true },
 
-      // Founder profile moved
-      { source: '/about-matthijs', destination: '/founder', permanent: true },
+      // Static HTML leftovers
+      { source: '/contact.html', destination: '/', permanent: true },
+      { source: '/insights.html', destination: '/', permanent: true },
 
-      // Retired NL energy sector → local services
-      { source: '/nl/sectoren/energie', destination: '/nl/sectoren/lokale-diensten', permanent: true },
+      // Admin convenience (keep admin; just shortcut paths)
+      { source: '/admin', destination: '/admin/microsites', permanent: false },
+      { source: '/admin/projects', destination: '/admin/microsites', permanent: false },
     ];
   },
   webpack: (config) => {

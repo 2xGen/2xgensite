@@ -8,6 +8,7 @@ export const pathMap = {
   '/platforms': '/nl/platforms',
   '/aruba': '/nl/aruba',
   '/aruba/guides': '/nl/aruba/guides',
+  '/aruba/survey': '/nl/aruba/survey',
   '/pricing': '/nl/prijzen',
   '/about': '/nl/over-ons',
   '/contact': '/nl/contact',

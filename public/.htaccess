@@ -1,0 +1,59 @@
+RewriteEngine On
+
+# ── 301: old pages → homepage (Apache / static fallback) ──
+RewriteRule ^what-we-build/?$ / [R=301,L]
+RewriteRule ^sectors(/.*)?$ / [R=301,L]
+RewriteRule ^platforms/?$ / [R=301,L]
+RewriteRule ^pricing/?$ / [R=301,L]
+RewriteRule ^contact/?$ / [R=301,L]
+RewriteRule ^acquisition-check/?$ / [R=301,L]
+RewriteRule ^founder/?$ /about [R=301,L]
+RewriteRule ^about-matthijs/?$ /about [R=301,L]
+RewriteRule ^cases/?$ / [R=301,L]
+RewriteRule ^insights(/.*)?$ / [R=301,L]
+RewriteRule ^aruba(/.*)?$ / [R=301,L]
+RewriteRule ^en(/.*)?$ / [R=301,L]
+RewriteRule ^nl(/.*)?$ / [R=301,L]
+RewriteRule ^wat-we-bouwen/?$ / [R=301,L]
+RewriteRule ^sectoren(/.*)?$ / [R=301,L]
+RewriteRule ^prijzen/?$ / [R=301,L]
+RewriteRule ^over-ons/?$ /about [R=301,L]
+RewriteRule ^acquisitiecheck/?$ / [R=301,L]
+RewriteRule ^diensten(/.*)?$ / [R=301,L]
+RewriteRule ^contact\.html$ / [R=301,L]
+RewriteRule ^insights\.html$ / [R=301,L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# Cache control for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+</IfModule>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+</IfModule>

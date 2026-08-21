@@ -1,0 +1,14 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Sample Project",
+      "thumbnail": "/images/project1.jpg",
+      "excerpt": "A brief overview of the project",
+      "description": "Detailed description of the project and its features",
+      "websiteUrl": "https://example.com",
+      "technologies": ["React", "Node.js", "MongoDB"],
+      "date": "2024-03-20"
+    }
+  ]
+} 

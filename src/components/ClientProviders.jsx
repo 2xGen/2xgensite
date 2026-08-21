@@ -4,7 +4,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Analytics } from '@vercel/analytics/next';
 import { AuthProvider } from '@/contexts/AuthContext';
 import { Toaster } from '@/components/ui/toaster';
-import StickyAcquisitieButton from '@/components/StickyAcquisitieButton';
 import CookieConsent, { getCookieConsent } from '@/components/CookieConsent';
 import { LocaleProvider } from '@/i18n/LocaleContext';
 
@@ -40,7 +39,6 @@ export default function ClientProviders({ children }) {
     <AuthProvider>
       <LocaleProvider>
         {children}
-        <StickyAcquisitieButton />
         <CookieConsent onConsentChange={handleConsentChange} />
         {consent === 'all' && <Analytics />}
         <Toaster />
