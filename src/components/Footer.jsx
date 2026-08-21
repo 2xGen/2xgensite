@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-xs text-white/40">
           <p>© {year} 2xGen LLC. All rights reserved.</p>
-          <p>Viator is a trademark of its respective owner. 2xGen is an independent partner site builder.</p>
+          <p>Viator and GetYourGuide are trademarks of their respective owners. 2xGen is an independent partner site builder.</p>
         </div>
       </div>
     </footer>

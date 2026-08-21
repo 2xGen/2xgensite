@@ -573,11 +573,6 @@ export default function TourLanding() {
             <div className="max-w-2xl">
               <div className="flex items-center gap-3 flex-wrap mb-2">
                 <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">Live projects</h3>
-                {networkSites.length > 0 && (
-                  <span className="px-3 py-1 rounded-full bg-[#09294c] text-white text-xs font-semibold tracking-wide">
-                    {networkSites.length} sites
-                  </span>
-                )}
               </div>
               <p className="text-gray-600 leading-relaxed">
                 Some of our tourism acquisition sites — part of the same content network your site
