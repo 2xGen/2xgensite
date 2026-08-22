@@ -35,11 +35,11 @@ const STEPS = [
   {
     num: '01',
     title: 'Build',
-    text: 'We build a dedicated acquisition site around your destination and tour type.',
+    text: 'We build a dedicated site around your destination and tour type.',
   },
   {
     num: '02',
-    title: 'Rank',
+    title: 'Target',
     text: 'We target high-intent Google searches travelers are already making.',
   },
   {
@@ -50,27 +50,27 @@ const STEPS = [
   {
     num: '04',
     title: 'Manage',
-    text: 'We continuously maintain, optimize, and expand the site throughout the year — so you don’t have to.',
+    text: 'We maintain the site and continue optimizing it throughout the year — so you don’t have to.',
   },
 ];
 
 const PROBLEMS = [
   {
     title: 'Your tour is on the marketplace',
-    text: 'Viator and GetYourGuide handle booking, payment, reviews, and trust. That layer already works.',
+    text: 'Viator and GetYourGuide handle booking, payment, reviews and trust.',
   },
   {
     title: 'Google is a different battlefield',
-    text: 'Travelers still start on Google — searching destination + activity before they open a marketplace app.',
+    text: 'Travelers search destination + activity before they ever reach a marketplace.',
   },
   {
     title: 'You run tours, not SEO',
-    text: 'Winning those searches should not be another full-time job. That is the Google layer we run for you.',
+    text: 'We handle the Google side.',
   },
 ];
 
 const INCLUDED = [
-  'Custom Google Acquisition Site for your destination and activity',
+  'Custom site built around your destination and tour type',
   'Keyword research for high-intent searches',
   'Editorial content built to attract bookers',
   'Hosting and technical upkeep',
@@ -101,28 +101,28 @@ const FOR_WHO = [
 
 const HERO_EXAMPLES = [
   {
-    domain: 'PartyBusAruba.fun',
+    name: 'PartyBusAruba',
     url: 'https://partybusaruba.fun',
     line: 'Aruba party bus nightlife → live Viator checkout',
   },
   {
-    domain: 'StonehengeToursLondon.site',
+    name: 'Stonehenge Tours',
     url: 'https://stonehengetourslondon.site',
     line: 'Stonehenge day trips from London → Viator booking',
   },
   {
-    domain: 'GozoQuadTours.fun',
+    name: 'GozoQuadTours',
     url: 'https://gozoquadtours.fun',
     line: 'Gozo off-road tours — quad, UTV, buggy, jeep & tuk tuk → Viator',
   },
   {
-    domain: 'Tyo365.com',
+    name: 'Tyo365',
     url: 'https://tyo365.com',
     line: 'Mt. Fuji helicopter tours from Tokyo',
   },
 ];
 
-const FLOW = ['Google search', 'Your acquisition site', 'Viator / GYG listing', 'Booking'];
+const FLOW = ['Google search', 'Your site', 'Viator / GYG', 'Booking'];
 
 const EXAMPLE_SEARCHES = [
   'best quad tours in Gozo',
@@ -157,23 +157,31 @@ const FAQS = [
   },
   {
     q: 'Do I keep my Viator or GetYourGuide listing?',
-    a: 'Yes. You keep selling where you already sell. We build the Google acquisition layer that sends qualified travelers into that same trusted booking flow.',
+    a: 'Yes. You keep selling where you already sell. We build a Google-facing site that sends qualified travelers into that same trusted booking flow.',
   },
   {
     q: 'Who owns the domain and website?',
-    a: 'The domain and website are part of the 2xGen tourism network. That is how we keep the product fully managed — hosting, updates, the booking API where available, and ongoing optimization — at one annual price. You get the bookings without the operational burden.',
+    a: 'The domain and website are part of the 2xGen tourism network. That is how we keep the product fully managed — hosting, updates, the booking API where available, and ongoing optimization — at one annual price. You get a Google-facing site without the operational burden.',
   },
   {
     q: 'Will the site look like my company website?',
-    a: 'An independent acquisition site — built to rank for high-intent searches and send travelers directly to your existing listing. We do not copy your brand, use your logos, or pretend to be the operator. You don’t need another booking channel.',
+    a: 'An independent SEO site — built for high-intent Google searches and sent straight to your existing listing. We do not copy your brand, use your logos, or pretend to be the operator. You don’t need another booking channel.',
   },
   {
     q: 'Can I request design changes?',
-    a: 'Each site is custom-built from scratch for your destination and tour type — not a template. We ship with an acquisition-first layout and no revision rounds. That keeps quality high and pricing simple.',
+    a: 'Each site is custom-built from scratch for your destination and tour type — not a template. We ship with an SEO-first layout and no revision rounds. That keeps quality high and pricing simple.',
   },
   {
     q: 'What does $199 / year include?',
-    a: 'One Google Acquisition Site, fully managed for the year: build, content, hosting, marketplace links, network connection where relevant, and ongoing optimization. Same price for Viator or GetYourGuide. We sell the system and the work — not guaranteed rankings or booking quotas.',
+    a: 'One dedicated SEO site for your tours, fully managed for the year: build, content, hosting, marketplace links, network connection where relevant, and ongoing optimization. Same price for Viator or GetYourGuide. We sell the system and the work — not guaranteed rankings or booking quotas.',
+  },
+  {
+    q: 'How fast is the site live after I order?',
+    a: 'Once your order is placed, we build and launch your site so it is operational within 3 business days.',
+  },
+  {
+    q: 'Why is it only $199 / year?',
+    a: 'The annual fee isn’t our only revenue stream. Where we participate in the relevant affiliate program, we may earn a commission from qualifying bookings through our sites — separate from your marketplace economics. That gives us an ongoing reason to keep improving the site. We don’t guarantee rankings, traffic or bookings.',
   },
 ];
 
@@ -273,18 +281,20 @@ export default function TourLanding() {
               <div className="accent-bar" />
               <p className="xgen-pill">For tour operators on Viator & GetYourGuide</p>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-semibold tracking-tight leading-[1.05]">
-                Managed Google acquisition for tour operators.
+                Your tour is on Viator.{' '}
+                <span className="text-[#1a5f9e]">Now give it a presence on Google.</span>
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed max-w-xl">
-                We build and manage a dedicated Google Acquisition Site around your tours, then send
-                qualified travelers directly into your existing Viator or GetYourGuide checkout.
+                We build and manage a dedicated SEO site around your tours, targeting destination and
+                activity searches and sending travelers directly to your existing Viator or
+                GetYourGuide checkout.
               </p>
               <p className="text-lg font-semibold text-[#09294c]">
-                You run the tours. We bring the bookings.
+                You run the tours. We run the Google side.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-1">
                 <a href="#contact" className="xgen-btn xgen-btn-primary">
-                  Get Your Google Acquisition Site
+                  Get a Site for Your Tours
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a href="#proof" className="xgen-btn xgen-btn-secondary">
@@ -312,9 +322,9 @@ export default function TourLanding() {
                   <div className="flex gap-1.5">
                     {HERO_EXAMPLES.map((_, i) => (
                       <button
-                        key={HERO_EXAMPLES[i].domain}
+                        key={HERO_EXAMPLES[i].name}
                         type="button"
-                        aria-label={`Show ${HERO_EXAMPLES[i].domain}`}
+                        aria-label={`Show ${HERO_EXAMPLES[i].name}`}
                         onClick={() => setHeroIndex(i)}
                         className={`h-1.5 rounded-full transition-all ${
                           i === heroIndex ? 'w-5 bg-[#3d8fd1]' : 'w-1.5 bg-[#09294c]/20'
@@ -327,7 +337,7 @@ export default function TourLanding() {
                 <div className="relative min-h-[168px]">
                   <AnimatePresence mode="wait">
                     <motion.a
-                      key={activeHero.domain}
+                      key={activeHero.name}
                       href={activeHero.url}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -335,10 +345,10 @@ export default function TourLanding() {
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -24 }}
                       transition={{ duration: 0.35 }}
-                      className="group absolute inset-0 block rounded-2xl pattern-navy text-white p-6 sm:p-8"
+                      className="group absolute inset-0 block rounded-2xl pattern-navy text-white p-6 sm:p-8 overflow-hidden"
                     >
-                      <p className="text-2xl sm:text-3xl font-semibold tracking-tight mb-2">
-                        {activeHero.domain}
+                      <p className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight mb-2 break-words leading-tight">
+                        {activeHero.name}
                       </p>
                       <p className="text-white/65 text-sm leading-relaxed mb-4">{activeHero.line}</p>
                       <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#3d8fd1] group-hover:text-white transition-colors">
@@ -441,8 +451,13 @@ export default function TourLanding() {
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
               We build the Google layer on top of your existing marketplace listing.
             </h2>
+            <p className="text-xl sm:text-2xl font-semibold tracking-tight text-[#09294c] leading-snug mb-4">
+              Viator handles the booking.
+              <br />
+              We handle the Google side.
+            </p>
             <p className="text-lg text-gray-600 leading-relaxed">
-              An independent acquisition site — built for high-intent searches and sent straight into
+              An independent SEO site — built for high-intent Google searches and sent straight into
               the checkout travelers already trust. You don&apos;t need another booking channel.
             </p>
           </motion.div>
@@ -470,10 +485,11 @@ export default function TourLanding() {
           <motion.div {...fadeUp} className="max-w-2xl mb-10">
             <div className="h-1 w-12 rounded-full bg-[#3d8fd1] mb-4" />
             <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-white mb-3">
-              Why not just Viator?
+              You&apos;re already on Viator. Now reach travelers searching on Google.
             </h2>
             <p className="text-lg text-white/65 leading-relaxed">
-              Viator gives you marketplace exposure. We give you another way to be found.
+              Viator gives you marketplace exposure. We help you reach travelers who are searching
+              outside the marketplace.
             </p>
           </motion.div>
 
@@ -531,8 +547,9 @@ export default function TourLanding() {
               Proven on our own sites
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              We already operate this model ourselves. Our sites send travelers into marketplace
-              checkouts — now the same Google acquisition system is available to tour operators.
+              We already operate this model ourselves. Our sites attract travelers through Google and
+              send them into marketplace checkouts — now we&apos;re making the same system available
+              to tour operators.
             </p>
           </motion.div>
 
@@ -545,8 +562,9 @@ export default function TourLanding() {
             </p>
             <p className="text-4xl sm:text-5xl font-semibold tracking-tight mb-2">$135k+</p>
             <p className="text-white/70 max-w-xl leading-relaxed">
-              in booking value generated through our tourism sites. We&apos;re commercializing a
-              system we already run — not selling an unproven service.
+              in booking value through our tourism network. We already operate tourism sites that send
+              travelers into marketplace bookings. 2xGen is now packaging the system for tour
+              operators.
             </p>
           </motion.div>
 
@@ -575,8 +593,7 @@ export default function TourLanding() {
                 <h3 className="text-2xl sm:text-3xl font-semibold tracking-tight">Live projects</h3>
               </div>
               <p className="text-gray-600 leading-relaxed">
-                Some of our tourism acquisition sites — part of the same content network your site
-                can connect to.
+                Some of our tourism sites — part of the same content network your site can connect to.
               </p>
             </div>
             <div className="flex items-center gap-2 shrink-0">
@@ -692,8 +709,8 @@ export default function TourLanding() {
               One product. One annual price.
             </h2>
             <p className="text-lg text-white/65 leading-relaxed">
-              A Google Acquisition Site — fully managed for the year. No setup fee. No monthly
-              retainer.
+              One dedicated site for your destination and tour type — fully managed for the year. No
+              setup fee. No monthly retainer.
             </p>
           </motion.div>
 
@@ -702,7 +719,7 @@ export default function TourLanding() {
               {...fadeUp}
               className="rounded-3xl bg-white text-[#0c1b2a] p-7 sm:p-8 shadow-[0_24px_60px_rgba(0,0,0,0.25)]"
             >
-              <p className="xgen-pill mb-4">Google Acquisition Site</p>
+              <p className="xgen-pill mb-4">Dedicated SEO Site</p>
               <p className="text-4xl sm:text-5xl font-semibold tracking-tight text-[#09294c] mb-1">
                 $199<span className="text-xl text-[#09294c]/45 font-medium"> / year</span>
               </p>
@@ -719,7 +736,7 @@ export default function TourLanding() {
                 ))}
               </ul>
               <a href="#contact" className="xgen-btn xgen-btn-primary w-full inline-flex justify-center">
-                Get Your Google Acquisition Site
+                Get a Site for Your Tours
                 <ArrowRight className="w-4 h-4" />
               </a>
               <p className="text-xs text-gray-500 mt-4 leading-relaxed">
@@ -736,7 +753,7 @@ export default function TourLanding() {
                 How it works
               </p>
               <h3 className="text-2xl font-semibold tracking-tight text-white mb-4">
-                You run the tours. We run the Google acquisition.
+                You run the tours. We run the Google side.
               </h3>
               <ul className="space-y-3 text-sm text-white/70 leading-relaxed mb-8 flex-1">
                 <li>
@@ -770,6 +787,63 @@ export default function TourLanding() {
         </div>
       </section>
 
+      {/* Why $199 */}
+      <section id="why-price" className="py-16 md:py-20 pattern-dots">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
+            <motion.div {...fadeUp} className="lg:col-span-5">
+              <div className="accent-bar mb-4" />
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">
+                Why is it only $199/year?
+              </h2>
+              <p className="text-lg font-semibold text-[#09294c] leading-snug">
+                Because the annual fee isn&apos;t our only source of revenue.
+              </p>
+            </motion.div>
+
+            <motion.div
+              {...fadeUp}
+              className="lg:col-span-7 space-y-4 text-lg text-gray-600 leading-relaxed"
+            >
+              <p>
+                You pay $199/year for us to build and manage your site. Where we participate in the
+                relevant affiliate program, we may also earn a commission when travelers book through
+                our sites — separate from your Viator or GetYourGuide economics.
+              </p>
+              <p>
+                That gives us an ongoing commercial incentive to improve the site&apos;s content,
+                visibility and user experience.
+              </p>
+              <p className="font-semibold text-[#09294c]">
+                You get a fully managed site. We have a reason to keep working on it.
+              </p>
+              <p>The model is simple:</p>
+              <ul className="space-y-2 text-base sm:text-lg">
+                <li>
+                  <span className="font-semibold text-[#09294c]">Traveler</span> → discovers your tour
+                  on Google
+                </li>
+                <li>
+                  <span className="font-semibold text-[#09294c]">You</span> → get a potential customer
+                </li>
+                <li>
+                  <span className="font-semibold text-[#09294c]">Viator / GetYourGuide</span> → handles
+                  the booking
+                </li>
+                <li>
+                  <span className="font-semibold text-[#09294c]">2xGen</span> → may earn affiliate
+                  commission
+                </li>
+              </ul>
+              <p className="text-sm text-gray-500 leading-relaxed pt-1">
+                We don&apos;t guarantee rankings, traffic or bookings. Results depend on destination,
+                competition, demand and Google&apos;s algorithms.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Example */}
       <section id="example" className="py-16 md:py-20 bg-[#e8f1f8]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -781,8 +855,8 @@ export default function TourLanding() {
               visitor clicks Book Now → Viator checkout → the operator gets the booking.
             </p>
             <p className="text-lg font-semibold text-[#09294c] leading-relaxed">
-              That is a Google acquisition asset on top of the marketplace you already use — not
-              another brand website to maintain.
+              That is a Google-facing site on top of the marketplace you already use — not another
+              brand website to maintain.
             </p>
           </motion.div>
         </div>
@@ -821,11 +895,11 @@ export default function TourLanding() {
             <motion.div {...fadeUp}>
               <div className="accent-bar mb-4" />
               <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
-                Get your own Google Acquisition Site
+                Get a site built around your tours
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
                 Tell us about your tours on Viator or GetYourGuide — we build and manage the Google
-                layer for the year. You run the tours. We run the acquisition.
+                side for the year. You run the tours. We run the Google side.
               </p>
               <div className="space-y-3 text-sm">
                 <a href="mailto:matthijs@2xgen.com" className="block font-semibold text-[#1a5f9e] hover:underline">
@@ -911,7 +985,7 @@ export default function TourLanding() {
                     disabled={!canSubmit || submitting}
                     className="xgen-btn xgen-btn-primary w-full disabled:opacity-50"
                   >
-                    {submitting ? 'Sending…' : 'Request my Google Acquisition Site'}
+                    {submitting ? 'Sending…' : 'Request my site'}
                     <ArrowRight className="w-4 h-4" />
                   </button>
                 </form>

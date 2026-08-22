@@ -63,7 +63,7 @@ const Navbar = () => {
               </a>
             ))}
             <a href={isHome ? '#contact' : '/#contact'} className="xgen-btn xgen-btn-primary !py-2 !px-4 text-sm">
-              Get Your Google Acquisition Site
+              Get a Site for Your Tours
             </a>
           </div>
 
@@ -95,7 +95,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
             className="xgen-btn xgen-btn-primary w-full mt-2"
           >
-            Get Your Google Acquisition Site
+            Get a Site for Your Tours
           </a>
         </div>
       )}

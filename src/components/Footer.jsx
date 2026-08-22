@@ -21,8 +21,8 @@ const Footer = () => {
               2xGen
             </h3>
             <p className="text-white/55 text-sm leading-relaxed max-w-sm">
-              Managed Google acquisition for tour operators — Google Acquisition Sites that send
-              bookings to your existing Viator or GetYourGuide listing.
+              Dedicated SEO sites for tour operators — built around your tours and sent to Viator or
+              GetYourGuide checkout.
             </p>
           </div>
           <div>

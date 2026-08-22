@@ -300,7 +300,7 @@ export default function AboutPage() {
               operators on Viator and GetYourGuide.
             </p>
             <a href="/#contact" className="xgen-btn xgen-btn-primary inline-flex">
-              Get your Google Acquisition Site · $199/year
+              Get a Site for Your Tours · $199/year
               <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>
