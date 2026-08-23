@@ -24,6 +24,7 @@ create table if not exists public.sites (
   screenshot_url text,
   listing_urls text,
   notes text,
+  operator_ideas text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -33,6 +34,7 @@ create unique index if not exists sites_one_per_profile on public.sites (profile
 -- Existing projects: create table if not exists won't add new columns
 alter table public.sites add column if not exists screenshot_url text;
 alter table public.sites add column if not exists listing_urls text;
+alter table public.sites add column if not exists operator_ideas text;
 
 create table if not exists public.subscriptions (
   id uuid primary key default gen_random_uuid(),

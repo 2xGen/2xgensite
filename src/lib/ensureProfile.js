@@ -1,6 +1,6 @@
 import { createServiceClient } from '@/lib/supabase/admin';
 import { isAdminEmail } from '@/lib/saas';
-import { emailOperatorByProfileId } from '@/lib/notifyOperator';
+import { emailOperatorByProfileId, notifyAdminByProfileId } from '@/lib/notifyOperator';
 
 function displayName(meta = {}) {
   return (
@@ -92,6 +92,7 @@ export async function ensureUserProfile(user) {
 
   if (created && effectiveRole === 'operator' && profile?.email) {
     emailOperatorByProfileId(user.id, 'welcome').catch(() => {});
+    notifyAdminByProfileId(user.id, 'admin_new_account').catch(() => {});
   }
 
   return profile;

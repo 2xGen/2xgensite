@@ -8,11 +8,17 @@ alter table public.sites
 alter table public.sites
   add column if not exists screenshot_url text;
 
+alter table public.sites
+  add column if not exists operator_ideas text;
+
 comment on column public.sites.listing_urls is
   'Operator-provided Viator/GYG listing URLs (one per line) for build intake';
 
 comment on column public.sites.screenshot_url is
   'Public image URL of the live site preview shown in the operator dashboard';
+
+comment on column public.sites.operator_ideas is
+  'Optional operator suggestions for the managed site (copy, tours to highlight, etc.)';
 
 -- Operators may update their own site row; privileged columns are locked by trigger.
 drop policy if exists "sites_update_admin" on public.sites;

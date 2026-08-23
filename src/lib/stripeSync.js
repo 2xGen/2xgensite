@@ -1,5 +1,5 @@
 import { createServiceClient } from '@/lib/supabase/admin';
-import { emailOperatorByProfileId } from '@/lib/notifyOperator';
+import { emailOperatorByProfileId, notifyAdminByProfileId } from '@/lib/notifyOperator';
 
 function periodEndIso(subscription) {
   const periodEndUnix =
@@ -85,6 +85,7 @@ export async function applyPaidSubscription(profileId, subscription, options = {
 
     if (becameActive || promoted) {
       emailOperatorByProfileId(profileId, 'payment_received').catch(() => {});
+      notifyAdminByProfileId(profileId, 'admin_new_order').catch(() => {});
     } else if (newlyCanceling) {
       const endsOn = periodEnd
         ? new Date(periodEnd).toLocaleDateString(undefined, {

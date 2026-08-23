@@ -2,6 +2,22 @@ import { createServerClient } from '@supabase/ssr';
 import { NextResponse } from 'next/server';
 
 export async function middleware(request) {
+  const { pathname, searchParams } = request.nextUrl;
+
+  // OAuth codes must hit /auth/callback. If Supabase falls back to Site URL or `/`,
+  // forward the code so the session can be exchanged.
+  if (
+    (pathname === '/' || pathname === '') &&
+    (searchParams.has('code') || searchParams.has('error'))
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/auth/callback';
+    if (!url.searchParams.get('next')) {
+      url.searchParams.set('next', '/dashboard');
+    }
+    return NextResponse.redirect(url);
+  }
+
   let supabaseResponse = NextResponse.next({ request });
 
   const supabase = createServerClient(

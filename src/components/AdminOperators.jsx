@@ -348,6 +348,16 @@ export default function AdminOperators() {
                     <p className="text-sm text-gray-600 mb-1">
                       Complete these while the site is <strong>Building</strong>.
                     </p>
+                    {selected.operator_ideas?.trim() && (
+                      <div className="rounded-xl border border-amber-100 bg-amber-50 px-3 py-3">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-amber-800/70 mb-1">
+                          Operator ideas
+                        </p>
+                        <p className="text-sm text-amber-950 whitespace-pre-wrap">
+                          {selected.operator_ideas.trim()}
+                        </p>
+                      </div>
+                    )}
                     <label className="block text-xs font-semibold uppercase text-[#09294c]/45">
                       Destination
                       <input

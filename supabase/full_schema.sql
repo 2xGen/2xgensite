@@ -296,6 +296,7 @@ create table if not exists public.sites (
   screenshot_url text,
   listing_urls text,
   notes text,
+  operator_ideas text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );
@@ -316,6 +317,7 @@ create table if not exists public.subscriptions (
 -- Existing projects: create table if not exists won't add new columns
 alter table public.sites add column if not exists screenshot_url text;
 alter table public.sites add column if not exists listing_urls text;
+alter table public.sites add column if not exists operator_ideas text;
 alter table public.subscriptions
   add column if not exists cancel_at_period_end boolean not null default false;
 

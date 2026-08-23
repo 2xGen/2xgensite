@@ -13,6 +13,7 @@ const STEPS = [
   { id: 'name', label: 'Name' },
   { id: 'company', label: 'Company' },
   { id: 'listings', label: 'Listings' },
+  { id: 'ideas', label: 'Ideas' },
   { id: 'pay', label: 'Subscribe' },
 ];
 
@@ -50,6 +51,7 @@ function inferStep(profile, site) {
   if (!profile?.full_name?.trim()) return 0;
   if (!profile?.company?.trim() || !site?.destination?.trim()) return 1;
   if (!site?.listing_urls?.trim() || !parseMarketplace(site?.notes)) return 2;
+  // Optional ideas step — land here after listings; subscribe is last
   return 3;
 }
 
@@ -71,6 +73,7 @@ export default function DashboardOverview() {
   });
   const [listingLinks, setListingLinks] = useState(['']);
   const [marketplace, setMarketplace] = useState(''); // 'viator' | 'getyourguide'
+  const [operatorIdeas, setOperatorIdeas] = useState('');
   const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   const load = useCallback(async () => {
@@ -119,6 +122,7 @@ export default function DashboardOverview() {
     });
     setListingLinks(parseListingUrls(site?.listing_urls));
     setMarketplace(parseMarketplace(site?.notes));
+    setOperatorIdeas(site?.operator_ideas || '');
     if (!stepReady && profile && site !== undefined && !loading) {
       setStep(inferStep(profile, site));
       setStepReady(true);
@@ -185,6 +189,10 @@ export default function DashboardOverview() {
           listing_urls: filledListings.join('\n'),
           notes: `marketplace:${marketplace}`,
         });
+      } else if (step === 3) {
+        await persistPartial(null, {
+          operator_ideas: operatorIdeas.trim() || null,
+        });
       }
       setStep((s) => Math.min(s + 1, STEPS.length - 1));
     } catch (e) {
@@ -212,6 +220,7 @@ export default function DashboardOverview() {
           destination: form.destination.trim(),
           listing_urls: filledListings.join('\n'),
           notes: marketplace ? `marketplace:${marketplace}` : site?.notes || null,
+          operator_ideas: operatorIdeas.trim() || null,
         }
       );
       const res = await fetch('/api/stripe/checkout', { method: 'POST' });
@@ -409,10 +418,11 @@ export default function DashboardOverview() {
           {step === 0 && 'What’s your name?'}
           {step === 1 && 'Your tour brand'}
           {step === 2 && 'Your listing URLs'}
-          {step === 3 && 'Complete your subscription'}
+          {step === 3 && 'Any ideas for the site?'}
+          {step === 4 && 'Complete your subscription'}
         </h1>
         <p className="text-gray-600 text-sm leading-relaxed">
-          {step < 3
+          {step < 4
             ? 'Complete onboarding so we know who you are and which tours to feature.'
             : 'Confirm your details and subscribe. We start building after payment — your live site and click dashboard unlock at launch.'}
         </p>
@@ -568,6 +578,32 @@ export default function DashboardOverview() {
 
         {step === 3 && (
           <>
+            <p className="text-sm text-gray-600">
+              Optional — anything you&apos;d like us to consider when we build your site. Skip if
+              you&apos;re happy for us to decide from your listings.
+            </p>
+            <label className="block text-sm font-medium text-[#09294c]">
+              Ideas &amp; suggestions
+              <textarea
+                autoFocus
+                rows={5}
+                placeholder={
+                  'e.g. Highlight the sunset sail and private charter\nPrefer a clean, simple look\nMention “family-friendly” and hotel pickup\nAvoid competitor names'
+                }
+                value={operatorIdeas}
+                onChange={(e) => setOperatorIdeas(e.target.value)}
+                className={`${inputClass} mt-2 resize-y min-h-[120px]`}
+              />
+            </label>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              Examples: tours to feature first, tone of voice, FAQs, or things to avoid. We may or
+              may not use your suggestions in the build — no guarantee they will be included.
+            </p>
+          </>
+        )}
+
+        {step === 4 && (
+          <>
             <div className="rounded-2xl bg-[#f3f7fb] px-4 py-4 space-y-2 text-sm">
               <p>
                 <span className="text-[#09294c]/45">Name</span>
@@ -604,6 +640,15 @@ export default function DashboardOverview() {
                     : '—'}
                 </span>
               </p>
+              {operatorIdeas.trim() && (
+                <p>
+                  <span className="text-[#09294c]/45">Ideas</span>
+                  <br />
+                  <span className="font-medium text-[#09294c] whitespace-pre-wrap">
+                    {operatorIdeas.trim()}
+                  </span>
+                </p>
+              )}
               <button
                 type="button"
                 onClick={() => setStep(0)}
@@ -688,14 +733,18 @@ export default function DashboardOverview() {
             </button>
           )}
 
-          {step < 3 ? (
+          {step < 4 ? (
             <button
               type="button"
               onClick={goNext}
               disabled={saving}
               className="xgen-btn xgen-btn-primary flex-1 sm:flex-none disabled:opacity-50"
             >
-              {saving ? 'Saving…' : 'Continue'}
+              {saving
+                ? 'Saving…'
+                : step === 3 && !operatorIdeas.trim()
+                  ? 'Skip for now'
+                  : 'Continue'}
               {!saving && <ArrowRight className="w-4 h-4" />}
             </button>
           ) : (

@@ -121,6 +121,39 @@ const TEMPLATES = {
       ctaHref: `${SITE()}/dashboard/billing`,
     }),
   }),
+
+  admin_new_account: ({ email, name, company }) => ({
+    subject: `New 2xGen account — ${email || 'unknown'}`,
+    text: `New operator account created.\n\nEmail: ${email || '—'}\nName: ${name || '—'}\nCompany: ${company || '—'}\n\n${SITE()}/admin/operators\n`,
+    html: layout({
+      title: 'New operator account',
+      bodyHtml: `<p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#334155;">A new account was created.</p>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#334155;">
+          <strong>Email:</strong> ${escapeHtml(email || '—')}<br/>
+          <strong>Name:</strong> ${escapeHtml(name || '—')}<br/>
+          <strong>Company:</strong> ${escapeHtml(company || '—')}
+        </p>`,
+      ctaLabel: 'Open admin',
+      ctaHref: `${SITE()}/admin/operators`,
+    }),
+  }),
+
+  admin_new_order: ({ email, name, company, destination }) => ({
+    subject: `New 2xGen order — ${email || company || 'operator'}`,
+    text: `New paid subscription.\n\nEmail: ${email || '—'}\nName: ${name || '—'}\nCompany: ${company || '—'}\nDestination: ${destination || '—'}\n\n${SITE()}/admin/operators\n`,
+    html: layout({
+      title: 'New paid order',
+      bodyHtml: `<p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#334155;">An operator just subscribed ($249/year). Site moved to the build queue.</p>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:#334155;">
+          <strong>Email:</strong> ${escapeHtml(email || '—')}<br/>
+          <strong>Name:</strong> ${escapeHtml(name || '—')}<br/>
+          <strong>Company:</strong> ${escapeHtml(company || '—')}<br/>
+          <strong>Destination:</strong> ${escapeHtml(destination || '—')}
+        </p>`,
+      ctaLabel: 'Open admin',
+      ctaHref: `${SITE()}/admin/operators`,
+    }),
+  }),
 };
 
 export async function sendOperatorEmail(templateId, { to, ...vars }) {
@@ -164,6 +197,21 @@ export async function sendOperatorEmail(templateId, { to, ...vars }) {
 
   const json = await res.json().catch(() => ({}));
   return { ok: true, id: json.id };
+}
+
+/** Founder/ops alerts (new accounts, paid orders). */
+export function adminNotifyEmail() {
+  return (
+    process.env.ADMIN_NOTIFY_EMAIL ||
+    'matthijs@2xgen.com'
+  ).trim();
+}
+
+export async function sendAdminEmail(templateId, vars = {}) {
+  return sendOperatorEmail(templateId, {
+    to: adminNotifyEmail(),
+    ...vars,
+  });
 }
 
 export function templateForSiteStatus(status) {
