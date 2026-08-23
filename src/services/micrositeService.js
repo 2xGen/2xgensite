@@ -1,5 +1,5 @@
 import { supabase } from '@/lib/supabase';
-import { FALLBACK_MICROSITES } from '@/data/microsites';
+import { FALLBACK_MICROSITES, imageForSite } from '@/data/microsites';
 
 function normalize(row) {
   return {
@@ -10,6 +10,7 @@ function normalize(row) {
     destination: row.destination,
     title: row.title || row.domain,
     blurb: row.blurb || '',
+    image: imageForSite(row),
     featured: row.featured !== false,
     sort_order: row.sort_order ?? 0,
   };

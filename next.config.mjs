@@ -8,7 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      // ── Keep product site: /, /about, /privacy, /admin/* ──
+      // ── Keep product site: /, /about, /get-a-site, /privacy, /admin/* ──
 
       // Old English marketing pages → home
       { source: '/what-we-build', destination: '/', permanent: true },

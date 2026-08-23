@@ -1,12 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Check, ExternalLink, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, ArrowRight, Check, ExternalLink } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { listMicrosites } from '@/services/micrositeService';
-import { supabase } from '@/lib/supabase';
+import { imageForUrl } from '@/data/microsites';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -99,29 +99,6 @@ const FOR_WHO = [
   'Adventure & outdoor',
 ];
 
-const HERO_EXAMPLES = [
-  {
-    name: 'PartyBusAruba',
-    url: 'https://partybusaruba.fun',
-    line: 'Aruba party bus nightlife → live Viator checkout',
-  },
-  {
-    name: 'Stonehenge Tours',
-    url: 'https://stonehengetourslondon.site',
-    line: 'Stonehenge day trips from London → Viator booking',
-  },
-  {
-    name: 'GozoQuadTours',
-    url: 'https://gozoquadtours.fun',
-    line: 'Gozo off-road tours — quad, UTV, buggy, jeep & tuk tuk → Viator',
-  },
-  {
-    name: 'Tyo365',
-    url: 'https://tyo365.com',
-    line: 'Mt. Fuji helicopter tours from Tokyo',
-  },
-];
-
 const FLOW = ['Google search', 'Your site', 'Viator / GYG', 'Booking'];
 
 const EXAMPLE_SEARCHES = [
@@ -137,16 +114,49 @@ const PROOF_SITES = [
     name: 'ArubaBuddies',
     url: 'https://arubabuddies.com',
     line: 'High-traffic tourism discovery — proven marketplace booking volume.',
+    image: imageForUrl('https://arubabuddies.com'),
   },
   {
     name: 'GozoQuadTours.fun',
     url: 'https://gozoquadtours.fun',
     line: 'The best Gozo off-road tours — five machines, one island → book on Viator.',
+    image: imageForUrl('https://gozoquadtours.fun'),
   },
   {
     name: 'TopTours.ai',
     url: 'https://toptours.ai',
     line: 'Broader tour discovery across destinations.',
+    image: imageForUrl('https://toptours.ai'),
+  },
+  {
+    name: 'PartyBusAruba',
+    url: 'https://partybusaruba.fun',
+    line: 'Aruba party bus nightlife — compare operators, book on Viator.',
+    image: imageForUrl('https://partybusaruba.fun'),
+  },
+  {
+    name: 'Stonehenge Tours',
+    url: 'https://stonehengetourslondon.site',
+    line: 'Stonehenge day trips from London — coaches, private cars, cruise shore days.',
+    image: imageForUrl('https://stonehengetourslondon.site'),
+  },
+  {
+    name: 'Cur365',
+    url: 'https://cur365.com',
+    line: 'Klein Curaçao day trips — boats that actually land on the island.',
+    image: imageForUrl('https://cur365.com'),
+  },
+  {
+    name: 'Prg365',
+    url: 'https://prg365.com',
+    line: 'Day trips from Prague — Český Krumlov, Kutná Hora, Bohemian Switzerland, and more.',
+    image: imageForUrl('https://prg365.com'),
+  },
+  {
+    name: 'Aru365',
+    url: 'https://aru365.com',
+    line: 'Best tours in Aruba — catamarans, snorkeling, ATV, sunset cruises, and more.',
+    image: imageForUrl('https://aru365.com'),
   },
 ];
 
@@ -187,28 +197,10 @@ const FAQS = [
 
 export default function TourLanding() {
   const [sites, setSites] = useState([]);
-  const [heroIndex, setHeroIndex] = useState(0);
   const [destinationFilter, setDestinationFilter] = useState('All');
-  const [form, setForm] = useState({
-    name: '',
-    company: '',
-    destination: '',
-    viatorLink: '',
-    email: '',
-  });
-  const [submitting, setSubmitting] = useState(false);
-  const [sent, setSent] = useState(false);
-  const [error, setError] = useState('');
 
   useEffect(() => {
     listMicrosites().then(setSites).catch(() => setSites([]));
-  }, []);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setHeroIndex((i) => (i + 1) % HERO_EXAMPLES.length);
-    }, 3800);
-    return () => clearInterval(id);
   }, []);
 
   const featured = sites.filter((s) => s.featured !== false);
@@ -222,39 +214,6 @@ export default function TourLanding() {
       ? networkSites
       : networkSites.filter((s) => s.destination === destinationFilter);
   const marqueeItems = [...FOR_WHO, ...FOR_WHO];
-
-  const canSubmit =
-    form.name.trim() &&
-    form.company.trim() &&
-    form.destination.trim() &&
-    form.viatorLink.trim() &&
-    form.email.trim();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!canSubmit || submitting) return;
-    setSubmitting(true);
-    setError('');
-
-    const { error: insertError } = await supabase.from('tour_microsite_leads').insert({
-      name: form.name.trim(),
-      company: form.company.trim(),
-      destination: form.destination.trim(),
-      viator_link: form.viatorLink.trim(),
-      email: form.email.trim(),
-      source: typeof window !== 'undefined' ? window.location.pathname : 'website',
-    });
-
-    setSubmitting(false);
-    if (insertError) {
-      console.error(insertError);
-      setError('Could not send. Email matthijs@2xgen.com or try again.');
-      return;
-    }
-    setSent(true);
-  };
-
-  const activeHero = HERO_EXAMPLES[heroIndex];
 
   return (
     <>
@@ -293,7 +252,7 @@ export default function TourLanding() {
                 You run the tours. We run the Google side.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 pt-1">
-                <a href="#contact" className="xgen-btn xgen-btn-primary">
+                <a href="/get-a-site" className="xgen-btn xgen-btn-primary">
                   Get a Site for Your Tours
                   <ArrowRight className="w-4 h-4" />
                 </a>
@@ -301,7 +260,6 @@ export default function TourLanding() {
                   See Live Examples
                 </a>
               </div>
-              <p className="text-sm text-[#09294c]/60 font-medium">$199 / year · fully managed</p>
             </motion.div>
 
             <motion.div
@@ -313,51 +271,36 @@ export default function TourLanding() {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
-                className="rounded-3xl border border-[#09294c]/12 bg-white/80 backdrop-blur-sm p-5 sm:p-6 shadow-[0_24px_60px_rgba(9,41,76,0.14)]"
+                className="rounded-3xl border border-[#09294c]/12 bg-white/90 backdrop-blur-sm p-6 sm:p-7 shadow-[0_24px_60px_rgba(9,41,76,0.14)]"
               >
-                <div className="flex items-center justify-between mb-3">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#3d8fd1]">
-                    Live example
-                  </p>
-                  <div className="flex gap-1.5">
-                    {HERO_EXAMPLES.map((_, i) => (
-                      <button
-                        key={HERO_EXAMPLES[i].name}
-                        type="button"
-                        aria-label={`Show ${HERO_EXAMPLES[i].name}`}
-                        onClick={() => setHeroIndex(i)}
-                        className={`h-1.5 rounded-full transition-all ${
-                          i === heroIndex ? 'w-5 bg-[#3d8fd1]' : 'w-1.5 bg-[#09294c]/20'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                <div className="relative min-h-[168px]">
-                  <AnimatePresence mode="wait">
-                    <motion.a
-                      key={activeHero.name}
-                      href={activeHero.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      initial={{ opacity: 0, x: 24 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -24 }}
-                      transition={{ duration: 0.35 }}
-                      className="group absolute inset-0 block rounded-2xl pattern-navy text-white p-6 sm:p-8 overflow-hidden"
-                    >
-                      <p className="text-xl sm:text-2xl lg:text-3xl font-semibold tracking-tight mb-2 break-words leading-tight">
-                        {activeHero.name}
-                      </p>
-                      <p className="text-white/65 text-sm leading-relaxed mb-4">{activeHero.line}</p>
-                      <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#3d8fd1] group-hover:text-white transition-colors">
-                        Open live site
-                        <ExternalLink className="w-4 h-4" />
-                      </span>
-                    </motion.a>
-                  </AnimatePresence>
-                </div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#3d8fd1] mb-3">
+                  Dedicated SEO Site
+                </p>
+                <p className="text-4xl sm:text-5xl font-semibold tracking-tight text-[#09294c] mb-1">
+                  $199<span className="text-xl text-[#09294c]/45 font-medium"> / year</span>
+                </p>
+                <p className="text-sm text-[#09294c]/60 mb-5">
+                  One site · fully managed · live in 3 business days
+                </p>
+                <ul className="space-y-2.5 mb-6">
+                  {[
+                    'Built around your destination and tour type',
+                    'Sends travelers to your Viator or GYG checkout',
+                    'Hosting, upkeep, and ongoing optimization',
+                  ].map((item) => (
+                    <li key={item} className="flex gap-2.5 text-sm text-gray-600 leading-snug">
+                      <Check className="w-4 h-4 text-[#3d8fd1] shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="/get-a-site"
+                  className="xgen-btn xgen-btn-primary w-full inline-flex justify-center"
+                >
+                  Get a Site for Your Tours
+                  <ArrowRight className="w-4 h-4" />
+                </a>
               </motion.div>
             </motion.div>
           </div>
@@ -568,7 +511,7 @@ export default function TourLanding() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-4 mb-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-12">
             {PROOF_SITES.map((site, i) => (
               <motion.a
                 key={site.name}
@@ -576,10 +519,22 @@ export default function TourLanding() {
                 target="_blank"
                 rel="noopener noreferrer"
                 {...stagger(i)}
-                className="rounded-3xl bg-white border border-[#09294c]/10 p-6 hover:border-[#3d8fd1]/40 hover:-translate-y-1 transition-all shadow-[0_10px_28px_rgba(9,41,76,0.06)]"
+                className="group rounded-3xl bg-white border border-[#09294c]/10 overflow-hidden hover:border-[#3d8fd1]/40 hover:-translate-y-1 transition-all shadow-[0_10px_28px_rgba(9,41,76,0.06)]"
               >
-                <p className="text-lg font-semibold text-[#09294c] mb-2">{site.name}</p>
-                <p className="text-sm text-gray-600 leading-relaxed">{site.line}</p>
+                {site.image && (
+                  <div className="relative h-36 overflow-hidden bg-[#e8f1f8]">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={site.image}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-500"
+                    />
+                  </div>
+                )}
+                <div className="p-5">
+                  <p className="text-lg font-semibold text-[#09294c] mb-2">{site.name}</p>
+                  <p className="text-sm text-gray-600 leading-relaxed">{site.line}</p>
+                </div>
               </motion.a>
             ))}
           </div>
@@ -662,11 +617,11 @@ export default function TourLanding() {
                       href={site.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative flex h-full min-h-[210px] flex-col overflow-hidden rounded-3xl bg-white border border-[#09294c]/08 shadow-[0_10px_30px_rgba(9,41,76,0.07)] hover:shadow-[0_18px_40px_rgba(9,41,76,0.12)] hover:-translate-y-1 transition-all duration-300"
+                      className="group relative flex h-full min-h-[220px] flex-col overflow-hidden rounded-3xl bg-white border border-[#09294c]/08 shadow-[0_10px_30px_rgba(9,41,76,0.07)] hover:shadow-[0_18px_40px_rgba(9,41,76,0.12)] hover:-translate-y-1 transition-all duration-300"
                     >
-                      <div className="h-1.5 w-full" style={{ backgroundColor: accent }} />
+                      <div className="h-1.5 w-full shrink-0" style={{ backgroundColor: accent }} />
                       <div className="flex flex-1 flex-col p-5">
-                        <div className="flex items-start justify-between gap-3 mb-4">
+                        <div className="flex items-start justify-between gap-3 mb-3">
                           <div className="min-w-0">
                             <p className="text-[11px] font-semibold uppercase tracking-wide text-[#09294c]/45 truncate">
                               {site.destination}
@@ -685,7 +640,7 @@ export default function TourLanding() {
                         >
                           {site.category}
                         </span>
-                        <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 mt-auto">
+                        <p className="text-sm text-gray-600 leading-relaxed line-clamp-2 mt-auto">
                           {site.blurb}
                         </p>
                       </div>
@@ -735,7 +690,7 @@ export default function TourLanding() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className="xgen-btn xgen-btn-primary w-full inline-flex justify-center">
+              <a href="/get-a-site" className="xgen-btn xgen-btn-primary w-full inline-flex justify-center">
                 Get a Site for Your Tours
                 <ArrowRight className="w-4 h-4" />
               </a>
@@ -884,114 +839,28 @@ export default function TourLanding() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section id="contact" className="py-16 md:py-20 bg-white scroll-mt-24 relative overflow-hidden">
+      {/* Final CTA */}
+      <section id="get-a-site" className="py-16 md:py-20 bg-white relative overflow-hidden">
         <div
           className="pointer-events-none absolute -bottom-24 right-0 w-96 h-96 rounded-full bg-[#3d8fd1]/12 blur-3xl"
           aria-hidden
         />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
-            <motion.div {...fadeUp}>
-              <div className="accent-bar mb-4" />
-              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
-                Get a site built around your tours
-              </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Tell us about your tours on Viator or GetYourGuide — we build and manage the Google
-                side for the year. You run the tours. We run the Google side.
-              </p>
-              <div className="space-y-3 text-sm">
-                <a href="mailto:matthijs@2xgen.com" className="block font-semibold text-[#1a5f9e] hover:underline">
-                  matthijs@2xgen.com
-                </a>
-                <a
-                  href="https://wa.me/2975668844"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-semibold text-[#1a5f9e] hover:underline"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  WhatsApp
-                </a>
-                <a href="/about" className="block text-[#09294c]/55 hover:text-[#1a5f9e] transition-colors">
-                  About 2xGen →
-                </a>
-              </div>
-            </motion.div>
-
-            <motion.div
-              {...stagger(1)}
-              className="rounded-3xl border border-[#09294c]/12 bg-[#f7fafc] p-6 sm:p-8 shadow-[0_20px_50px_rgba(9,41,76,0.1)]"
-            >
-              {sent ? (
-                <div>
-                  <div className="w-10 h-10 rounded-2xl bg-emerald-50 border border-emerald-100 flex items-center justify-center mb-4">
-                    <Check className="w-5 h-5 text-emerald-700" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Thanks — we got it.</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    We&apos;ll review your destination and listing and follow up shortly.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-3">
-                  <input
-                    required
-                    placeholder="Your name"
-                    value={form.name}
-                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                    className="w-full px-4 py-3.5 rounded-2xl border border-[#09294c]/12 bg-white text-[#09294c] placeholder:text-gray-400 focus:outline-none focus:border-[#3d8fd1]"
-                  />
-                  <input
-                    required
-                    placeholder="Company / tour brand"
-                    value={form.company}
-                    onChange={(e) => setForm((f) => ({ ...f, company: e.target.value }))}
-                    className="w-full px-4 py-3.5 rounded-2xl border border-[#09294c]/12 bg-white text-[#09294c] placeholder:text-gray-400 focus:outline-none focus:border-[#3d8fd1]"
-                  />
-                  <input
-                    required
-                    placeholder="Destination"
-                    value={form.destination}
-                    onChange={(e) => setForm((f) => ({ ...f, destination: e.target.value }))}
-                    className="w-full px-4 py-3.5 rounded-2xl border border-[#09294c]/12 bg-white text-[#09294c] placeholder:text-gray-400 focus:outline-none focus:border-[#3d8fd1]"
-                  />
-                  <input
-                    required
-                    placeholder="Viator or GetYourGuide listing URL"
-                    value={form.viatorLink}
-                    onChange={(e) => setForm((f) => ({ ...f, viatorLink: e.target.value }))}
-                    className="w-full px-4 py-3.5 rounded-2xl border border-[#09294c]/12 bg-white text-[#09294c] placeholder:text-gray-400 focus:outline-none focus:border-[#3d8fd1]"
-                  />
-                  <input
-                    required
-                    type="email"
-                    placeholder="Email"
-                    value={form.email}
-                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                    className="w-full px-4 py-3.5 rounded-2xl border border-[#09294c]/12 bg-white text-[#09294c] placeholder:text-gray-400 focus:outline-none focus:border-[#3d8fd1]"
-                  />
-                  {error && <p className="text-sm text-red-600">{error}</p>}
-                  <p className="text-xs text-gray-500">
-                    By submitting, you agree to our{' '}
-                    <a href="/privacy" className="text-[#1a5f9e] underline underline-offset-2">
-                      privacy policy
-                    </a>
-                    .
-                  </p>
-                  <button
-                    type="submit"
-                    disabled={!canSubmit || submitting}
-                    className="xgen-btn xgen-btn-primary w-full disabled:opacity-50"
-                  >
-                    {submitting ? 'Sending…' : 'Request my site'}
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </form>
-              )}
-            </motion.div>
-          </div>
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+          <motion.div {...fadeUp}>
+            <div className="accent-bar mx-auto mb-4" />
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
+              Get a site built around your tours
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-6 max-w-xl mx-auto">
+              Tell us about your tours on Viator or GetYourGuide — we build and manage the Google
+              side for the year.
+            </p>
+            <a href="/get-a-site" className="xgen-btn xgen-btn-primary inline-flex">
+              Get a Site for Your Tours
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <p className="text-sm text-[#09294c]/55 font-medium mt-4">$199 / year · fully managed</p>
+          </motion.div>
         </div>
       </section>
     </>

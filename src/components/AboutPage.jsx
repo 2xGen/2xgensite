@@ -299,7 +299,7 @@ export default function AboutPage() {
               That&apos;s the model behind 2xGen — and the model we&apos;re now offering to tour
               operators on Viator and GetYourGuide.
             </p>
-            <a href="/#contact" className="xgen-btn xgen-btn-primary inline-flex">
+            <a href="/get-a-site" className="xgen-btn xgen-btn-primary inline-flex">
               Get a Site for Your Tours · $199/year
               <ArrowRight className="w-4 h-4" />
             </a>

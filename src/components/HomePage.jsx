@@ -4,6 +4,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import TourLanding from '@/components/TourLanding';
 import Footer from '@/components/Footer';
+import StickyGetSiteButton from '@/components/StickyGetSiteButton';
 
 export default function HomePage({ schema }) {
   return (
@@ -17,6 +18,7 @@ export default function HomePage({ schema }) {
       <Navbar />
       <TourLanding />
       <Footer />
+      <StickyGetSiteButton />
     </>
   );
 }

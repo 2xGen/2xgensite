@@ -46,6 +46,11 @@ const Footer = () => {
             <p className="text-xs font-semibold uppercase tracking-wide text-white/40 mb-3">Company</p>
             <ul className="space-y-2">
               <li>
+                <a href="/get-a-site" className="text-sm text-white/70 hover:text-white transition-colors">
+                  Get a Site for Your Tours
+                </a>
+              </li>
+              <li>
                 <a href="/about" className="text-sm text-white/70 hover:text-white transition-colors">
                   About
                 </a>
