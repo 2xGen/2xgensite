@@ -234,7 +234,7 @@ export default function AboutPage() {
                 We build focused acquisition properties, connect them to marketplace inventory,
                 monitor their performance and keep improving them.
               </p>
-              <p>That allows us to offer the entire system for $199/year.</p>
+              <p>That allows us to offer the entire system for $249/year.</p>
               <p className="font-semibold text-white pt-2">
                 You run the tours.
                 <br />
@@ -300,7 +300,7 @@ export default function AboutPage() {
               operators on Viator and GetYourGuide.
             </p>
             <a href="/get-a-site" className="xgen-btn xgen-btn-primary inline-flex">
-              Get a Site for Your Tours · $199/year
+              Get a Site for Your Tours · $249/year
               <ArrowRight className="w-4 h-4" />
             </a>
           </motion.div>

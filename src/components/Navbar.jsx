@@ -14,6 +14,7 @@ const Navbar = () => {
     { href: isHome ? '#problem' : '/#problem', label: 'Problem' },
     { href: isHome ? '#who' : '/#who', label: 'Who it’s for' },
     { href: isHome ? '#solution' : '/#solution', label: 'Solution' },
+    { href: isHome ? '#dashboard' : '/#dashboard', label: 'Dashboard' },
     { href: isHome ? '#proof' : '/#proof', label: 'Live examples' },
     { href: isHome ? '#pricing' : '/#pricing', label: 'Pricing' },
     { href: isHome ? '#faq' : '/#faq', label: 'FAQ' },
@@ -62,6 +63,9 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+            <a href="/login" className="text-sm font-medium text-[#09294c]/70 hover:text-[#09294c]">
+              Sign in
+            </a>
             <a href="/get-a-site" className="xgen-btn xgen-btn-primary !py-2 !px-4 text-sm">
               Get a Site for Your Tours
             </a>
@@ -90,6 +94,20 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <a
+            href="/login"
+            onClick={() => setIsOpen(false)}
+            className="block px-3 py-2.5 rounded-xl text-sm font-medium text-[#09294c] hover:bg-[#f3f7fb]"
+          >
+            Sign in
+          </a>
+          <a
+            href="/signup"
+            onClick={() => setIsOpen(false)}
+            className="block px-3 py-2.5 rounded-xl text-sm font-medium text-[#09294c] hover:bg-[#f3f7fb]"
+          >
+            Create free account
+          </a>
           <a
             href="/get-a-site"
             onClick={() => setIsOpen(false)}

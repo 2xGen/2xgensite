@@ -126,6 +126,12 @@ export default function AdminMicrosites() {
           <h1 className="text-lg font-semibold">Tour microsites</h1>
         </div>
         <div className="flex items-center gap-2">
+          <a href="/admin/operators" className="text-sm text-white/70 hover:text-white px-3 py-2">
+            Operators
+          </a>
+          <a href="/admin/links" className="text-sm text-white/70 hover:text-white px-3 py-2">
+            Tracking links
+          </a>
           <a href="/" className="text-sm text-white/70 hover:text-white px-3 py-2">
             View site
           </a>

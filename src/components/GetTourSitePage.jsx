@@ -12,7 +12,7 @@ const fadeUp = {
 };
 
 const HIGHLIGHTS = [
-  '$199 / year · fully managed',
+  '$249 / year · fully managed',
   'Live within 3 business days',
   'Books through your Viator or GetYourGuide listing',
   'You run the tours. We run the Google side.',
@@ -69,6 +69,13 @@ export default function GetTourSitePage() {
                 <MessageCircle className="w-4 h-4" />
                 WhatsApp
               </a>
+              <p className="pt-2 text-gray-600">
+                Prefer self-serve?{' '}
+                <a href="/signup" className="font-semibold text-[#1a5f9e] hover:underline">
+                  Continue with Google
+                </a>{' '}
+                to join the waitlist, then subscribe at $249/year in your dashboard.
+              </p>
             </div>
           </motion.div>
 

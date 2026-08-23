@@ -46,6 +46,16 @@ const Footer = () => {
             <p className="text-xs font-semibold uppercase tracking-wide text-white/40 mb-3">Company</p>
             <ul className="space-y-2">
               <li>
+                <a href="/signup" className="text-sm text-white/70 hover:text-white transition-colors">
+                  Create free account
+                </a>
+              </li>
+              <li>
+                <a href="/login" className="text-sm text-white/70 hover:text-white transition-colors">
+                  Sign in
+                </a>
+              </li>
+              <li>
                 <a href="/get-a-site" className="text-sm text-white/70 hover:text-white transition-colors">
                   Get a Site for Your Tours
                 </a>
@@ -58,6 +68,11 @@ const Footer = () => {
               <li>
                 <a href="/privacy" className="text-sm text-white/70 hover:text-white transition-colors">
                   Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/terms" className="text-sm text-white/70 hover:text-white transition-colors">
+                  Terms of Service
                 </a>
               </li>
               <li>

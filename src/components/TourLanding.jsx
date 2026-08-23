@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { listMicrosites } from '@/services/micrositeService';
 import { imageForUrl } from '@/data/microsites';
+import DashboardMockup from '@/components/DashboardMockup';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -50,7 +51,7 @@ const STEPS = [
   {
     num: '04',
     title: 'Manage',
-    text: 'We maintain the site and continue optimizing it throughout the year — so you don’t have to.',
+    text: 'We maintain the site, keep optimizing, and you track booking-link clicks in your dashboard.',
   },
 ];
 
@@ -75,6 +76,7 @@ const INCLUDED = [
   'Editorial content built to attract bookers',
   'Hosting and technical upkeep',
   'Booking integration / marketplace links (Viator API or GYG links)',
+  'Operator dashboard — site status & tracked link clicks',
   'Ongoing optimization through the year',
   'Connected to our tourism content network where relevant',
 ];
@@ -182,15 +184,19 @@ const FAQS = [
     a: 'Each site is custom-built from scratch for your destination and tour type — not a template. We ship with an SEO-first layout and no revision rounds. That keeps quality high and pricing simple.',
   },
   {
-    q: 'What does $199 / year include?',
-    a: 'One dedicated SEO site for your tours, fully managed for the year: build, content, hosting, marketplace links, network connection where relevant, and ongoing optimization. Same price for Viator or GetYourGuide. We sell the system and the work — not guaranteed rankings or booking quotas.',
+    q: 'Can I create an account before paying?',
+    a: 'Yes. Create a free account to join the waitlist and see your site status in the dashboard. Subscribe at $249/year when you’re ready to enter the build queue.',
+  },
+  {
+    q: 'What does $249 / year include?',
+    a: 'One dedicated SEO site for your tours, fully managed for the year: build, content, hosting, marketplace links, network connection where relevant, ongoing optimization, and tracked booking-link click stats when live. Same price for Viator or GetYourGuide. We sell the system and the work — not guaranteed rankings or booking quotas.',
   },
   {
     q: 'How fast is the site live after I order?',
     a: 'Once your order is placed, we build and launch your site so it is operational within 3 business days.',
   },
   {
-    q: 'Why is it only $199 / year?',
+    q: 'Why is it only $249 / year?',
     a: 'The annual fee isn’t our only revenue stream. Where we participate in the relevant affiliate program, we may earn a commission from qualifying bookings through our sites — separate from your marketplace economics. That gives us an ongoing reason to keep improving the site. We don’t guarantee rankings, traffic or bookings.',
   },
 ];
@@ -277,7 +283,7 @@ export default function TourLanding() {
                   Dedicated SEO Site
                 </p>
                 <p className="text-4xl sm:text-5xl font-semibold tracking-tight text-[#09294c] mb-1">
-                  $199<span className="text-xl text-[#09294c]/45 font-medium"> / year</span>
+                  $249<span className="text-xl text-[#09294c]/45 font-medium"> / year</span>
                 </p>
                 <p className="text-sm text-[#09294c]/60 mb-5">
                   One site · fully managed · live in 3 business days
@@ -286,7 +292,7 @@ export default function TourLanding() {
                   {[
                     'Built around your destination and tour type',
                     'Sends travelers to your Viator or GYG checkout',
-                    'Hosting, upkeep, and ongoing optimization',
+                    'Dashboard with site status & link click stats',
                   ].map((item) => (
                     <li key={item} className="flex gap-2.5 text-sm text-gray-600 leading-snug">
                       <Check className="w-4 h-4 text-[#3d8fd1] shrink-0 mt-0.5" />
@@ -418,6 +424,49 @@ export default function TourLanding() {
                 <p className="text-sm text-gray-600 leading-relaxed">{step.text}</p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Operator dashboard */}
+      <section id="dashboard" className="py-16 md:py-20 pattern-dots overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <motion.div {...fadeUp} className="max-w-xl">
+              <div className="accent-bar mb-4" />
+              <p className="xgen-pill mb-4">Operator dashboard</p>
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">
+                See status and booking-link clicks in one place.
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                Create a free account to join the waitlist. After your site is live, your dashboard
+                shows site status and how many travelers clicked through your tracked Viator /
+                GetYourGuide links — for 7 days, 30 days, 90 days, and all time.
+              </p>
+              <ul className="space-y-2.5 mb-7">
+                {[
+                  'Waitlist → queued → building → live',
+                  'Tracked /go links on your SEO site',
+                  'Click counts without another analytics tool',
+                ].map((item) => (
+                  <li key={item} className="flex gap-2.5 text-sm text-gray-600 leading-snug">
+                    <Check className="w-4 h-4 text-[#3d8fd1] shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href="/signup" className="xgen-btn xgen-btn-primary">
+                  Create free account
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+                <a href="/login" className="xgen-btn xgen-btn-secondary">
+                  Sign in
+                </a>
+              </div>
+            </motion.div>
+
+            <DashboardMockup />
           </div>
         </div>
       </section>
@@ -676,7 +725,7 @@ export default function TourLanding() {
             >
               <p className="xgen-pill mb-4">Dedicated SEO Site</p>
               <p className="text-4xl sm:text-5xl font-semibold tracking-tight text-[#09294c] mb-1">
-                $199<span className="text-xl text-[#09294c]/45 font-medium"> / year</span>
+                $249<span className="text-xl text-[#09294c]/45 font-medium"> / year</span>
               </p>
               <p className="text-sm text-[#09294c]/60 mb-6">
                 One site · one destination/activity focus · fully managed
@@ -712,6 +761,11 @@ export default function TourLanding() {
               </h3>
               <ul className="space-y-3 text-sm text-white/70 leading-relaxed mb-8 flex-1">
                 <li>
+                  Your operator dashboard shows site status and click stats for the tracked booking
+                  links we place on your site — so you can see travelers moving from Google toward
+                  checkout.
+                </li>
+                <li>
                   Every Book Now path links to your Viator or GetYourGuide tours — you keep the
                   marketplace checkout travelers already trust.
                 </li>
@@ -742,14 +796,14 @@ export default function TourLanding() {
         </div>
       </section>
 
-      {/* Why $199 */}
+      {/* Why $249 */}
       <section id="why-price" className="py-16 md:py-20 pattern-dots">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
             <motion.div {...fadeUp} className="lg:col-span-5">
               <div className="accent-bar mb-4" />
               <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-4">
-                Why is it only $199/year?
+                Why is it only $249/year?
               </h2>
               <p className="text-lg font-semibold text-[#09294c] leading-snug">
                 Because the annual fee isn&apos;t our only source of revenue.
@@ -761,7 +815,7 @@ export default function TourLanding() {
               className="lg:col-span-7 space-y-4 text-lg text-gray-600 leading-relaxed"
             >
               <p>
-                You pay $199/year for us to build and manage your site. Where we participate in the
+                You pay $249/year for us to build and manage your site. Where we participate in the
                 relevant affiliate program, we may also earn a commission when travelers book through
                 our sites — separate from your Viator or GetYourGuide economics.
               </p>
@@ -859,7 +913,7 @@ export default function TourLanding() {
               Get a Site for Your Tours
               <ArrowRight className="w-4 h-4" />
             </a>
-            <p className="text-sm text-[#09294c]/55 font-medium mt-4">$199 / year · fully managed</p>
+            <p className="text-sm text-[#09294c]/55 font-medium mt-4">$249 / year · fully managed</p>
           </motion.div>
         </div>
       </section>

@@ -7,7 +7,5 @@ if (!supabaseUrl || !supabaseKey) {
   console.warn('Supabase env vars missing: NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY');
 }
 
-export const supabase = createClient(
-  supabaseUrl || '',
-  supabaseKey || ''
-);
+/** Browser/anon client for public forms and catalog reads. Prefer @/lib/supabase/client for auth. */
+export const supabase = createClient(supabaseUrl || '', supabaseKey || '');

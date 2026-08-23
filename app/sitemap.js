@@ -3,7 +3,7 @@ const BASE = 'https://2xgen.com';
 export default function sitemap() {
   const now = new Date();
 
-  const staticRoutes = ['', '/about', '/get-a-site', '/privacy'];
+  const staticRoutes = ['', '/about', '/get-a-site', '/signup', '/login', '/privacy', '/terms'];
 
   return staticRoutes.map((path) => ({
     url: `${BASE}${path}`,

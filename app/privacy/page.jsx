@@ -75,7 +75,7 @@ export default function EnPrivacyPage() {
           </section>
 
           <p className="pt-4">
-            <Link href="/en" className="text-sm font-semibold text-[#1a5f9e] hover:underline">
+            <Link href="/" className="text-sm font-semibold text-[#1a5f9e] hover:underline">
               ← Back to home
             </Link>
           </p>

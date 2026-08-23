@@ -8,7 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      // ── Keep product site: /, /about, /get-a-site, /privacy, /admin/* ──
+      // Keep product site: /, /about, /get-a-site, /privacy, /terms, /admin/*
 
       // Old English marketing pages → home
       { source: '/what-we-build', destination: '/', permanent: true },
@@ -50,8 +50,8 @@ const nextConfig = {
       { source: '/contact.html', destination: '/', permanent: true },
       { source: '/insights.html', destination: '/', permanent: true },
 
-      // Admin convenience (keep admin; just shortcut paths)
-      { source: '/admin', destination: '/admin/microsites', permanent: false },
+      // Admin convenience
+      { source: '/admin', destination: '/admin/operators', permanent: false },
       { source: '/admin/projects', destination: '/admin/microsites', permanent: false },
     ];
   },

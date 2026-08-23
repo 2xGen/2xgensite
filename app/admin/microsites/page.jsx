@@ -6,7 +6,7 @@ import AdminMicrosites from '@/components/AdminMicrosites';
 
 export default function AdminMicrositesPage() {
   return (
-    <ProtectedRoute>
+    <ProtectedRoute requireAdmin loginPath="/admin/login">
       <AdminMicrosites />
     </ProtectedRoute>
   );

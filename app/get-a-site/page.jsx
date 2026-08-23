@@ -4,7 +4,7 @@ import GetTourSitePage from '@/components/GetTourSitePage';
 export const metadata = {
   title: 'Get a Site for Your Tours | 2xGen',
   description:
-    'Request a dedicated SEO site for your Viator or GetYourGuide tours — $199/year, fully managed, live within 3 business days.',
+    'Request a dedicated SEO site for your Viator or GetYourGuide tours — $249/year, fully managed, live within 3 business days.',
   alternates: { canonical: '/get-a-site' },
   openGraph: {
     title: 'Get a Site for Your Tours | 2xGen',
