@@ -30,7 +30,7 @@ function layout({ title, bodyHtml, ctaLabel, ctaHref }) {
         </td></tr>
         <tr><td style="padding:16px 28px 24px;border-top:1px solid rgba(9,41,76,0.08);">
           <p style="margin:0;font-size:12px;color:#6b7c8f;line-height:1.5;">
-            This is a service message about your 2xGen account. Questions? Reply to this email or write matthijs@2xgen.com.
+            This is a service message about your 2xGen account. Questions? Reply to this email or write support@2xgen.com.
           </p>
         </td></tr>
       </table>
@@ -201,10 +201,7 @@ export async function sendOperatorEmail(templateId, { to, ...vars }) {
 
 /** Founder/ops alerts (new accounts, paid orders). */
 export function adminNotifyEmail() {
-  return (
-    process.env.ADMIN_NOTIFY_EMAIL ||
-    'matthijs@2xgen.com'
-  ).trim();
+  return (process.env.ADMIN_NOTIFY_EMAIL || 'hello@2xgen.com').trim();
 }
 
 export async function sendAdminEmail(templateId, vars = {}) {
@@ -212,6 +209,79 @@ export async function sendAdminEmail(templateId, vars = {}) {
     to: adminNotifyEmail(),
     ...vars,
   });
+}
+
+/** Pre-sale / account-manager inquiry → hello@ (reply-to = visitor). */
+export async function sendContactInquiry({
+  name,
+  email,
+  message,
+  company = '',
+  source = '',
+}) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    return { ok: false, skipped: 'RESEND_API_KEY not set' };
+  }
+
+  const to = process.env.CONTACT_INQUIRY_EMAIL || 'hello@2xgen.com';
+  const from = process.env.RESEND_FROM_EMAIL || '2xGen <noreply@2xgen.com>';
+  const safeName = String(name || '').trim() || 'Visitor';
+  const safeEmail = String(email || '').trim();
+  const safeMessage = String(message || '').trim();
+  const safeCompany = String(company || '').trim();
+  const safeSource = String(source || '').trim();
+
+  if (!safeEmail || !safeMessage) {
+    return { ok: false, skipped: 'missing fields' };
+  }
+
+  const subject = `Account inquiry — ${safeName}${safeCompany ? ` (${safeCompany})` : ''}`;
+  const text = [
+    'New pre-sale / account manager inquiry',
+    '',
+    `Name: ${safeName}`,
+    `Email: ${safeEmail}`,
+    `Company: ${safeCompany || '—'}`,
+    `Source: ${safeSource || '—'}`,
+    '',
+    safeMessage,
+  ].join('\n');
+
+  const html = `<!DOCTYPE html>
+<html><body style="font-family:Segoe UI,Helvetica,Arial,sans-serif;color:#09294c;line-height:1.5;">
+  <h2 style="margin:0 0 12px;">Account manager inquiry</h2>
+  <p style="margin:0 0 8px;"><strong>Name:</strong> ${escapeHtml(safeName)}</p>
+  <p style="margin:0 0 8px;"><strong>Email:</strong> ${escapeHtml(safeEmail)}</p>
+  <p style="margin:0 0 8px;"><strong>Company:</strong> ${escapeHtml(safeCompany || '—')}</p>
+  <p style="margin:0 0 16px;"><strong>Source:</strong> ${escapeHtml(safeSource || '—')}</p>
+  <p style="margin:0;white-space:pre-wrap;">${escapeHtml(safeMessage)}</p>
+</body></html>`;
+
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from,
+      to: [to],
+      reply_to: safeEmail,
+      subject,
+      text,
+      html,
+    }),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text();
+    console.error('Resend contact inquiry', errText);
+    return { ok: false, error: errText };
+  }
+
+  const json = await res.json().catch(() => ({}));
+  return { ok: true, id: json.id };
 }
 
 export function templateForSiteStatus(status) {

@@ -61,8 +61,8 @@ export default function AboutPage() {
               <div className="space-y-3 text-sm px-1">
                 <div>
                   <p className="font-semibold text-[#09294c] mb-0.5">E-mail</p>
-                  <a href="mailto:matthijs@2xgen.com" className="text-[#1a5f9e] hover:underline">
-                    matthijs@2xgen.com
+                  <a href="mailto:hello@2xgen.com" className="text-[#1a5f9e] hover:underline">
+                    hello@2xgen.com
                   </a>
                 </div>
                 <div>

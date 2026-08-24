@@ -21,8 +21,12 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold text-[#09294c] mb-2">Wie zijn wij?</h2>
             <p>
               2xGen LLC (2xGen) bouwt digitale acquisitiesystemen. Contact:{' '}
-              <a href="mailto:matthijs@2xgen.com" className="text-[#1a5f9e] hover:underline">
-                matthijs@2xgen.com
+              <a href="mailto:hello@2xgen.com" className="text-[#1a5f9e] hover:underline">
+                hello@2xgen.com
+              </a>
+              . Privacyverzoeken:{' '}
+              <a href="mailto:legal@2xgen.com" className="text-[#1a5f9e] hover:underline">
+                legal@2xgen.com
               </a>
               .
             </p>
@@ -55,7 +59,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold text-[#09294c] mb-2">VS — California / state privacy</h2>
             <p>
               We verkopen je persoonsgegevens niet. Analytics kan als “sharing” van gebruiksgegevens worden gezien;
-              je kunt dat uitzetten via “Cookies beheren” (opt-out). Voor verzoeken: matthijs@2xgen.com.
+              je kunt dat uitzetten via “Cookies beheren” (opt-out). Voor verzoeken: legal@2xgen.com.
             </p>
           </section>
 
@@ -71,7 +75,7 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-semibold text-[#09294c] mb-2">Je rechten</h2>
             <p>
               Afhankelijk van je locatie kun je gegevens inzien, corrigeren, laten verwijderen, beperken of
-              bezwaar maken, en toestemming intrekken. Mail matthijs@2xgen.com. Cookiekeuze wijzig je via de footer
+              bezwaar maken, en toestemming intrekken. Mail legal@2xgen.com. Cookiekeuze wijzig je via de footer
               of door localStorage te wissen en de pagina te herladen.
             </p>
           </section>

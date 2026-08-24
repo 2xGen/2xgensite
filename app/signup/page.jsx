@@ -1,5 +1,6 @@
 import PageShell from '@/components/PageShell';
 import SignupForm from '@/components/SignupForm';
+import AccountManagerAsk from '@/components/AccountManagerAsk';
 
 export const metadata = {
   title: 'Create free account',
@@ -21,6 +22,9 @@ export default function SignupPage() {
         </p>
         <div className="rounded-3xl border border-[#09294c]/12 bg-white/90 p-6 shadow-[0_20px_50px_rgba(9,41,76,0.1)]">
           <SignupForm />
+        </div>
+        <div className="mt-4">
+          <AccountManagerAsk variant="inline" source="signup" />
         </div>
       </div>
     </PageShell>

@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, MessageCircle } from 'lucide-react';
 import GetTourSiteForm from '@/components/GetTourSiteForm';
+import AccountManagerAsk from '@/components/AccountManagerAsk';
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -53,22 +54,23 @@ export default function GetTourSitePage() {
                 </li>
               ))}
             </ul>
-            <div className="space-y-2 text-sm pt-2">
-              <a
-                href="mailto:matthijs@2xgen.com"
-                className="block font-semibold text-[#1a5f9e] hover:underline"
-              >
-                matthijs@2xgen.com
-              </a>
-              <a
-                href="https://wa.me/2975668844"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-semibold text-[#1a5f9e] hover:underline"
-              >
-                <MessageCircle className="w-4 h-4" />
-                WhatsApp
-              </a>
+              <div className="space-y-2 text-sm pt-2">
+                <a
+                  href="mailto:hello@2xgen.com"
+                  className="block font-semibold text-[#1a5f9e] hover:underline"
+                >
+                  hello@2xgen.com
+                </a>
+                <AccountManagerAsk variant="ghost" source="get-a-site" className="!inline-flex" />
+                <a
+                  href="https://wa.me/2975668844"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-semibold text-[#1a5f9e] hover:underline"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp
+                </a>
               <p className="pt-2 text-gray-600">
                 Prefer self-serve?{' '}
                 <a href="/signup" className="font-semibold text-[#1a5f9e] hover:underline">

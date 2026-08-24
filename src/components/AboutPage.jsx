@@ -267,10 +267,10 @@ export default function AboutPage() {
                 destinations and markets.
               </p>
               <a
-                href="mailto:matthijs@2xgen.com"
+                href="mailto:hello@2xgen.com"
                 className="text-[#1a5f9e] font-semibold hover:underline"
               >
-                matthijs@2xgen.com
+                hello@2xgen.com
               </a>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}

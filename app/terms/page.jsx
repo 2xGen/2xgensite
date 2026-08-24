@@ -30,9 +30,21 @@ export default function TermsPage() {
           <section>
             <h2 className="text-xl font-semibold text-[#09294c] mb-2">2. Who we are</h2>
             <p>
-              2xGen LLC is registered in Albuquerque, New Mexico, USA. Contact:{' '}
-              <a href="mailto:matthijs@2xgen.com" className="text-[#1a5f9e] hover:underline">
-                matthijs@2xgen.com
+              2xGen LLC is registered in Albuquerque, New Mexico, USA. General contact:{' '}
+              <a href="mailto:hello@2xgen.com" className="text-[#1a5f9e] hover:underline">
+                hello@2xgen.com
+              </a>
+              . Legal notices:{' '}
+              <a href="mailto:legal@2xgen.com" className="text-[#1a5f9e] hover:underline">
+                legal@2xgen.com
+              </a>
+              . Billing:{' '}
+              <a href="mailto:billing@2xgen.com" className="text-[#1a5f9e] hover:underline">
+                billing@2xgen.com
+              </a>
+              . Support:{' '}
+              <a href="mailto:support@2xgen.com" className="text-[#1a5f9e] hover:underline">
+                support@2xgen.com
               </a>
               .
             </p>

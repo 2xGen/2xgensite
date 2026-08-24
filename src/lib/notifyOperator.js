@@ -21,7 +21,7 @@ export async function emailOperatorByProfileId(profileId, templateId, extra = {}
   }
 }
 
-/** Alert matthijs@2xgen.com (or ADMIN_NOTIFY_EMAIL) with operator context. */
+/** Alert hello@2xgen.com (or ADMIN_NOTIFY_EMAIL) with operator context. */
 export async function notifyAdminByProfileId(profileId, templateId) {
   if (!profileId) return { ok: false, skipped: 'no profile' };
   try {

@@ -295,6 +295,17 @@ export default function DashboardBilling() {
           </div>
         )}
       </div>
+      <p className="text-xs text-gray-500 leading-relaxed">
+        Billing questions:{' '}
+        <a href="mailto:billing@2xgen.com" className="text-[#1a5f9e] hover:underline">
+          billing@2xgen.com
+        </a>
+        . Product support:{' '}
+        <a href="mailto:support@2xgen.com" className="text-[#1a5f9e] hover:underline">
+          support@2xgen.com
+        </a>
+        .
+      </p>
     </div>
   );
 }

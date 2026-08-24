@@ -60,7 +60,7 @@ export default function GetTourSiteForm({ source = 'get-a-site' }) {
     setSubmitting(false);
     if (insertError) {
       console.error(insertError);
-      setError('Could not send. Email matthijs@2xgen.com or try again.');
+      setError('Could not send. Email hello@2xgen.com or try again.');
       return;
     }
     setSent(true);

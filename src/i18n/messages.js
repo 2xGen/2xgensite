@@ -74,7 +74,7 @@ export const messages = {
       privacyLink: 'privacybeleid',
       privacyAfter: '.',
       note: 'Geen salespitch. We gebruiken je antwoorden om te begrijpen wat Arubaanse bedrijven écht nodig hebben — en te beslissen wat we hierna bouwen.',
-      error: 'Opslaan mislukt. Probeer het opnieuw of mail matthijs@2xgen.com.',
+      error: 'Opslaan mislukt. Probeer het opnieuw of mail hello@2xgen.com.',
       thanksTitle: 'Bedankt — dat helpt enorm.',
       thanksBody:
         'We verzamelen input van Arubaanse bedrijven over hoe toeristen hen vinden en boeken. Als jouw probleem vaak terugkomt, bouwen we daar specifiek omheen — en laten we het je weten.',
@@ -175,7 +175,7 @@ export const messages = {
       systemLabel: 'Mogelijk acquisitiesysteem',
       systemFlow: 'Search → nuttige tool → kwalificatie → lead → opvolging → klant',
       doneBody: 'We hebben je antwoorden ontvangen. Wil je dat we dit verder uitwerken voor jouw site? We nemen contact op.',
-      error: 'Opslaan mislukt. Probeer het opnieuw of mail matthijs@2xgen.com.',
+      error: 'Opslaan mislukt. Probeer het opnieuw of mail hello@2xgen.com.',
       close: 'Sluit acquisitiecheck',
       analysis: {
         conversion: {
@@ -811,7 +811,7 @@ export const messages = {
       privacyLink: 'privacy policy',
       privacyAfter: '.',
       note: 'No sales pitch. We use your answers to understand what Aruba businesses actually need and decide what we build next.',
-      error: 'Could not save. Please try again or email matthijs@2xgen.com.',
+      error: 'Could not save. Please try again or email hello@2xgen.com.',
       thanksTitle: 'Thank you — that helps a lot.',
       thanksBody:
         "We're collecting input from Aruba businesses on how tourists find and book them. If your problem shows up often, we'll build specifically for it — and we'll come back to you.",
@@ -912,7 +912,7 @@ export const messages = {
       systemLabel: 'Potential acquisition system',
       systemFlow: 'Search → useful tool → qualification → lead → follow-up → customer',
       doneBody: "We've saved your answers. Want us to take this further for your site? We'll be in touch.",
-      error: 'Could not save. Please try again or email matthijs@2xgen.com.',
+      error: 'Could not save. Please try again or email hello@2xgen.com.',
       close: 'Close acquisition check',
       analysis: {
         conversion: {

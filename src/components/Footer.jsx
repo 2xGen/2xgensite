@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import AccountManagerAsk from '@/components/AccountManagerAsk';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -20,10 +21,11 @@ const Footer = () => {
             <h3 className="text-xl font-semibold tracking-tight mb-3 text-white" style={{ fontFamily: 'Outfit, sans-serif' }}>
               2xGen
             </h3>
-            <p className="text-white/55 text-sm leading-relaxed max-w-sm">
+            <p className="text-white/55 text-sm leading-relaxed max-w-sm mb-4">
               Dedicated SEO sites for tour operators — built around your tours and sent to Viator or
               GetYourGuide checkout.
             </p>
+            <AccountManagerAsk variant="footer" source="footer" className="max-w-sm" />
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wide text-white/40 mb-3">Our network</p>
@@ -76,8 +78,8 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="mailto:matthijs@2xgen.com" className="text-sm text-white/70 hover:text-white transition-colors">
-                  matthijs@2xgen.com
+                <a href="mailto:hello@2xgen.com" className="text-sm text-white/70 hover:text-white transition-colors">
+                  hello@2xgen.com
                 </a>
               </li>
             </ul>

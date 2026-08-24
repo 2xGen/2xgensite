@@ -8,6 +8,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { listMicrosites } from '@/services/micrositeService';
 import { imageForUrl } from '@/data/microsites';
 import DashboardMockup from '@/components/DashboardMockup';
+import AccountManagerAsk from '@/components/AccountManagerAsk';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -889,6 +890,9 @@ export default function TourLanding() {
                 <p className="text-sm text-gray-600 leading-relaxed">{item.a}</p>
               </motion.div>
             ))}
+            <motion.div {...stagger(FAQS.length)} className="pt-2">
+              <AccountManagerAsk variant="inline" source="faq" />
+            </motion.div>
           </div>
         </div>
       </section>

@@ -19,8 +19,12 @@ export default function EnPrivacyPage() {
             <h2 className="text-xl font-semibold text-[#09294c] mb-2">Who we are</h2>
             <p>
               2xGen LLC (2xGen) builds digital acquisition systems. Contact:{' '}
-              <a href="mailto:matthijs@2xgen.com" className="text-[#1a5f9e] hover:underline">
-                matthijs@2xgen.com
+              <a href="mailto:hello@2xgen.com" className="text-[#1a5f9e] hover:underline">
+                hello@2xgen.com
+              </a>
+              . Privacy requests:{' '}
+              <a href="mailto:legal@2xgen.com" className="text-[#1a5f9e] hover:underline">
+                legal@2xgen.com
               </a>
               .
             </p>
@@ -53,7 +57,7 @@ export default function EnPrivacyPage() {
             <h2 className="text-xl font-semibold text-[#09294c] mb-2">US — California / state privacy</h2>
             <p>
               We do not sell your personal information. Analytics may be considered “sharing” of usage data; you can
-              opt out via “Manage cookies”. For requests: matthijs@2xgen.com.
+              opt out via “Manage cookies”. For requests: legal@2xgen.com.
             </p>
           </section>
 
@@ -69,7 +73,7 @@ export default function EnPrivacyPage() {
             <h2 className="text-xl font-semibold text-[#09294c] mb-2">Your rights</h2>
             <p>
               Depending on your location, you may access, correct, delete, restrict, or object to processing, and
-              withdraw consent. Email matthijs@2xgen.com. Change cookie choices via the footer, or clear localStorage
+              withdraw consent. Email legal@2xgen.com. Change cookie choices via the footer, or clear localStorage
               and reload.
             </p>
           </section>

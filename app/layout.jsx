@@ -94,7 +94,7 @@ export default function RootLayout({ children }) {
               },
               contactPoint: {
                 '@type': 'ContactPoint',
-                email: 'matthijs@2xgen.com',
+                email: 'hello@2xgen.com',
                 contactType: 'business',
                 availableLanguage: ['English'],
               },
