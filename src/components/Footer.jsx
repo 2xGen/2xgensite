@@ -2,6 +2,7 @@
 
 import React from 'react';
 import AccountManagerAsk from '@/components/AccountManagerAsk';
+import PaymentBadges from '@/components/PaymentBadges';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -85,6 +86,11 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
+        <div className="border-t border-white/10 pt-8 mb-8">
+          <PaymentBadges />
+        </div>
+
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between text-xs text-white/40">
           <p>© {year} 2xGen LLC. All rights reserved.</p>
           <p>Viator and GetYourGuide are trademarks of their respective owners. 2xGen is an independent site builder.</p>

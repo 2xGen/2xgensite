@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useEffect, useMemo, useState } from 'react';
-import Link from 'next/link';
-import { ExternalLink, LogOut, Search } from 'lucide-react';
+import { ExternalLink, Search } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { statusLabel, trackingLinkUrl } from '@/lib/saas';
+import AdminNav from '@/components/AdminNav';
 
 function countInRange(clicks, days) {
   if (!clicks?.length) return 0;
@@ -14,7 +14,7 @@ function countInRange(clicks, days) {
 }
 
 export default function AdminTrackingLinks() {
-  const { supabase, logout } = useAuth();
+  const { supabase } = useAuth();
   const [rows, setRows] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -87,32 +87,7 @@ export default function AdminTrackingLinks() {
 
   return (
     <div className="min-h-screen bg-[#f3f7fb]">
-      <header className="bg-white border-b border-[#09294c]/10">
-        <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <span className="font-semibold text-[#09294c]" style={{ fontFamily: 'Outfit, sans-serif' }}>
-              2xGen Admin
-            </span>
-            <Link href="/admin/microsites" className="text-sm text-[#09294c]/60 hover:text-[#09294c]">
-              Network sites
-            </Link>
-            <Link href="/admin/operators" className="text-sm text-[#09294c]/60 hover:text-[#09294c]">
-              Operators
-            </Link>
-            <Link href="/admin/links" className="text-sm font-semibold text-[#09294c]">
-              Tracking links
-            </Link>
-          </div>
-          <button
-            type="button"
-            onClick={() => logout()}
-            className="inline-flex items-center gap-1.5 text-sm text-[#09294c]/60 hover:text-[#09294c]"
-          >
-            <LogOut className="w-4 h-4" />
-            Sign out
-          </button>
-        </div>
-      </header>
+      <AdminNav active="links" />
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
