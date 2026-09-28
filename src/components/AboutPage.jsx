@@ -262,9 +262,36 @@ export default function AboutPage() {
                 2xGen LLC is founded by Matthijs van Reek, a marketer and tourism entrepreneur focused
                 on building digital acquisition systems.
               </p>
-              <p className="text-gray-600 leading-relaxed mb-6">
-                Registered in Albuquerque, New Mexico. 2xGen operates tourism websites across multiple
-                destinations and markets.
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Registered in Albuquerque, New Mexico. 2xGen owns and manages tourism websites across
+                multiple destinations — and also operates other digital properties, including{' '}
+                <a
+                  href="https://tolls.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1a5f9e] font-medium hover:underline"
+                >
+                  tolls.be
+                </a>
+                ,{' '}
+                <a
+                  href="https://belgiumvignette.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1a5f9e] font-medium hover:underline"
+                >
+                  belgiumvignette.be
+                </a>
+                , and{' '}
+                <a
+                  href="https://factuurbaas.nl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#1a5f9e] font-medium hover:underline"
+                >
+                  factuurbaas.nl
+                </a>
+                .
               </p>
               <a
                 href="mailto:hello@2xgen.com"
