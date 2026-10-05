@@ -11,13 +11,10 @@ const Navbar = () => {
   const isHome = pathname === '/';
 
   const navLinks = [
-    { href: isHome ? '#problem' : '/#problem', label: 'Problem' },
-    { href: isHome ? '#who' : '/#who', label: 'Who it’s for' },
-    { href: isHome ? '#solution' : '/#solution', label: 'Solution' },
-    { href: isHome ? '#dashboard' : '/#dashboard', label: 'Dashboard' },
-    { href: isHome ? '#proof' : '/#proof', label: 'Live examples' },
+    { href: isHome ? '#solution' : '/#solution', label: 'How it works' },
+    { href: isHome ? '#proof' : '/#proof', label: 'Examples' },
     { href: isHome ? '#pricing' : '/#pricing', label: 'Pricing' },
-    { href: isHome ? '#faq' : '/#faq', label: 'FAQ' },
+    { href: '/guides', label: 'Guides' },
     { href: '/about', label: 'About' },
   ];
 
@@ -43,10 +40,17 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <a
             href="/"
-            className="text-xl font-semibold text-[#09294c] tracking-tight"
-            style={{ fontFamily: 'Outfit, sans-serif' }}
+            className="flex flex-col justify-center min-w-0 leading-none"
           >
-            2xGen
+            <span
+              className="text-xl font-semibold text-[#09294c] tracking-tight"
+              style={{ fontFamily: 'Outfit, sans-serif' }}
+            >
+              2xGen
+            </span>
+            <span className="text-[10px] sm:text-[11px] font-medium text-[#09294c]/55 tracking-wide mt-0.5 truncate">
+              SEO for Tour Operators
+            </span>
           </a>
 
           <div className="hidden lg:flex items-center gap-7">
@@ -55,7 +59,8 @@ const Navbar = () => {
                 key={link.href}
                 href={link.href}
                 className={`text-sm font-medium transition-colors ${
-                  pathname === '/about' && link.href === '/about'
+                  (pathname === '/about' && link.href === '/about') ||
+                  (pathname?.startsWith('/guides') && link.href === '/guides')
                     ? 'text-[#09294c]'
                     : 'text-[#09294c]/70 hover:text-[#09294c]'
                 }`}
@@ -67,7 +72,7 @@ const Navbar = () => {
               Sign in
             </a>
             <a href="/get-a-site" className="xgen-btn xgen-btn-primary !py-2 !px-4 text-sm">
-              Get a Site for Your Tours
+              Get a Site
             </a>
           </div>
 
@@ -113,7 +118,7 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
             className="xgen-btn xgen-btn-primary w-full mt-2"
           >
-            Get a Site for Your Tours
+            Get a Site
           </a>
         </div>
       )}
